@@ -13,6 +13,7 @@ local lsp_server = {
     html = {},
     basedpyright = {},
     cmake = {},
+    rust_analyzer = {},
 }
 
 return {
