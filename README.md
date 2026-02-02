@@ -9,6 +9,92 @@
 3. Rust 工具链: `rustc`, `cargo`
 4. `tree-sitter-cli`: 确保语法高亮解析正常
 
+# 安装指南
+
+```bash
+# 编译安装最新 neovim (v0.12.0-dev-19eb758 for now)
+git clone --depth 1 https://github.com/neovim/neovim
+make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/share/neovim" CMAKE_BUILD_TYPE=Release
+make install
+export PATH="$HOME/.local/share/neovim/bin:$PATH"
+
+# 安装必须依赖
+bun i -g tree-sitter-cli
+export PATH="$HOME/.bun/bin:$PATH"
+```
+
+## 安装语言支持(lsp formatter)
+
+### Arch Linux
+
+#### Lua
+
+```bash
+sudo pacman -S lua-language-server stylua
+```
+
+#### Rust
+
+```bash
+sudo pacman -S rust-analyzer rust
+```
+
+#### C/C++
+
+```bash
+sudo pacman -S clang
+```
+
+#### Python
+
+```bash
+sudo pacman -S python-ruff
+```
+
+#### Bash
+
+```bash
+sudo pacman -S bash-language-server shfmt
+```
+
+#### JSON
+
+```bash
+sudo pacman -S vscode-json-languageserver
+```
+
+#### Go
+
+```bash
+sudo pacman -S gopls go
+go install golang.org/x/tools/cmd/goimports@latest
+export PATH="$HOME/go/bin:$PATH"
+```
+
+#### Zig
+
+```bash
+sudo pacman -S zls zig
+```
+
+#### TOML
+
+```bash
+sudo pacman -S taplo-cli
+```
+
+#### CMake
+
+```bash
+sudo pacman -S cmake-format
+```
+
+#### Markdown/YAML/HTML/CSS
+
+```bash
+bun i -g prettier
+```
+
 ## 结构
 
 ```test
