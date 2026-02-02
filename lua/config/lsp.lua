@@ -1,5 +1,14 @@
 -- Lsp servers
-local lsp_servers = { "lua_ls", "rust_analyzer", "clangd", "ruff", "bashls", "jsonls", "gopls" }
+local lsp_servers = {
+	"lua_ls",
+	"rust_analyzer",
+	"clangd",
+	"ruff",
+	"bashls",
+	"jsonls",
+	"gopls",
+	"zls",
+}
 
 vim.filetype.add({
 	extension = {

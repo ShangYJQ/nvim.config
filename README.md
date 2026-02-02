@@ -3,12 +3,14 @@
 ![界面预览](./screenshots/01.png)
 
 ## 环境依赖
+
 1. `Neovim` v0.12+
 2. 编译器: `gcc`, `g++`
 3. Rust 工具链: `rustc`, `cargo`
 4. `tree-sitter-cli`: 确保语法高亮解析正常
 
 ## 结构
+
 ```test
 ├── after
 │   └── lsp
@@ -48,3 +50,4 @@
     ├── json.json
     ├── lua.json
     └── package.json
+```
