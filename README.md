@@ -1,13 +1,50 @@
-# Persional Neovim config (Just share my config)
-## This is a neovim config that focus on speed and aesthetic
-## It use modern plugins,which to boost your start time
+## 由 `Neovim` v0.12 & `vim.pack` 驱动. 为速度和美观而生.
 
-`Install`
-1. Ensure you have installed git clang and neovim v0.11
-2. Run `git clone https://github.com/ShangYJQ/nvim.config.git ~/.config/nvim && nvim` in your shell
-3. Run nvim again and check.
+![界面预览](./screenshots/01.png)
 
-`Tip`
-1. Please check `lua/config/keymaps.lua`
-2. The plugin `autorun.nvim` is just for personal use,so it is just a very simple plugin.
-3. you need to install some lsp server like:`basedpyright` `clangd` `lua_ls` and so on.
+## 环境依赖
+1. `Neovim` v0.12+
+2. 编译器: `gcc`, `g++`
+3. Rust 工具链: `rustc`, `cargo`
+4. `tree-sitter-cli`: 确保语法高亮解析正常
+
+## 结构
+```test
+├── after
+│   └── lsp
+│       └── lua_ls.lua
+├── init.lua
+├── lua
+│   ├── config
+│   │   ├── autocmd.lua
+│   │   ├── globals.lua
+│   │   ├── init.lua
+│   │   ├── keymap.lua
+│   │   ├── lsp.lua
+│   │   ├── neovide.lua
+│   │   └── options.lua
+│   ├── plugins
+│   │   ├── blink-cmp.lua
+│   │   ├── blink-pairs.lua
+│   │   ├── conform.lua
+│   │   ├── gitsigns.lua
+│   │   ├── init.lua
+│   │   ├── lualine.lua
+│   │   ├── mini-files.lua
+│   │   ├── mini-indentscope.lua
+│   │   ├── mini-surround.lua
+│   │   ├── multicursor-nvim.lua
+│   │   ├── nvim-treesitter.lua
+│   │   ├── oil.lua
+│   │   ├── render-markdown.lua
+│   │   ├── telescope.lua
+│   │   ├── themes.lua
+│   │   └── tiny-inline-diagnostics.lua
+│   └── utlis
+│       └── builder.lua
+├── nvim-pack-lock.json
+└── snippets
+    ├── cpp.json
+    ├── json.json
+    ├── lua.json
+    └── package.json

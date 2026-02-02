@@ -1,46 +1,46 @@
 {
-    "code": {
-        "prefix": "code",
-        "body": [
-            "// Create by ShangYJQ.",
-            "// ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
-            "",
-            "#include <bits/stdc++.h>",
-            "using namespace std;",
-            "",
-            "signed main()",
-            "{",
-            "\tcin.tie(nullptr)->sync_with_stdio(false);",
-            "\t",
-            "\t$1",
-            "\t",
-            "\treturn 0;",
-            "}"
-        ],
-        "description": "Start code!"
-    },
-    "fastread": {
-        "prefix": "fastread",
-        "body": [
-            "inline int read()",
-            "{",
-            "\tint x = 0, f = 1;",
-            "\tchar c = getchar();",
-            "\twhile (c < '0' || c > '9')",
-            "\t{",
-            "\t\tif (c == '-')",
-            "\t\t\tf = -1;",
-            "\t\tc = getchar();",
-            "\t}",
-            "\twhile (((c - '0') | ('9' - c)) >= 0)",
-            "\t{",
-            "\t\tx = (x << 1) + (x << 3) + (c ^ 48);",
-            "\t\tc = getchar();",
-            "\t}",
-            "\treturn x * f;",
-            "}",
-            "$1"
-        ],
-        "description": "Fast read"
-    }
+	"code": {
+		"prefix": "code",
+		"body": [
+			"// Create by ShangYJQ.",
+			"// ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+			"",
+			"#include <bits/stdc++.h>",
+			"using namespace std;",
+			"",
+			"signed main()",
+			"{",
+			"\tcin.tie(nullptr)->sync_with_stdio(false);",
+			"\t",
+			"\t$1",
+			"\t",
+			"\treturn 0;",
+			"}"
+		],
+		"description": "Start code!"
+	},
+	"fastread": {
+		"prefix": "fastread",
+		"body": [
+			"inline int read()",
+			"{",
+			"\tint x = 0, f = 1;",
+			"\tchar c = getchar();",
+			"\twhile (c < '0' || c > '9')",
+			"\t{",
+			"\t\tif (c == '-')",
+			"\t\t\tf = -1;",
+			"\t\tc = getchar();",
+			"\t}",
+			"\twhile (((c - '0') | ('9' - c)) >= 0)",
+			"\t{",
+			"\t\tx = (x << 1) + (x << 3) + (c ^ 48);",
+			"\t\tc = getchar();",
+			"\t}",
+			"\treturn x * f;",
+			"}",
+			"$1"
+		],
+		"description": "Fast read"
+	}
 }
