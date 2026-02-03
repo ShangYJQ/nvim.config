@@ -104,6 +104,13 @@ bun i -g prettier
 ```bash
 pacman -S vue-language-server
 bun i -g @vtsls/language-server
+bun i -g unocss-language-server
+```
+
+#### DockerFile
+
+```bash
+bun i -g dockerfile-language-server-nodejs
 ```
 
 ## 结构

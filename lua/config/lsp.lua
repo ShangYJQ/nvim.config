@@ -7,6 +7,9 @@ local lsp_servers = {
 	"jsonls",
 	"gopls",
 	"zls",
+	"unocss",
+	"dockerls",
+	"vtsls",
 }
 
 -- you need have vue-language-server exe in your PATH !
@@ -38,15 +41,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = "vue",
 	callback = function()
 		vim.lsp.enable("vue_ls")
-		vim.lsp.enable("vtsls")
 	end,
-})
-
-vim.filetype.add({
-	extension = {
-		gowork = "gowork",
-		gotmpl = "gotmpl",
-	},
 })
 
 vim.diagnostic.config({
