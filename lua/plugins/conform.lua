@@ -31,6 +31,7 @@ require("conform").setup({
 		bash = { "shfmt" },
 		toml = { "taplo" },
 		cmake = { "cmake_format" },
+		vue = { "prettier" },
 		markdown = { "prettier" },
 		yaml = { "prettier" },
 		html = { "prettier" },

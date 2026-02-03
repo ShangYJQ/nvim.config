@@ -99,6 +99,13 @@ sudo pacman -S cmake-format
 bun i -g prettier
 ```
 
+#### Vue
+
+```bash
+pacman -S vue-language-server
+bun i -g @vtsls/language-server
+```
+
 ## 结构
 
 ```test

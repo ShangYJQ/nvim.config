@@ -1,4 +1,3 @@
--- Lsp servers
 local lsp_servers = {
 	"lua_ls",
 	"rust_analyzer",
@@ -9,6 +8,39 @@ local lsp_servers = {
 	"gopls",
 	"zls",
 }
+
+-- you need have vue-language-server exe in your PATH !
+-- try pacman -S vue-language-server
+local vue_language_server_path = vim.fn.exepath("vue-language-server")
+
+local vue_plugin = {
+	name = "@vue/typescript-plugin",
+	location = vue_language_server_path,
+	languages = { "vue" },
+	configNamespace = "typescript",
+}
+
+vim.lsp.config("vtsls", {
+	settings = {
+		vtsls = {
+			tsserver = {
+				globalPlugins = {
+					vue_plugin,
+				},
+			},
+		},
+	},
+	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+})
+
+-- 按需加载Vue语言服务器配置
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "vue",
+	callback = function()
+		vim.lsp.enable("vue_ls")
+		vim.lsp.enable("vtsls")
+	end,
+})
 
 vim.filetype.add({
 	extension = {
