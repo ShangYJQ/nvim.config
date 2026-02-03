@@ -39,7 +39,7 @@ ts.install({
 	"gitignore",
 	"zsh",
 	"zig",
-	"latex",
+	-- "latex",
 	"yaml",
 })
 

@@ -14,7 +14,7 @@ require("blink.cmp").setup({
 		["<C-p>"] = { "select_prev", "fallback" },
 		["<C-e>"] = { "hide", "fallback" },
 	},
-	fuzzy = { implementation = "prefer_rust_with_warning" },
+	fuzzy = { implementation = "lua" },
 	completion = {
 		documentation = {
 			auto_show = true,
