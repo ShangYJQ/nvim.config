@@ -20,7 +20,7 @@ vim.pack.add({
 	-- cd ~/.local/share/nvim/site/pack/core/opt/blink.cmp
 	-- rustup override set nightly
 	-- cargo build --release
-	-- cargo +nightly-2025-09-30 build --release
+	-- cargo build --release
 
 	{ src = "https://github.com/saghen/blink.cmp" },
 
@@ -42,7 +42,7 @@ vim.pack.add({
 	-- cd ~/.local/share/nvim/site/pack/core/opt/blink.pairs
 	-- rustup override set nightly
 	-- cargo build --release
-	-- cargo +nightly-2025-09-30 build --release
+	-- cargo --release
 	{ src = "https://github.com/saghen/blink.pairs" },
 
 	{ src = "https://github.com/jake-stewart/multicursor.nvim" },
