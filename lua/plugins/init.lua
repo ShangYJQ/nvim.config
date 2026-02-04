@@ -33,6 +33,7 @@ vim.pack.add({
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 	{ src = "https://github.com/folke/todo-comments.nvim" },
+	{ src = "https://github.com/windwp/nvim-ts-autotag" },
 
 	-- { src = "https://github.com/nvim-mini/mini.files" },
 	{ src = "https://github.com/nvim-mini/mini.surround" },
@@ -70,6 +71,7 @@ require("plugins.mini-surround")
 require("plugins.telescope")
 require("plugins.render-markdown")
 require("plugins.tiny-inline-diagnostics")
+require("plugins.nvim-ts-autotag")
 require("plugins.oil")
 require("plugins.todo-comments")
 -- require("plugins.mini-files")
