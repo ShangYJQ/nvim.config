@@ -33,8 +33,12 @@ map("n", "<leader>th", builtin.help_tags, { desc = "Telescope help tags" })
 map("n", "<leader>d", builtin.diagnostics, { desc = "Telescope diagnostics" })
 map("n", "<leader>s", builtin.lsp_document_symbols, { desc = "Telescope lsp_document_symbols" })
 map("n", "<leader>S", builtin.lsp_workspace_symbols, { desc = "Telescope lsp_workspace_symbols" })
+
+-- TodoTelescope
+map("n", "<leader>p", "<cmd>TodoTelescope<CR>", { desc = "Telescope find tode" })
+
 -- theme switcher
-vim.keymap.set("n", "<leader>T", function()
+map("n", "<leader>T", function()
 	builtin.colorscheme({
 		enable_preview = true,
 	})

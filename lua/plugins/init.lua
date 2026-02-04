@@ -31,6 +31,9 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-telescope/telescope.nvim" },
 	{ src = "https://github.com/nvim-lua/plenary.nvim" },
 	{ src = "https://github.com/stevearc/oil.nvim" },
+	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
+	{ src = "https://github.com/folke/todo-comments.nvim" },
+
 	-- { src = "https://github.com/nvim-mini/mini.files" },
 	{ src = "https://github.com/nvim-mini/mini.surround" },
 	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
@@ -46,8 +49,6 @@ vim.pack.add({
 	-- cd .local/share/nvim/site/pack/core/opt/telescope-fzf-native.nvim
 	-- make
 	{ src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim" },
-
-	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 })
 
 -- 获得自动构建器
@@ -70,6 +71,7 @@ require("plugins.telescope")
 require("plugins.render-markdown")
 require("plugins.tiny-inline-diagnostics")
 require("plugins.oil")
+require("plugins.todo-comments")
 -- require("plugins.mini-files")
 require("plugins.multicursor-nvim")
 require("plugins.mini-indentscope")

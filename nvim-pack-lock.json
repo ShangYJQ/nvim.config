@@ -1,11 +1,11 @@
 {
   "plugins": {
     "blink.cmp": {
-      "rev": "fab799d086fd63fa5b389007f63767b23885ebf8",
+      "rev": "22cbfef275b6f76c6c55e9ef9ed8bb8b6f8bb894",
       "src": "https://github.com/saghen/blink.cmp"
     },
     "blink.pairs": {
-      "rev": "65978aadaf9b7d6cae59c1c51cf2b366b370546e",
+      "rev": "2a7cb15f2c4bbbbe178ebf9f3fdae19aa6d28d39",
       "src": "https://github.com/saghen/blink.pairs"
     },
     "catppuccin": {
@@ -17,7 +17,7 @@
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "gitsigns.nvim": {
-      "rev": "abf82a65f185bd54adc0679f74b7d6e1ada690c9",
+      "rev": "1ce96a464fdbc24208e24c117e2021794259005d",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "kanagawa.nvim": {
@@ -33,7 +33,7 @@
       "src": "https://github.com/nvim-mini/mini.indentscope"
     },
     "mini.surround": {
-      "rev": "f9358544ed06bc10197e698b7fc8dc5963be3f4b",
+      "rev": "d648a5601e1c48f175b07d10eba141da338a0a2a",
       "src": "https://github.com/nvim-mini/mini.surround"
     },
     "multicursor.nvim": {
@@ -50,7 +50,7 @@
       "version": "'main'"
     },
     "nvim-web-devicons": {
-      "rev": "803353450c374192393f5387b6a0176d0972b848",
+      "rev": "746ffbb17975ebd6c40142362eee1b0249969c5c",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "oil.nvim": {
@@ -66,7 +66,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "render-markdown.nvim": {
-      "rev": "b3efd6408e4e4d66d6caaee0579e72b579bc0884",
+      "rev": "48b4175dbca8439d30c1f52231cbe5a712c8f9d9",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "telescope-fzf-native.nvim": {
@@ -80,6 +80,10 @@
     "tiny-inline-diagnostic.nvim": {
       "rev": "ecce93ff7db4461e942c03e0fcc64bd785df4057",
       "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
+    },
+    "todo-comments.nvim": {
+      "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
+      "src": "https://github.com/folke/todo-comments.nvim"
     },
     "tokyonight.nvim": {
       "rev": "5da1b76e64daf4c5d410f06bcb6b9cb640da7dfd",
