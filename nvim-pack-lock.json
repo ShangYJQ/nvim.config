@@ -28,6 +28,10 @@
       "rev": "47f91c416daef12db467145e16bed5bbfe00add8",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
+    "material.nvim": {
+      "rev": "52c121551ffbf7b8f25bed3ef5878e5d6896c786",
+      "src": "https://github.com/marko-cerovac/material.nvim"
+    },
     "mini.indentscope": {
       "rev": "0308f949f31769e509696af5d5f91cebb2159c69",
       "src": "https://github.com/nvim-mini/mini.indentscope"

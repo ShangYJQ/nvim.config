@@ -12,7 +12,7 @@
 # 安装指南
 
 ```bash
-# 导入配置配置
+# 导入配置
 git clone https://github.com/ShangYJQ/nvim.config.git ~/.config/nvim
 git clone git@github.com:ShangYJQ/nvim.config.git # If use ssh
 

@@ -9,7 +9,9 @@ vim.pack.add({
 	{ src = "https://github.com/navarasu/onedark.nvim" },
 	{ src = "https://github.com/rebelot/kanagawa.nvim" },
 	{ src = "https://github.com/folke/tokyonight.nvim" },
+	{ src = "https://github.com/marko-cerovac/material.nvim" },
 
+	-- UI
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
 	{ src = "https://github.com/nvim-mini/mini.indentscope" },
