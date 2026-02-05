@@ -46,9 +46,6 @@ map("n", "gl", "$", { desc = "Move to right" })
 map("n", "x", "V", { noremap = true, silent = true })
 map("v", "x", "<Esc>", { noremap = true, silent = true })
 
--- open oil
-map("n", "<leader>e", "<cmd>Oil<cr>", { desc = "open oil" })
-
 -- auto close pairs
 -- map("i", "'", "''<left>")
 -- map("i", "`", "``<left>")

@@ -202,3 +202,13 @@ require("oil").setup({
 		border = nil,
 	},
 })
+
+local map = vim.keymap.set
+
+-- open oil
+map("n", "<leader>e", function()
+	require("oil").open()
+	vim.defer_fn(function()
+		require("oil").open_preview()
+	end, 250)
+end, { desc = "Open Oil with Preview" })
