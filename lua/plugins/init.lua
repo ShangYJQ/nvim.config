@@ -20,7 +20,6 @@ vim.pack.add({
 	-- cd ~/.local/share/nvim/site/pack/core/opt/blink.cmp
 	-- rustup override set nightly
 	-- cargo build --release
-	-- cargo build --release
 
 	{ src = "https://github.com/saghen/blink.cmp" },
 
@@ -34,6 +33,7 @@ vim.pack.add({
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 	{ src = "https://github.com/folke/todo-comments.nvim" },
 	{ src = "https://github.com/windwp/nvim-ts-autotag" },
+	{ src = "https://github.com/akinsho/toggleterm.nvim" },
 
 	-- { src = "https://github.com/nvim-mini/mini.files" },
 	{ src = "https://github.com/nvim-mini/mini.surround" },
@@ -42,7 +42,6 @@ vim.pack.add({
 	-- cd ~/.local/share/nvim/site/pack/core/opt/blink.pairs
 	-- rustup override set nightly
 	-- cargo build --release
-	-- cargo --release
 	{ src = "https://github.com/saghen/blink.pairs" },
 
 	{ src = "https://github.com/jake-stewart/multicursor.nvim" },
@@ -72,6 +71,7 @@ require("plugins.telescope")
 require("plugins.render-markdown")
 require("plugins.tiny-inline-diagnostics")
 require("plugins.nvim-ts-autotag")
+require("plugins.toggleterm")
 require("plugins.oil")
 require("plugins.todo-comments")
 -- require("plugins.mini-files")

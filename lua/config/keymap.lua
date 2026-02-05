@@ -32,11 +32,12 @@ map("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Increase width" }
 map("n", "<S-n>", ":tabnew ", { desc = "New tab" })
 
 -- Terminal
-map("n", "<leader>t", function()
-	vim.cmd("botright 10split | terminal")
-	vim.cmd("startinsert")
-end, { desc = "Open terminal" })
+-- map("n", "<leader>t", function()
+-- 	vim.cmd("botright 10split | terminal")
+-- 	vim.cmd("startinsert")
+-- end, { desc = "Open terminal" })
 map("t", "<C-q>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
+
 -- helix move
 map("n", "gs", "0", { desc = "Move to left" })
 map("n", "gl", "$", { desc = "Move to right" })
