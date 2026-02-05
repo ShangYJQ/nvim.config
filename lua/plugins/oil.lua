@@ -208,7 +208,15 @@ local map = vim.keymap.set
 -- open oil
 map("n", "<leader>e", function()
 	require("oil").open()
-	vim.defer_fn(function()
-		require("oil").open_preview()
-	end, 250)
 end, { desc = "Open Oil with Preview" })
+
+-- auto open preview
+vim.api.nvim_create_autocmd("User", {
+	pattern = "OilEnter",
+	callback = function()
+		-- 使用 vim.schedule 代替 vim.defer_fn
+		vim.schedule(function()
+			require("oil").open_preview()
+		end)
+	end,
+})
