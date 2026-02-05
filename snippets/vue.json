@@ -1,6 +1,6 @@
 {
-	"init": {
-		"prefix": "init",
+	"Vue init": {
+		"prefix": "vinit",
 		"body": [
 			"<script lang=\"ts\" setup>",
 			"",
@@ -10,7 +10,7 @@
 			"",
 			"</template>",
 			"",
-			"<style>",
+			"<style scoped>",
 			"",
 			"</style>"
 		],
@@ -44,5 +44,12 @@
 			"}>()"
 		],
 		"description": "TS 定义 Emits"
+	},
+	"Vue Define Model": {
+		"prefix": "vmodel",
+		"body": [
+			"const ${1:modelValue} = defineModel<${2:string}>({ required: ${3:true} })"
+		],
+		"description": "Vue defineModel 宏"
 	}
 }
