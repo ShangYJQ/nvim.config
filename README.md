@@ -105,6 +105,7 @@ bun i -g prettier
 pacman -S vue-language-server
 bun i -g @vtsls/language-server
 bun i -g unocss-language-server
+bun i -g vscode-langservers-extracted
 ```
 
 #### DockerFile

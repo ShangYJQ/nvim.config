@@ -9,6 +9,7 @@ local lsp_servers = {
 	"zls",
 	"unocss",
 	"dockerls",
+	"eslint",
 	"vtsls",
 }
 
@@ -43,6 +44,14 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.lsp.enable("vue_ls")
 	end,
 })
+
+-- Emmet 服务器
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	pattern = { "vue", "html" },
+-- 	callback = function()
+-- 		vim.lsp.enable("emmet_language_server")
+-- 	end,
+-- })
 
 vim.diagnostic.config({
 	signs = {
