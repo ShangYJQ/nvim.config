@@ -7,6 +7,9 @@ opt.laststatus = 3
 
 opt.shortmess:append("I")
 
+-- 推出对话框
+opt.confirm = true
+
 -- Display
 opt.number = true
 opt.relativenumber = true
