@@ -1,7 +1,7 @@
 -- KEYMAPS
 
 local map = vim.keymap.set
---
+
 -- General editing
 map("i", "<C-q>", "<Esc>", { desc = "Exit insert mode" })
 map("n", "<C-q>", "<cmd>q<CR>", { desc = "Quit" })
@@ -42,9 +42,22 @@ map("t", "<C-q>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 map("n", "gs", "0", { desc = "Move to left" })
 map("n", "gl", "$", { desc = "Move to right" })
 
+-- move code
+map("n", "<A-k>", ":move .-2<CR>==", { noremap = true, silent = true })
+map("n", "<A-j>", ":move .+1<CR>==", { noremap = true, silent = true })
+
 -- change x to helix mode
 map("n", "x", "V", { noremap = true, silent = true })
 map("v", "x", "<Esc>", { noremap = true, silent = true })
+
+-- Toggle cmdheight
+map("n", "<leader>z", function()
+	if vim.o.cmdheight == 0 then
+		vim.o.cmdheight = 1
+	else
+		vim.o.cmdheight = 0
+	end
+end, { silent = true, desc = "Toggle cmdheight" })
 
 -- auto close pairs
 -- map("i", "'", "''<left>")
