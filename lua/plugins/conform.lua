@@ -14,13 +14,18 @@ require("conform").setup({
 		taplo = {
 			prepend_args = { "format", "-", "--option", "indent_string=\t" },
 		},
+		prettier = {
+			prepend_args = {
+				"--use-tabs",
+			},
+		},
 	},
 
 	formatters_by_ft = {
 		c = { "clang_format" },
 		cpp = { "clang_format" },
-		json = { "clang_format" },
-		jsonc = { "clang_format" },
+		json = { "prettier" },
+		jsonc = { "prettier" },
 		lua = { "stylua" },
 		rust = { "rustfmt", lsp_format = "fallback" },
 		python = { "ruff_format" },
