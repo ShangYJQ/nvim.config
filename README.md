@@ -132,6 +132,7 @@ bun i -g dockerfile-language-server-nodejs
 │   │   └── options.lua
 │   ├── plugins
 │   │   ├── blink-cmp.lua
+│   │   ├── blink-indent.lua
 │   │   ├── blink-pairs.lua
 │   │   ├── conform.lua
 │   │   ├── gitsigns.lua
@@ -161,5 +162,6 @@ bun i -g dockerfile-language-server-nodejs
     ├── cpp.json
     ├── json.json
     ├── lua.json
-    └── package.json
+    ├── package.json
+    └── vue.json
 ```

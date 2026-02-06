@@ -25,7 +25,7 @@ opt.wrap = false
 opt.list = true
 opt.listchars = {
 	space = "·",
-	tab = "│ ",
+	tab = "→ ",
 }
 
 -- Indentation

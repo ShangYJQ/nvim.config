@@ -4,6 +4,10 @@
       "rev": "f9e855c4d96e1264f7c818844f5a0166ad48c212",
       "src": "https://github.com/saghen/blink.cmp"
     },
+    "blink.indent": {
+      "rev": "9c80820ca77218a8d28e70075d6f44a1609911fe",
+      "src": "https://github.com/saghen/blink.indent"
+    },
     "blink.pairs": {
       "rev": "2a7cb15f2c4bbbbe178ebf9f3fdae19aa6d28d39",
       "src": "https://github.com/saghen/blink.pairs"
@@ -32,10 +36,6 @@
       "rev": "52c121551ffbf7b8f25bed3ef5878e5d6896c786",
       "src": "https://github.com/marko-cerovac/material.nvim"
     },
-    "mini.indentscope": {
-      "rev": "0308f949f31769e509696af5d5f91cebb2159c69",
-      "src": "https://github.com/nvim-mini/mini.indentscope"
-    },
     "mini.surround": {
       "rev": "d648a5601e1c48f175b07d10eba141da338a0a2a",
       "src": "https://github.com/nvim-mini/mini.surround"
@@ -45,7 +45,7 @@
       "src": "https://github.com/jake-stewart/multicursor.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "0480b120318ec8bab27b530ffab6ee76a8c4d806",
+      "rev": "66fd02ad1c7ea31616d3ca678fa04e6d0b360824",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
