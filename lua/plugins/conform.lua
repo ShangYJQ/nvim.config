@@ -41,7 +41,5 @@ require("conform").setup({
 		yaml = { "prettier" },
 		html = { "prettier" },
 		css = { "prettier" },
-		svg = { "prettier" },
-		xml = { "prettier" },
 	},
 })
