@@ -7,7 +7,8 @@
 1. `Neovim` v0.12+
 2. 编译器: `gcc`, `g++`
 3. Rust 工具链: `rustc`, `cargo`
-4. `tree-sitter-cli`: 确保语法高亮解析正常
+4. Node 环境: `bun` （推荐）
+5. `tree-sitter-cli`: 确保语法高亮解析正常
 
 # 安装指南
 
@@ -16,7 +17,7 @@
 git clone https://github.com/ShangYJQ/nvim.config.git ~/.config/nvim
 git clone git@github.com:ShangYJQ/nvim.config.git # If use ssh
 
-# 编译安装最新 neovim (v0.12.0-dev-396edf1 for now)
+# 编译安装最新 neovim (NVIM v0.12.0-dev-1519a34e43 for now)
 git clone --depth 1 https://github.com/neovim/neovim
 make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/share/neovim" CMAKE_BUILD_TYPE=Release
 make install
