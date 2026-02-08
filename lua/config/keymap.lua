@@ -6,7 +6,7 @@ local map = vim.keymap.set
 map("i", "<C-q>", "<Esc>", { desc = "Exit insert mode" })
 map("n", "<C-q>", "<cmd>q<CR>", { desc = "Quit" })
 map("n", "<C-Q>", "<cmd>q!<CR>", { desc = "Forced quit" })
-map("n", "<C-z>", "<cmd>undo<CR>", { desc = "Undo" })
+-- map("n", "<C-z>", "<cmd>undo<CR>", { desc = "Undo" })
 map({ "n", "v" }, "d", '"_d', { desc = "Delete to black hole register" })
 map("n", "<leader>c", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 

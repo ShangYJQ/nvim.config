@@ -1,5 +1,8 @@
 -- gitsigns
 require("gitsigns").setup({
+	-- signcolumn = false,
+	-- numhl = true,
+
 	signs = {
 		add = { text = "┃" },
 		change = { text = "┃" },

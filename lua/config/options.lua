@@ -66,6 +66,12 @@ opt.ignorecase = true
 opt.smartcase = true
 
 -- Folding via Treesitter
-opt.foldmethod = "expr"
-opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+-- opt.foldmethod = "expr"
+-- opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 opt.foldlevel = 99
+
+-- ufo setting
+opt.foldcolumn = "1"
+opt.foldlevelstart = 99
+opt.foldenable = true
+vim.o.fillchars = "eob: ,fold: ,foldopen: ,foldsep: ,foldinner: ,foldclose: "

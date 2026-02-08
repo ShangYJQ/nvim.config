@@ -39,6 +39,10 @@ vim.pack.add({
 	{ src = "https://github.com/windwp/nvim-ts-autotag" },
 	{ src = "https://github.com/akinsho/toggleterm.nvim" },
 
+	-- nvim-ufo
+	{ src = "https://github.com/kevinhwang91/promise-async" }, -- ufo dependent
+	{ src = "https://github.com/kevinhwang91/nvim-ufo" },
+
 	-- { src = "https://github.com/nvim-mini/mini.files" },
 	{ src = "https://github.com/nvim-mini/mini.surround" },
 	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
@@ -77,6 +81,7 @@ require("plugins.tiny-inline-diagnostics")
 require("plugins.nvim-ts-autotag")
 require("plugins.toggleterm")
 require("plugins.oil")
+require("plugins.nvim-ufo")
 require("plugins.todo-comments")
 require("plugins.blink-indent")
 -- require("plugins.mini-files")

@@ -160,5 +160,10 @@ require("material").setup({
 
 	custom_colors = nil, -- If you want to override the default colors, set this to a function
 
-	custom_highlights = {}, -- Overwrite highlights with your own
+	custom_highlights = {
+
+		-- ufo color
+		FoldColumn = { fg = "#6B7280", bg = "NONE" },
+		CursorLineFold = { fg = "#9CA3AF", bg = "NONE" }, -- 当前行稍亮一点
+	}, -- Overwrite highlights with your own
 })

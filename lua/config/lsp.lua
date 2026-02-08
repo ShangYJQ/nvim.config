@@ -14,7 +14,6 @@ local lsp_servers = {
 }
 
 -- you need have vue-language-server exe in your PATH !
--- try pacman -S vue-language-server
 local vue_language_server_path = vim.fn.exepath("vue-language-server")
 
 local vue_plugin = {

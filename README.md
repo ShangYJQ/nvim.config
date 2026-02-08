@@ -40,7 +40,8 @@ sudo pacman -S lua-language-server stylua
 #### Rust
 
 ```bash
-sudo pacman -S rust-analyzer rust
+# sudo pacman -S rust-analyzer rust
+rustup component add rust-analyzer
 ```
 
 #### C/C++
@@ -64,7 +65,7 @@ sudo pacman -S bash-language-server shfmt
 #### JSON
 
 ```bash
-sudo pacman -S vscode-json-languageserver
+bun i -g vscode-langservers-extracted
 ```
 
 #### Go
@@ -102,7 +103,7 @@ bun i -g prettier
 #### Vue
 
 ```bash
-pacman -S vue-language-server
+bun i -g @vue/language-server
 bun i -g @vtsls/language-server
 bun i -g unocss-language-server
 bun i -g vscode-langservers-extracted

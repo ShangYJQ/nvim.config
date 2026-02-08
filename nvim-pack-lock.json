@@ -1,7 +1,7 @@
 {
   "plugins": {
     "blink.cmp": {
-      "rev": "f9e855c4d96e1264f7c818844f5a0166ad48c212",
+      "rev": "f85eb6252f4c0212be15c6c4213e9af587574cbe",
       "src": "https://github.com/saghen/blink.cmp"
     },
     "blink.indent": {
@@ -49,13 +49,17 @@
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
-      "rev": "92c9b016d16473dabd2bf3760196cf2d928edacc",
+      "rev": "45a07f869b0cffba342276f2c77ba7c116d35db8",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
     "nvim-ts-autotag": {
       "rev": "8e1c0a389f20bf7f5b0dd0e00306c1247bda2595",
       "src": "https://github.com/windwp/nvim-ts-autotag"
+    },
+    "nvim-ufo": {
+      "rev": "ab3eb124062422d276fae49e0dd63b3ad1062cfc",
+      "src": "https://github.com/kevinhwang91/nvim-ufo"
     },
     "nvim-web-devicons": {
       "rev": "746ffbb17975ebd6c40142362eee1b0249969c5c",
@@ -72,6 +76,10 @@
     "plenary.nvim": {
       "rev": "b9fd5226c2f76c951fc8ed5923d85e4de065e509",
       "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "promise-async": {
+      "rev": "119e8961014c9bfaf1487bf3c2a393d254f337e2",
+      "src": "https://github.com/kevinhwang91/promise-async"
     },
     "render-markdown.nvim": {
       "rev": "48b4175dbca8439d30c1f52231cbe5a712c8f9d9",
