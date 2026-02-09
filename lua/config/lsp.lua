@@ -8,6 +8,7 @@ local lsp_servers = {
 	"gopls",
 	"zls",
 	"unocss",
+	"tailwindcss",
 	"dockerls",
 	"eslint",
 	"vtsls",

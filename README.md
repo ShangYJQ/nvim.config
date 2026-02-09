@@ -107,6 +107,7 @@ bun i -g prettier
 bun i -g @vue/language-server
 bun i -g @vtsls/language-server
 bun i -g unocss-language-server
+bun i -g @tailwindcss/language-server
 bun i -g vscode-langservers-extracted
 ```
 
