@@ -16,6 +16,7 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
 	-- { src = "https://github.com/nvim-mini/mini.indentscope" },
 	{ src = "https://github.com/saghen/blink.indent" },
+	{ src = "https://github.com/rcarriga/nvim-notify" },
 
 	-- LSP and diagnostics
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
@@ -84,6 +85,7 @@ require("plugins.oil")
 require("plugins.nvim-ufo")
 require("plugins.todo-comments")
 require("plugins.blink-indent")
+require("plugins.nvim-notify")
 -- require("plugins.mini-files")
 require("plugins.multicursor-nvim")
 -- require("plugins.mini-indentscope")

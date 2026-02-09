@@ -44,3 +44,5 @@ map("n", "<leader>T", function()
 		enable_preview = true,
 	})
 end, { desc = "switcher theme" })
+
+map("n", "<leader>n", "<cmd>Telescope notify<CR>", { desc = "Telescope notify" })
