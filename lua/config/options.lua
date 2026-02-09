@@ -6,6 +6,9 @@ opt.cmdheight = 0
 opt.laststatus = 3
 
 opt.shortmess:append("I")
+opt.shortmess:append("W")
+opt.shortmess:append("F")
+opt.shortmess:append("s")
 
 -- 推出对话框
 opt.confirm = true
