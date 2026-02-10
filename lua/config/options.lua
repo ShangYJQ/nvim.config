@@ -9,8 +9,11 @@ opt.shortmess:append("I")
 opt.shortmess:append("W")
 opt.shortmess:append("F")
 opt.shortmess:append("s")
+opt.shortmess:append("A")
 
--- 推出对话框
+opt.more = false
+
+--  退出对话框
 opt.confirm = true
 
 -- Display
