@@ -112,7 +112,7 @@ require("neo-tree").setup({
 	commands = {},
 	window = {
 		position = "left",
-		width = 34,
+		width = 32,
 		mapping_options = {
 			noremap = true,
 			nowait = true,
@@ -142,7 +142,7 @@ require("neo-tree").setup({
 			["t"] = "open_tabnew",
 			-- ["<cr>"] = "open_drop",
 			-- ["t"] = "open_tab_drop",
-			["w"] = "open_with_window_picker",
+			-- ["w"] = "open_with_window_picker",
 			--["P"] = "toggle_preview", -- enter preview mode, which shows the current node without focusing
 			["C"] = "close_node",
 			-- ['C'] = 'close_all_subnodes',
