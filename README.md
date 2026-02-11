@@ -145,6 +145,7 @@ bun i -g dockerfile-language-server-nodejs
 │   │   ├── mini-indentscope.lua
 │   │   ├── mini-surround.lua
 │   │   ├── multicursor-nvim.lua
+│   │   ├── neo-tree.lua
 │   │   ├── nvim-notify.lua
 │   │   ├── nvim-treesitter.lua
 │   │   ├── nvim-ts-autotag.lua

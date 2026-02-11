@@ -34,7 +34,11 @@ vim.pack.add({
 	-- Editing enhancement
 	{ src = "https://github.com/nvim-telescope/telescope.nvim" },
 	{ src = "https://github.com/nvim-lua/plenary.nvim" },
-	{ src = "https://github.com/stevearc/oil.nvim" },
+	-- { src = "https://github.com/stevearc/oil.nvim" },
+
+	{ src = "https://github.com/MunifTanjim/nui.nvim" },
+	{ src = "https://github.com/nvim-neo-tree/neo-tree.nvim" },
+
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 	{ src = "https://github.com/folke/todo-comments.nvim" },
 	{ src = "https://github.com/windwp/nvim-ts-autotag" },
@@ -81,7 +85,8 @@ require("plugins.render-markdown")
 require("plugins.tiny-inline-diagnostics")
 require("plugins.nvim-ts-autotag")
 require("plugins.toggleterm")
-require("plugins.oil")
+-- require("plugins.oil")
+require("plugins.neo-tree")
 require("plugins.nvim-ufo")
 require("plugins.todo-comments")
 require("plugins.blink-indent")

@@ -12,6 +12,8 @@ require("onedark").setup({
 	-- toggle_style_key = "<leader>O",
 })
 
+-- NOTE: See highlights here
+-- https://github.com/rebelot/kanagawa.nvim/blob/master/lua/kanagawa/highlights/plugins.lua
 require("kanagawa").setup({
 	transparent = false,
 	dimInactive = false,
@@ -52,6 +54,43 @@ require("kanagawa").setup({
 			healthError = { fg = theme.diag.error },
 			healthSuccess = { fg = theme.diag.ok },
 			healthWarning = { fg = theme.diag.warning },
+
+			-- Neo tree
+			NeoTreeTabInactive = { link = "TabLine" },
+			NeoTreeTabActive = { link = "TabLineSel" },
+			NeoTreeTabSeparatorInactive = { link = "NeoTreeTabInactive" },
+			NeoTreeTabSeparatorActive = { link = "NeoTreeTabActive" },
+			NeoTreeRootName = { fg = theme.syn.identifier, bold = true },
+			NeoTreeModified = { link = "String" },
+			NeoTreeGitModified = { fg = theme.vcs.changed },
+			NeoTreeGitAdded = { fg = theme.vcs.added },
+			NeoTreeGitDeleted = { fg = theme.vcs.removed },
+			NeoTreeGitStaged = { fg = theme.vcs.added },
+			NeoTreeGitConflict = { fg = theme.diag.error },
+			NeoTreeGitUntracked = { link = "NeoTreeGitModified", default = true },
+			NeoTreeGitUnstaged = { link = "NeoTreeGitModified", default = true },
+			NeoTreeIndentMarker = { link = "NonText" },
+
+			-- Notify
+			NotifyBackground = { bg = theme.ui.bg },
+			NotifyERRORBorder = { link = "DiagnosticError" },
+			NotifyWARNBorder = { link = "DiagnosticWarn" },
+			NotifyINFOBorder = { link = "DiagnosticInfo" },
+			NotifyHINTBorder = { link = "DiagnosticHint" },
+			NotifyDEBUGBorder = { link = "Debug" },
+			NotifyTRACEBorder = { link = "Comment" },
+			NotifyERRORIcon = { link = "DiagnosticError" },
+			NotifyWARNIcon = { link = "DiagnosticWarn" },
+			NotifyINFOIcon = { link = "DiagnosticInfo" },
+			NotifyHINTIcon = { link = "DiagnosticHint" },
+			NotifyDEBUGIcon = { link = "Debug" },
+			NotifyTRACEIcon = { link = "Comment" },
+			NotifyERRORTitle = { link = "DiagnosticError" },
+			NotifyWARNTitle = { link = "DiagnosticWarn" },
+			NotifyINFOTitle = { link = "DiagnosticInfo" },
+			NotifyHINTTitle = { link = "DiagnosticHint" },
+			NotifyDEBUGTitle = { link = "Debug" },
+			NotifyTRACETitle = { link = "Comment" },
 		}
 	end,
 	theme = "wave",
@@ -124,7 +163,7 @@ require("material").setup({
 		-- "indent-blankline",
 		-- "lspsaga",
 		"mini",
-		-- "neo-tree",
+		"neo-tree",
 		-- "neogit",
 		-- "neorg",
 		-- "neotest",

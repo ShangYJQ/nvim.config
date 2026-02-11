@@ -6,4 +6,4 @@ require("plugins")
 require("utlis")
 
 -- 默认主题
-vim.cmd.colorscheme("material-darker")
+vim.cmd.colorscheme("kanagawa")
