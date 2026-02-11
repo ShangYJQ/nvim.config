@@ -21,6 +21,16 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+-- force filetype detect
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+	callback = function(args)
+		local b = args.buf
+		if vim.bo[b].buftype == "" and vim.api.nvim_buf_get_name(b) ~= "" and vim.bo[b].filetype == "" then
+			vim.cmd("silent! filetype detect")
+		end
+	end,
+})
+
 local function dashboard()
 	if vim.fn.argc() == 0 and vim.fn.line("$") == 1 and vim.fn.getline(1) == "" then
 		local logo_raw = [[
