@@ -29,6 +29,22 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	end,
 })
 
+-- Boot time
+local uv = vim.uv
+local start_ns = uv.hrtime()
+
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		vim.schedule(function()
+			local elapsed_ms = (uv.hrtime() - start_ns) / 1e6
+			vim.notify(("⚡ Neovim loaded in %.2f ms"):format(elapsed_ms), vim.log.levels.INFO, {
+				title = "Startup",
+				timeout = 0,
+			})
+		end)
+	end,
+})
+
 local function dashboard()
 	if vim.fn.argc() == 0 and vim.fn.line("$") == 1 and vim.fn.getline(1) == "" then
 		local logo_raw = [[
