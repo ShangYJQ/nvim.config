@@ -10,5 +10,5 @@ require("toggleterm").setup({
 
 local map = vim.keymap.set
 
-map("n", "<leader>tt", "<cmd>ToggleTerm direction=float<CR>", { noremap = true, silent = true })
-map("n", "<leader>tb", "<cmd>ToggleTerm direction=tab<CR>", { noremap = true, silent = true })
+map("n", "<leader>t", "<cmd>ToggleTerm direction=float<CR>", { noremap = true, silent = true })
+-- map("n", "<leader>tb", "<cmd>ToggleTerm direction=tab<CR>", { noremap = true, silent = true })
