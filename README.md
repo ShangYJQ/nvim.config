@@ -93,6 +93,7 @@ sudo pacman -S taplo-cli
 
 ```bash
 sudo pacman -S cmake-format
+paru -S neocmakelsp-bin
 ```
 
 #### Markdown/YAML/HTML/CSS
