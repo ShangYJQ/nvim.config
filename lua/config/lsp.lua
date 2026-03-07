@@ -12,6 +12,7 @@ local lsp_servers = {
 	"dockerls",
 	"eslint",
 	"vtsls",
+	"neocmake",
 }
 
 -- you need have vue-language-server exe in your PATH !
@@ -64,9 +65,4 @@ vim.diagnostic.config({
 	},
 })
 
-vim.api.nvim_create_autocmd("BufReadPost", {
-	once = true,
-	callback = function()
-		vim.lsp.enable(lsp_servers)
-	end,
-})
+vim.lsp.enable(lsp_servers)
