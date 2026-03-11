@@ -173,7 +173,7 @@ require("neo-tree").setup({
 			--  }
 			--}
 			["m"] = "move", -- takes text input for destination, also accepts the optional config.show_path option like "add".
-			["<leader>e"] = "close_window",
+			-- ["<leader>e"] = "close_window",
 			["R"] = "refresh",
 			["?"] = "show_help",
 			["<"] = "prev_source",
@@ -324,4 +324,4 @@ require("neo-tree").setup({
 
 local map = vim.keymap.set
 
-map("n", "<leader>e", "<Cmd>Neotree<CR>")
+map("n", "<leader>e", "<Cmd>Neotree toggle<CR>", { silent = true, desc = " Neotree toggle" })
