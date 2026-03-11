@@ -29,7 +29,7 @@ function M.setup_autobuild()
 			local output = vim.fn.system(full_cmd)
 
 			if vim.v.shell_error == 0 then
-				vim.notify("[seccess]: " .. name .. " building successfully！")
+				vim.notify("[success]: " .. name .. " building successfully！")
 			else
 				vim.notify("[error] " .. name .. " building fail！\n" .. output)
 				return false
@@ -53,7 +53,7 @@ function M.force_rebuild_all()
 			local output = vim.fn.system(full_cmd)
 
 			if vim.v.shell_error == 0 then
-				vim.notify("[seccess]: " .. name .. " building successfully！")
+				vim.notify("[success]: " .. name .. " building successfully！")
 			else
 				vim.notify("[error] " .. name .. " building fail！\n" .. output)
 				return false

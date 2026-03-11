@@ -6,6 +6,11 @@ local map = vim.keymap.set
 map("i", "<C-q>", "<Esc>", { desc = "Exit insert mode" })
 map("n", "<C-q>", "<cmd>q<CR>", { desc = "Quit" })
 map("n", "<C-Q>", "<cmd>q!<CR>", { desc = "Forced quit" })
+
+-- 更好的搜索跳转
+map("n", "n", "nzzzv", { desc = "Next search result centered" })
+map("n", "N", "Nzzzv", { desc = "Previous search result centered" })
+
 -- map("n", "<C-z>", "<cmd>undo<CR>", { desc = "Undo" })
 map({ "n", "v" }, "d", '"_d', { desc = "Delete to black hole register" })
 map("n", "<leader>c", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
@@ -29,7 +34,7 @@ map("n", "<C-Left>", "<cmd>vertical resize -2<CR>", { desc = "Decrease width" })
 map("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Increase width" })
 
 -- Tab navigation
-map("n", "<S-n>", ":tabnew ", { desc = "New tab" })
+-- map("n", "<S-n>", ":tabnew ", { desc = "New tab" })
 
 -- Terminal
 -- map("n", "<leader>t", function()
