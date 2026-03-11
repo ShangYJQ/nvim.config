@@ -41,7 +41,7 @@ map("n", "<leader>gh", builtin.git_status, { desc = "Telescope git status" })
 map("n", "<leader>o", "<cmd>TodoTelescope<CR>", { desc = "Telescope find tode" })
 
 -- Projects telescope
-vim.keymap.set("n", "<leader>p", function()
+map("n", "<leader>p", function()
 	require("telescope").extensions.project.project({})
 end, { desc = "Telescope projects" })
 
