@@ -81,6 +81,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(event)
 		local buf = event.buf
 		local client = vim.lsp.get_client_by_id(event.data.client_id)
+		local telescope_builtin = require("telescope.builtin")
 
 		-- add omnifunc to cmp with lsp
 		vim.bo[buf].omnifunc = "v:lua.vim.lsp.omnifunc"
@@ -93,11 +94,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 
 		-- Navigation
-		map("n", "gd", vim.lsp.buf.definition, { buffer = buf, desc = "LSP: Go to definition" })
 		map("n", "gD", vim.lsp.buf.declaration, { buffer = buf, desc = "LSP: Go to declaration" })
-		map("n", "gi", vim.lsp.buf.implementation, { buffer = buf, desc = "LSP: Go to implementation" })
-		map("n", "gr", vim.lsp.buf.references, { buffer = buf, desc = "LSP: Find references" })
-		map("n", "gy", vim.lsp.buf.type_definition, { buffer = buf, desc = "LSP: Go to type definition" })
+		map("n", "gd", telescope_builtin.lsp_definitions, { buffer = buf, desc = "LSP: Go to definition" })
+		map("n", "gi", telescope_builtin.lsp_implementations, { buffer = buf, desc = "LSP: Go to implementation" })
+		map("n", "gr", telescope_builtin.lsp_references, { buffer = buf, desc = "LSP: Find references" })
+		map("n", "gy", telescope_builtin.lsp_type_definitions, { buffer = buf, desc = "LSP: Go to type definition" })
 
 		-- Documentation and help
 		map("n", "K", vim.lsp.buf.hover, { buffer = buf, desc = "LSP: Hover documentation" })

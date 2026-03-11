@@ -3,6 +3,11 @@ require("telescope").setup({
 	defaults = {
 		layout_strategy = "horizontal",
 		sorting_strategy = "ascending",
+		file_ignore_patterns = {
+			"node_modules/",
+			"%.git/",
+			"build.*/",
+		},
 		layout_config = {
 			prompt_position = "top",
 			width = 0.9,
@@ -29,7 +34,8 @@ local map = vim.keymap.set
 -- Telescope
 local builtin = require("telescope.builtin")
 map("n", "<leader>f", builtin.find_files, { desc = "Telescope find files" })
-map("n", "<leader>/", builtin.live_grep, { desc = "Telescope live grep" })
+map("n", "<leader>/", builtin.current_buffer_fuzzy_find, { desc = "Telescope current buffer fuzzy find" })
+map("n", "<leader>?", builtin.live_grep, { desc = "Telescope live grep" })
 map("n", "<leader>b", builtin.buffers, { desc = "Telescope buffers" })
 map("n", "<leader>th", builtin.help_tags, { desc = "Telescope help tags" })
 map("n", "<leader>d", builtin.diagnostics, { desc = "Telescope diagnostics" })
