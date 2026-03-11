@@ -63,6 +63,13 @@ sudo pacman -S python-ruff
 sudo pacman -S bash-language-server shfmt
 ```
 
+#### Fish
+
+```bash
+sudo pacman -S fish-lsp
+sudo pacman -S shfmt
+```
+
 #### JSON
 
 ```bash
