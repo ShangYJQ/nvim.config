@@ -20,7 +20,9 @@ require("telescope").setup({
 		},
 	},
 })
+
 require("telescope").load_extension("fzf")
+require("telescope").load_extension("project")
 
 local map = vim.keymap.set
 
@@ -36,7 +38,12 @@ map("n", "<leader>S", builtin.lsp_workspace_symbols, { desc = "Telescope lsp_wor
 map("n", "<leader>gh", builtin.git_status, { desc = "Telescope git status" })
 
 -- TodoTelescope
-map("n", "<leader>p", "<cmd>TodoTelescope<CR>", { desc = "Telescope find tode" })
+map("n", "<leader>o", "<cmd>TodoTelescope<CR>", { desc = "Telescope find tode" })
+
+-- Projects telescope
+vim.keymap.set("n", "<leader>p", function()
+	require("telescope").extensions.project.project({})
+end, { desc = "Telescope projects" })
 
 -- theme switcher
 map("n", "<leader>T", function()

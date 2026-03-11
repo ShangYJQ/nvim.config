@@ -63,6 +63,7 @@ vim.pack.add({
 	-- cd .local/share/nvim/site/pack/core/opt/telescope-fzf-native.nvim
 	-- make
 	{ src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim" },
+	{ src = "https://github.com/nvim-telescope/telescope-project.nvim" },
 })
 
 -- 获得自动构建器
