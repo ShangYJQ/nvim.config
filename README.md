@@ -102,6 +102,12 @@ paru -S neocmakelsp-bin
 bun i -g prettier
 ```
 
+#### XML
+
+```bash
+sudo pacman -S libxml2
+```
+
 #### Vue
 
 ```bash

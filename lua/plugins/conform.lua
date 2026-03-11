@@ -39,6 +39,8 @@ require("conform").setup({
 		vue = { "prettier" },
 		markdown = { "prettier" },
 		yaml = { "prettier" },
+		yml = { "prettier" },
+		xml = { "xmllint" },
 		html = { "prettier" },
 		css = { "prettier" },
 	},
