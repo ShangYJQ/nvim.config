@@ -90,6 +90,12 @@ export PATH="$HOME/go/bin:$PATH"
 sudo pacman -S zls zig
 ```
 
+#### ASM
+
+```bash
+sudo pacman -S asm-lsp
+```
+
 #### TOML
 
 ```bash

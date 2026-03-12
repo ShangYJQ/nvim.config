@@ -14,6 +14,7 @@ local lsp_servers = {
 	"vtsls",
 	"neocmake",
 	"fish_lsp",
+	"asm_lsp",
 }
 
 -- you need have vue-language-server exe in your PATH !
