@@ -17,7 +17,7 @@
 git clone https://github.com/ShangYJQ/nvim.config.git ~/.config/nvim
 git clone git@github.com:ShangYJQ/nvim.config.git # If use ssh
 
-# 编译安装最新 neovim (NVIM v0.12.0-dev-a8361c3afc for now)
+# 编译安装最新 neovim (NVIM v0.12.0-dev-83037cf218 for now)
 git clone --depth 1 https://github.com/neovim/neovim
 make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/share/neovim" CMAKE_BUILD_TYPE=Release
 make install
@@ -158,6 +158,7 @@ bun i -g dockerfile-language-server-nodejs
 │   │   ├── blink-indent.lua
 │   │   ├── blink-pairs.lua
 │   │   ├── conform.lua
+│   │   ├── flash.lua
 │   │   ├── gitsigns.lua
 │   │   ├── init.lua
 │   │   ├── lualine.lua
@@ -171,6 +172,7 @@ bun i -g dockerfile-language-server-nodejs
 │   │   ├── nvim-ts-autotag.lua
 │   │   ├── nvim-ufo.lua
 │   │   ├── oil.lua
+│   │   ├── overseer.lua
 │   │   ├── render-markdown.lua
 │   │   ├── telescope.lua
 │   │   ├── themes.lua

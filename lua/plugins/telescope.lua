@@ -44,7 +44,8 @@ map("n", "<leader>S", builtin.lsp_workspace_symbols, { desc = "Telescope lsp_wor
 map("n", "<leader>gh", builtin.git_status, { desc = "Telescope git status" })
 
 -- TodoTelescope
-map("n", "<leader>o", "<cmd>TodoTelescope<CR>", { desc = "Telescope find tode" })
+-- What to do?
+map("n", "<leader>w", "<cmd>TodoTelescope<CR>", { desc = "Telescope find tode" })
 
 -- Projects telescope
 map("n", "<leader>p", function()

@@ -64,6 +64,8 @@ vim.pack.add({
 	-- make
 	{ src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim" },
 	{ src = "https://github.com/nvim-telescope/telescope-project.nvim" },
+
+	{ src = "https://github.com/stevearc/overseer.nvim" },
 })
 
 -- 获得自动构建器
@@ -97,3 +99,4 @@ require("plugins.flash")
 -- require("plugins.mini-files")
 require("plugins.multicursor-nvim")
 -- require("plugins.mini-indentscope")
+require("plugins.overseer")
