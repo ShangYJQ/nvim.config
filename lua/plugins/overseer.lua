@@ -69,9 +69,18 @@ map("n", "<leader>oo", function()
 	overseer.toggle({ enter = false, direction = "bottom" })
 end, { desc = "Overseer: toggle task list" })
 
-map("n", "<leader>or", function()
+map("n", "<leader>ot", function()
 	overseer.run_task()
 end, { desc = "Overseer: run task" })
 
 map("n", "<leader>os", "<cmd>OverseerShell<cr>", { desc = "Overseer: shell task" })
 map("n", "<leader>oa", "<cmd>OverseerTaskAction<cr>", { desc = "Overseer: task action" })
+
+map("n", "<leader>or", function()
+	local task = overseer.list_tasks({ recent_first = true })[1]
+	if task then
+		task:restart()
+	else
+		vim.notify("No recent Overseer task", vim.log.levels.WARN)
+	end
+end, { desc = "Overseer: restart last task" })
