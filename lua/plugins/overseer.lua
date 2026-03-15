@@ -74,3 +74,4 @@ map("n", "<leader>or", function()
 end, { desc = "Overseer: run task" })
 
 map("n", "<leader>os", "<cmd>OverseerShell<cr>", { desc = "Overseer: shell task" })
+map("n", "<leader>oa", "<cmd>OverseerTaskAction<cr>", { desc = "Overseer: task action" })
