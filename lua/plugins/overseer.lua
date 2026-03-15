@@ -77,7 +77,17 @@ map("n", "<leader>os", "<cmd>OverseerShell<cr>", { desc = "Overseer: shell task"
 map("n", "<leader>oa", "<cmd>OverseerTaskAction<cr>", { desc = "Overseer: task action" })
 
 map("n", "<leader>or", function()
-	local task = overseer.list_tasks({ recent_first = true })[1]
+	local tasks = overseer.list_tasks({
+		include_ephemeral = true,
+		filter = function(task)
+			return task.time_start ~= nil
+		end,
+		sort = function(a, b)
+			return (a.time_start or 0) > (b.time_start or 0)
+		end,
+	})
+
+	local task = tasks[1]
 	if task then
 		task:restart()
 	else
