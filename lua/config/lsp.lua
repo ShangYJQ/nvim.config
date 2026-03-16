@@ -27,6 +27,14 @@ local vue_plugin = {
 	configNamespace = "typescript",
 }
 
+vim.lsp.config("clangd", {
+	cmd = {
+		"clangd",
+		"--background-index",
+		"--clang-tidy",
+	},
+})
+
 vim.lsp.config("vtsls", {
 	settings = {
 		vtsls = {
