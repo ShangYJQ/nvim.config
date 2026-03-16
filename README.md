@@ -137,6 +137,12 @@ bun i -g vscode-langservers-extracted
 bun i -g dockerfile-language-server-nodejs
 ```
 
+#### sqls
+
+```bash
+go install github.com/sqls-server/sqls@latest
+```
+
 ## 结构
 
 ```text

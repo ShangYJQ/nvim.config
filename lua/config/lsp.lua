@@ -13,6 +13,7 @@ local lsp_servers = {
 	"eslint",
 	"vtsls",
 	"neocmake",
+	"sqls",
 	"fish_lsp",
 	"asm_lsp",
 }
