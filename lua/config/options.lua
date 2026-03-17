@@ -46,6 +46,23 @@ vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 -- use conform
 -- vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 
+-- Clipboard for termux support
+-- install termux:api and termux-api
+if vim.env.TERMUX_VERSION then
+	vim.g.clipboard = {
+		name = "termux-clipboard",
+		copy = {
+			["+"] = "termux-clipboard-set",
+			["*"] = "termux-clipboard-set",
+		},
+		paste = {
+			["+"] = "termux-clipboard-get",
+			["*"] = "termux-clipboard-get",
+		},
+		cache_enabled = 0,
+	}
+end
+
 -- Clipboard
 opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 

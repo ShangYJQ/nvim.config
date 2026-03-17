@@ -55,6 +55,13 @@ map("n", "<A-j>", ":move .+1<CR>==", { noremap = true, silent = true })
 map("n", "x", "V", { noremap = true, silent = true })
 map("v", "x", "<Esc>", { noremap = true, silent = true })
 
+-- Yank whole file without moving cursor
+map("n", "<leader>u", function()
+	local view = vim.fn.winsaveview()
+	vim.cmd("silent keepjumps %y")
+	vim.fn.winrestview(view)
+end, { desc = "Yank whole file without moving cursor" })
+
 -- Toggle cmdheight
 map("n", "<leader>z", function()
 	if vim.o.cmdheight == 0 then

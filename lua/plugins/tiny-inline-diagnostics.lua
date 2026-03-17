@@ -4,3 +4,9 @@ require("tiny-inline-diagnostic").setup({
 	transparent_bg = true,
 	transparent_cursorline = true,
 })
+
+local map = vim.keymap.set
+
+map("n", "<leader>id", function()
+	require("tiny-inline-diagnostic").toggle()
+end, { desc = "Toggle inline diagnostic" })
