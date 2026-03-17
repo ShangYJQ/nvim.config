@@ -49,6 +49,16 @@ vim.lsp.config("vtsls", {
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 })
 
+-- sqls 的配置
+-- 在打开目录下创建 config.yml
+-- connections:
+--   - alias: local_pg
+--     driver: postgresql
+--     dataSourceName: "host=/run/postgresql user=xxx dbname=xxx sslmode=disable"
+vim.lsp.config("sqls", {
+	cmd = { "sqls", "-config", "config.yml" },
+})
+
 -- 按需加载Vue语言服务器配置
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "vue",
