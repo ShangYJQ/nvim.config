@@ -241,7 +241,7 @@ require("neo-tree").setup({
 		-- instead of relying on nvim autocmd events.
 		window = {
 			mappings = {
-				["<bs>"] = "navigate_up",
+				["h"] = "navigate_up",
 				["."] = "set_root",
 				["H"] = "toggle_hidden",
 				["/"] = "fuzzy_finder",

@@ -51,15 +51,6 @@ overseer.setup({
 			["q"] = { "<CMD>close<CR>", desc = "Close task list" },
 		},
 	},
-	log_level = vim.log.levels.WARN,
-
-	-- Overseer can wrap any call to vim.system and vim.fn.jobstart as a task.
-	experimental_wrap_builtins = {
-		enabled = false,
-		condition = function(cmd, caller, opts)
-			return true
-		end,
-	},
 })
 
 local map = vim.keymap.set
@@ -70,7 +61,51 @@ map("n", "<leader>oo", function()
 end, { desc = "Overseer: toggle task list" })
 
 map("n", "<leader>ot", function()
-	overseer.run_task()
+	local tmpl_module = require("overseer.template")
+	local pickers = require("telescope.pickers")
+	local finders = require("telescope.finders")
+	local conf = require("telescope.config").values
+	local actions = require("telescope.actions")
+	local action_state = require("telescope.actions.state")
+	local search_opts = { dir = vim.fn.getcwd(), filetype = vim.bo.filetype }
+	tmpl_module.list(search_opts, function(templates)
+		templates = vim.tbl_filter(function(t)
+			return not t.hide
+		end, templates)
+		table.sort(templates, function(a, b)
+			return a.name < b.name
+		end)
+		pickers
+			.new({}, {
+				prompt_title = "Task template",
+				finder = finders.new_table({
+					results = templates,
+					entry_maker = function(tmpl)
+						return {
+							value = tmpl,
+							display = tmpl.desc and string.format("%s (%s)", tmpl.name, tmpl.desc) or tmpl.name,
+							ordinal = tmpl.name,
+						}
+					end,
+				}),
+				sorter = conf.generic_sorter({}),
+				attach_mappings = function(prompt_bufnr)
+					actions.select_default:replace(function()
+						actions.close(prompt_bufnr)
+						local sel = action_state.get_selected_entry()
+						if sel then
+							tmpl_module.build_task(sel.value, { params = {}, search = search_opts }, function(_, task)
+								if task then
+									task:start()
+								end
+							end)
+						end
+					end)
+					return true
+				end,
+			})
+			:find()
+	end)
 end, { desc = "Overseer: run task" })
 
 map("n", "<leader>os", "<cmd>OverseerShell<cr>", { desc = "Overseer: shell task" })
