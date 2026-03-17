@@ -25,3 +25,6 @@ vim.g.loaded_matchparen = 1
 
 -- Disable sql omni completion, it is broken.
 vim.g.loaded_sql_completion = 1
+
+-- 解决 sql 文件不断报错打断
+vim.g.omni_sql_no_default_maps = 1
