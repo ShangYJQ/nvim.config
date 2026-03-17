@@ -140,7 +140,10 @@ bun i -g dockerfile-language-server-nodejs
 #### sqls
 
 ```bash
+# lsp
 go install github.com/sqls-server/sqls@latest
+# formatter
+sudo pacman -S pgformatter
 ```
 
 ## 结构

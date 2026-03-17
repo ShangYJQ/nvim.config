@@ -43,5 +43,7 @@ require("conform").setup({
 		xml = { "xmllint" },
 		html = { "prettier" },
 		css = { "prettier" },
+		-- for pgsql
+		sql = { "pg_format" },
 	},
 })
