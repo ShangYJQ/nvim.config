@@ -51,9 +51,16 @@ map("n", "gl", "$", { desc = "Move to right" })
 map("n", "<A-k>", ":move .-2<CR>==", { noremap = true, silent = true })
 map("n", "<A-j>", ":move .+1<CR>==", { noremap = true, silent = true })
 
+map("n", "<A-Up>", ":move .-2<CR>==", { noremap = true, silent = true })
+map("n", "<A-Down>", ":move .+1<CR>==", { noremap = true, silent = true })
+
 -- change x to helix mode
 map("n", "x", "V", { noremap = true, silent = true })
 map("v", "x", "<Esc>", { noremap = true, silent = true })
+
+-- Half-page scrolling for Shift/Page keys
+map("n", "<S-Up>", "<C-u>", { desc = "Half page up" })
+map("n", "<S-Down>", "<C-d>", { desc = "Half page down" })
 
 -- Yank whole file without moving cursor
 map("n", "<leader>u", function()
