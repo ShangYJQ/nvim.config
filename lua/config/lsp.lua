@@ -13,7 +13,7 @@ local lsp_servers = {
 	"eslint",
 	"vtsls",
 	"neocmake",
-	"sqls",
+	-- "sqls",
 	"fish_lsp",
 	"asm_lsp",
 }
@@ -55,9 +55,9 @@ vim.lsp.config("vtsls", {
 --   - alias: local_pg
 --     driver: postgresql
 --     dataSourceName: "host=/run/postgresql user=xxx dbname=xxx sslmode=disable"
-vim.lsp.config("sqls", {
-	cmd = { "sqls", "-config", "config.yml" },
-})
+-- vim.lsp.config("sqls", {
+-- 	cmd = { "sqls", "-config", "config.yml" },
+-- })
 
 -- 按需加载Vue语言服务器配置
 vim.api.nvim_create_autocmd("FileType", {
