@@ -1,6 +1,12 @@
 -- Conform
 require("conform").setup({
-	format_on_save = { timeout_ms = 500, lsp_format = "fallback" },
+	format_on_save = function(bufnr)
+		local ft = vim.bo[bufnr].filetype
+		if ft == "c" or ft == "cpp" then
+			return { timeout_ms = 500, lsp_format = "never" }
+		end
+		return { timeout_ms = 500, lsp_format = "fallback" }
+	end,
 
 	formatters = {
 		clang_format = {
