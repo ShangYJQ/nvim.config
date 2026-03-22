@@ -44,6 +44,6 @@ require("conform").setup({
 		html = { "prettier" },
 		css = { "prettier" },
 		-- for pgsql
-		sql = { "pg_format" },
+		-- sql = { "pg_format" },
 	},
 })
