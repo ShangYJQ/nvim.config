@@ -5,7 +5,7 @@
 			"// Create by ShangYJQ.",
 			"// ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
 			"",
-			"#include <bits/stdc++.h>",
+			"#include <iostream>",
 			"using namespace std;",
 			"",
 			"signed main()",
