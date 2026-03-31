@@ -1,7 +1,7 @@
 -- mini surround
 require("mini.surround").setup({
 	mappings = {
-		add = "ms",
+		add = "ma",
 		delete = "md",
 		replace = "mr",
 		find = "mf",
