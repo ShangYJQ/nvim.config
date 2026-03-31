@@ -17,6 +17,10 @@
 			{
 				"language": "vue",
 				"path": "./vue.json"
+			},
+			{
+				"language": "markdown",
+				"path": "./markdown.json"
 			}
 		]
 	}

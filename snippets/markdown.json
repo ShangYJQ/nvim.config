@@ -1,0 +1,15 @@
+{
+	"mdhead": {
+		"prefix": "mdhead",
+		"body": [
+			"# ${1:Title}",
+			"",
+			"> Date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+			"> Author: ShangYJQ",
+			"> GitHub: https://github.com/ShangYJQ",
+			"",
+			"---",
+			""
+		]
+	}
+}
