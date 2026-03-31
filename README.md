@@ -165,14 +165,20 @@ sudo pacman -S pgformatter
 │   ├── overseer
 │   │   └── template
 │   │       └── user
-│   │           ├── cpp_quick_run.lua
 │   │           ├── c_quick_run.lua
+│   │           ├── cpp_quick_run.lua
+│   │           ├── debug_quick_build.lua
 │   │           └── py_quick_run.lua
 │   ├── plugins
 │   │   ├── blink-cmp.lua
 │   │   ├── blink-indent.lua
 │   │   ├── blink-pairs.lua
 │   │   ├── conform.lua
+│   │   ├── dap
+│   │   │   ├── dap-ui.lua
+│   │   │   ├── dap-virtual-text.lua
+│   │   │   ├── dap.lua
+│   │   │   └── init.lua
 │   │   ├── flash.lua
 │   │   ├── gitsigns.lua
 │   │   ├── init.lua
@@ -205,6 +211,7 @@ sudo pacman -S pgformatter
     ├── cpp.json
     ├── json.json
     ├── lua.json
+    ├── markdown.json
     ├── package.json
     └── vue.json
 ```

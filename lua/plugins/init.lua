@@ -65,7 +65,14 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim" },
 	{ src = "https://github.com/nvim-telescope/telescope-project.nvim" },
 
+	-- overseer
 	{ src = "https://github.com/stevearc/overseer.nvim" },
+
+	-- dap and dap-ui
+	{ src = "https://codeberg.org/mfussenegger/nvim-dap.git" },
+	{ src = "https://github.com/nvim-neotest/nvim-nio" }, -- dependent for nvim-dap-ui
+	{ src = "https://github.com/rcarriga/nvim-dap-ui" },
+	{ src = "https://github.com/thehamsta/nvim-dap-virtual-text" },
 })
 
 -- 获得自动构建器
@@ -100,3 +107,4 @@ require("plugins.flash")
 require("plugins.multicursor-nvim")
 -- require("plugins.mini-indentscope")
 require("plugins.overseer")
+require("plugins.dap")

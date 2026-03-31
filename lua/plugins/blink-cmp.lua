@@ -1,5 +1,15 @@
 -- Blink.cmp(autocompletion)
 require("blink.cmp").setup({
+	enabled = function()
+		local ft = vim.bo.filetype
+
+		-- disable for dapui
+		if ft:match("^dap%-") or ft:match("^dapui_") then
+			return false
+		end
+
+		return true
+	end,
 	keymap = {
 		preset = "enter",
 		["<C-space>"] = { "show", "show_documentation", "hide_documentation" },

@@ -5,7 +5,7 @@ notify.setup({
 	render = "compact",
 	timeout = 2000,
 	top_down = true,
-	background_colour = "Normal",
+	background_colour = "#000000",
 })
 
 -- 让所有插件的通知都走 notify
