@@ -11,7 +11,7 @@ vim.g.neovide_cursor_trail_size = 0.9
 vim.g.neovide_cursor_hack = true
 vim.g.neovide_cursor_smooth_blink = true
 
-vim.o.guifont = "CaskaydiaCove Nerd Font:h14:n"
+vim.o.guifont = "CaskaydiaCove Nerd Font:h16:n"
 vim.g.neovide_scale_factor = 1.0
 vim.g.neovide_text_gamma = 0.0
 vim.g.neovide_text_contrast = 0.5
