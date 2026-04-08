@@ -218,7 +218,7 @@ sudo pacman -S pgformatter
 | 模式 | 按键 | 功能 |
 |------|------|------|
 | n | `]c` / `[c` | 下/上一个 git hunk |
-| n | `<leader>ig` | 切换 git blame |
+| n | `<leader>gb` | 切换 git blame |
 | n | `<leader>gd` | 行内 diff 预览 |
 | n | `<leader>gr` | 重置 hunk |
 

@@ -48,7 +48,7 @@ map("n", "[c", function()
 end, { desc = "Go to prev git hunk" })
 
 -- Toggle git blame
-vim.keymap.set("n", "<leader>ig", function()
+vim.keymap.set("n", "<leader>gb", function()
 	require("gitsigns").toggle_current_line_blame()
 end, { desc = "Toggle git blame" })
 
