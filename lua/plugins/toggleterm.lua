@@ -1,9 +1,9 @@
 require("toggleterm").setup({
 	direction = "float",
 	float_opts = {
-		border = "curved",
-		width = 130,
-		height = 30,
+		border = "rounded",
+		width = 90,
+		height = 28,
 		winblend = 0,
 	},
 })
