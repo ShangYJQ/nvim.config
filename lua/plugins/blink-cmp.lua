@@ -2,9 +2,15 @@
 require("blink.cmp").setup({
 	enabled = function()
 		local ft = vim.bo.filetype
+		local bt = vim.bo.buftype
 
 		-- disable for dapui
 		if ft:match("^dap%-") or ft:match("^dapui_") then
+			return false
+		end
+
+		-- 所有 nofile 都不开启
+		if bt ~= "" then
 			return false
 		end
 
