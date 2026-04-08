@@ -17,7 +17,7 @@
 git clone https://github.com/ShangYJQ/nvim.config.git ~/.config/nvim
 git clone git@github.com:ShangYJQ/nvim.config.git # If use ssh
 
-# 编译安装最新 neovim (NVIM v0.12.0-dev-83037cf218 for now)
+# 编译安装最新 neovim (NVIM v0.12.1 已经发布 直接包管理安装即可)
 git clone --depth 1 https://github.com/neovim/neovim
 make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/share/neovim" CMAKE_BUILD_TYPE=Release
 make install
@@ -174,6 +174,7 @@ sudo pacman -S pgformatter
 │   │   ├── blink-indent.lua
 │   │   ├── blink-pairs.lua
 │   │   ├── conform.lua
+│   │   ├── cph.lua
 │   │   ├── dap
 │   │   │   ├── dap-ui.lua
 │   │   │   ├── dap-virtual-text.lua
@@ -202,7 +203,8 @@ sudo pacman -S pgformatter
 │   │   └── toggleterm.lua
 │   └── utlis
 │       ├── builder.lua
-│       └── init.lua
+│       ├── init.lua
+│       └── lazy.lua
 ├── nvim-pack-lock.json
 ├── README.md
 ├── screenshots

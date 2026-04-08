@@ -54,3 +54,4 @@ end, { desc = "Toggle git blame" })
 
 -- show diff hunk inline
 map("n", "<leader>gd", gitsigns.preview_hunk_inline, { desc = "Inline preview" })
+map("n", "<leader>gr", gitsigns.reset_hunk, { desc = "Reset hunk" })

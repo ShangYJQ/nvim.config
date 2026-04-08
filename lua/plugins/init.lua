@@ -2,6 +2,8 @@
 --  在大多数情况下会自动编译 编译失败请手动编译
 vim.pack.add({
 
+	----------------------- core plugins -----------------------
+
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 
 	-- Themes
@@ -36,13 +38,9 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-lua/plenary.nvim" },
 	-- { src = "https://github.com/stevearc/oil.nvim" },
 
-	{ src = "https://github.com/MunifTanjim/nui.nvim" },
-	{ src = "https://github.com/nvim-neo-tree/neo-tree.nvim" },
-
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 	{ src = "https://github.com/folke/todo-comments.nvim" },
 	{ src = "https://github.com/windwp/nvim-ts-autotag" },
-	{ src = "https://github.com/akinsho/toggleterm.nvim" },
 	{ src = "https://github.com/folke/flash.nvim" },
 
 	-- nvim-ufo
@@ -64,6 +62,13 @@ vim.pack.add({
 	-- make
 	{ src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim" },
 	{ src = "https://github.com/nvim-telescope/telescope-project.nvim" },
+
+	----------------------- lazy load plugins -----------------------
+
+	{ src = "https://github.com/akinsho/toggleterm.nvim" },
+
+	{ src = "https://github.com/nvim-neo-tree/neo-tree.nvim" },
+	{ src = "https://github.com/MunifTanjim/nui.nvim" }, -- dependent for neo-tree
 
 	-- overseer
 	{ src = "https://github.com/stevearc/overseer.nvim" },
@@ -98,9 +103,9 @@ require("plugins.telescope")
 require("plugins.render-markdown")
 require("plugins.tiny-inline-diagnostics")
 require("plugins.nvim-ts-autotag")
-require("plugins.toggleterm")
+-- require("plugins.toggleterm") -- lazy loaded
 -- require("plugins.oil")
-require("plugins.neo-tree")
+-- require("plugins.neo-tree") -- lazy loaded
 require("plugins.nvim-ufo")
 require("plugins.todo-comments")
 require("plugins.blink-indent")
@@ -109,6 +114,27 @@ require("plugins.flash")
 -- require("plugins.mini-files")
 require("plugins.multicursor-nvim")
 -- require("plugins.mini-indentscope")
-require("plugins.cph")
-require("plugins.overseer")
-require("plugins.dap")
+-- require("plugins.overseer") -- lazy loaded
+
+-- 使用lazy加载器
+local lazy = require("utlis.lazy")
+
+-- 在使用命令的时候懒加载插件
+
+lazy.map("<leader>t", "toggleterm", "plugins.toggleterm", { noremap = true, silent = true, desc = "ToggleTerm float" })
+
+lazy.map("<leader>e", "neo-tree", "plugins.neo-tree", { silent = true, desc = " Neotree toggle" })
+
+lazy.map("<leader>oo", "overseer", "plugins.overseer", { desc = "Overseer: toggle task list" })
+lazy.map("<leader>ot", "overseer", "plugins.overseer", { desc = "Overseer: run task" })
+lazy.map("<leader>os", "overseer", "plugins.overseer", { desc = "Overseer: shell task" })
+lazy.map("<leader>oa", "overseer", "plugins.overseer", { desc = "Overseer: task action" })
+
+lazy.map("<leader>x", "cph", "plugins.cph", { silent = true, desc = " CPH toggle" })
+
+lazy.map("<F5>", "dap", "plugins.dap", { desc = "DAP Continue" })
+lazy.map("<leader>dn", "dap", "plugins.dap", { desc = "DAP Step Over" })
+lazy.map("<leader>di", "dap", "plugins.dap", { desc = "DAP Step Into" })
+lazy.map("<leader>do", "dap", "plugins.dap", { desc = "DAP Step Out" })
+lazy.map("<Leader>b", "dap", "plugins.dap", { desc = "DAP Toggle Breakpoint" })
+lazy.map("<Leader>dq", "dap", "plugins.dap", { desc = "DAP Quit" })

@@ -5,6 +5,7 @@ vim.fn.sign_define("DapBreakpoint", {
 })
 vim.api.nvim_set_hl(0, "DapBreakpoint", { fg = "#e06c75" })
 
+---@diagnostic disable-next-line: missing-fields
 require("dapui").setup({
 	controls = {
 		element = "repl",
