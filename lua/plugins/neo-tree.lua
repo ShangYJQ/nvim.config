@@ -1,8 +1,8 @@
 require("neo-tree").setup({
 	close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
-	popup_border_style = "NC", -- or "" to use 'winborder' on Neovim v0.11+
+	popup_border_style = "", -- or "" to use 'winborder' on Neovim v0.11+
 	clipboard = {
-		sync = "none", -- or "global"/"universal" to share a clipboard for each/all Neovim instance(s), respectively
+		sync = "global", -- or "global"/"universal" to share a clipboard for each/all Neovim instance(s), respectively
 	},
 	enable_git_status = true,
 	enable_diagnostics = true,

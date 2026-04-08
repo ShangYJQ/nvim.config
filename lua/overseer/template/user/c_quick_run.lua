@@ -18,8 +18,8 @@ return {
 					"open_output",
 					direction = "float",
 					focus = true,
-					on_start = "never",
-					on_complete = "always",
+					on_start = "always",
+					on_complete = "never",
 				},
 
 				"on_exit_set_status",

@@ -1,3 +1,11 @@
+local function build_library()
+	local library = vim.api.nvim_get_runtime_file("", true)
+	if not vim.tbl_contains(library, vim.env.VIMRUNTIME) then
+		table.insert(library, vim.env.VIMRUNTIME)
+	end
+	return library
+end
+
 return {
 	on_init = function(client)
 		if client.workspace_folders then
@@ -25,14 +33,14 @@ return {
 			-- Make the server aware of Neovim runtime files
 			workspace = {
 				checkThirdParty = false,
-				library = {
-					vim.env.VIMRUNTIME,
-					-- Depending on the usage, you might want to add additional paths
-					-- here.
-					-- '${3rd}/luv/library'
-					-- '${3rd}/busted/library'
-				},
+				library = build_library(),
+				-- vim.env.VIMRUNTIME,
+				-- Depending on the usage, you might want to add additional paths
+				-- here.
+				-- '${3rd}/luv/library'
+				-- '${3rd}/busted/library'
 				-- Or pull in all of 'runtimepath'.
+
 				-- NOTE: this is a lot slower and will cause issues when working on
 				-- your own configuration.
 				-- See https://github.com/neovim/nvim-lspconfig/issues/3189

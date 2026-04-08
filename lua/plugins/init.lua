@@ -68,6 +68,9 @@ vim.pack.add({
 	-- overseer
 	{ src = "https://github.com/stevearc/overseer.nvim" },
 
+	-- cph from bcyz
+	{ src = "https://github.com/beicanzhuzhu/cph.nvim" },
+
 	-- dap and dap-ui
 	{ src = "https://codeberg.org/mfussenegger/nvim-dap.git" },
 	{ src = "https://github.com/nvim-neotest/nvim-nio" }, -- dependent for nvim-dap-ui
@@ -106,5 +109,6 @@ require("plugins.flash")
 -- require("plugins.mini-files")
 require("plugins.multicursor-nvim")
 -- require("plugins.mini-indentscope")
+require("plugins.cph")
 require("plugins.overseer")
 require("plugins.dap")

@@ -10,6 +10,13 @@ overseer.setup({
 		-- If true, don't clear the buffer when a task restarts
 		preserve_output = false,
 	},
+
+	-- padding for float win
+	task_win = {
+		padding = 6,
+		border = "rounded",
+	},
+
 	-- Configure the task list
 	task_list = {
 		-- Default direction. Can be "left", "right", or "bottom"
@@ -96,7 +103,10 @@ map("n", "<leader>ot", function()
 						if sel then
 							tmpl_module.build_task(sel.value, { params = {}, search = search_opts }, function(_, task)
 								if task then
-									task:start()
+									-- 添加保护 在 telescope 关闭之后在运行
+									vim.schedule(function()
+										task:start()
+									end)
 								end
 							end)
 						end
@@ -111,21 +121,21 @@ end, { desc = "Overseer: run task" })
 map("n", "<leader>os", "<cmd>OverseerShell<cr>", { desc = "Overseer: shell task" })
 map("n", "<leader>oa", "<cmd>OverseerTaskAction<cr>", { desc = "Overseer: task action" })
 
-map("n", "<leader>or", function()
-	local tasks = overseer.list_tasks({
-		include_ephemeral = true,
-		filter = function(task)
-			return task.time_start ~= nil
-		end,
-		sort = function(a, b)
-			return (a.time_start or 0) > (b.time_start or 0)
-		end,
-	})
-
-	local task = tasks[1]
-	if task then
-		task:restart()
-	else
-		vim.notify("No recent Overseer task", vim.log.levels.WARN)
-	end
-end, { desc = "Overseer: restart last task" })
+-- map("n", "<leader>or", function()
+-- 	local tasks = overseer.list_tasks({
+-- 		include_ephemeral = true,
+-- 		filter = function(task)
+-- 			return task.time_start ~= nil
+-- 		end,
+-- 		sort = function(a, b)
+-- 			return (a.time_start or 0) > (b.time_start or 0)
+-- 		end,
+-- 	})
+--
+-- 	local task = tasks[1]
+-- 	if task then
+-- 		task:restart()
+-- 	else
+-- 		vim.notify("No recent Overseer task", vim.log.levels.WARN)
+-- 	end
+-- end, { desc = "Overseer: restart last task" })
