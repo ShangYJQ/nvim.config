@@ -41,7 +41,7 @@ opt.softtabstop = tablen
 opt.shiftwidth = tablen
 opt.expandtab = false
 opt.autoindent = true
-vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+opt.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 
 -- use conform
 -- vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
