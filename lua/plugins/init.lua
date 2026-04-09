@@ -63,15 +63,15 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim" },
 	{ src = "https://github.com/nvim-telescope/telescope-project.nvim" },
 
+	-- overseer
+	{ src = "https://github.com/stevearc/overseer.nvim" },
+
 	----------------------- lazy load plugins -----------------------
 
 	{ src = "https://github.com/akinsho/toggleterm.nvim" },
 
 	{ src = "https://github.com/nvim-neo-tree/neo-tree.nvim" },
 	{ src = "https://github.com/MunifTanjim/nui.nvim" }, -- dependent for neo-tree
-
-	-- overseer
-	{ src = "https://github.com/stevearc/overseer.nvim" },
 
 	-- cph from bcyz
 	{ src = "https://github.com/beicanzhuzhu/cph.nvim" },
@@ -114,7 +114,7 @@ require("plugins.flash")
 -- require("plugins.mini-files")
 require("plugins.multicursor-nvim")
 -- require("plugins.mini-indentscope")
--- require("plugins.overseer") -- lazy loaded
+require("plugins.overseer")
 
 -- 使用lazy加载器
 local lazy = require("utlis.lazy")
@@ -124,11 +124,6 @@ local lazy = require("utlis.lazy")
 lazy.map("<leader>t", "toggleterm", "plugins.toggleterm", { noremap = true, silent = true, desc = "ToggleTerm float" })
 
 lazy.map("<leader>e", "neo-tree", "plugins.neo-tree", { silent = true, desc = " Neotree toggle" })
-
-lazy.map("<leader>oo", "overseer", "plugins.overseer", { desc = "Overseer: toggle task list" })
-lazy.map("<leader>ot", "overseer", "plugins.overseer", { desc = "Overseer: run task" })
-lazy.map("<leader>os", "overseer", "plugins.overseer", { desc = "Overseer: shell task" })
-lazy.map("<leader>oa", "overseer", "plugins.overseer", { desc = "Overseer: task action" })
 
 lazy.map("<leader>x", "cph", "plugins.cph", { silent = true, desc = " CPH toggle" })
 
