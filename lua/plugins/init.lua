@@ -2,7 +2,7 @@
 --  在大多数情况下会自动编译 编译失败请手动编译
 vim.pack.add({
 
-	----------------------- core plugins -----------------------
+	---------------------------------------- core plugins ----------------------------------------
 
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 
@@ -56,31 +56,31 @@ vim.pack.add({
 	-- cargo build --release
 	{ src = "https://github.com/saghen/blink.pairs" },
 
-	{ src = "https://github.com/jake-stewart/multicursor.nvim" },
+	-- { src = "https://github.com/jake-stewart/multicursor.nvim" },
 
 	-- cd .local/share/nvim/site/pack/core/opt/telescope-fzf-native.nvim
 	-- make
 	{ src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim" },
 	{ src = "https://github.com/nvim-telescope/telescope-project.nvim" },
 
+	---------------------------------------- lazy load plugins ----------------------------------------
+
 	-- overseer
-	{ src = "https://github.com/stevearc/overseer.nvim" },
+	-- { src = "https://github.com/stevearc/overseer.nvim" },
 
-	----------------------- lazy load plugins -----------------------
+	-- { src = "https://github.com/akinsho/toggleterm.nvim" },
 
-	{ src = "https://github.com/akinsho/toggleterm.nvim" },
-
-	{ src = "https://github.com/nvim-neo-tree/neo-tree.nvim" },
-	{ src = "https://github.com/MunifTanjim/nui.nvim" }, -- dependent for neo-tree
+	-- { src = "https://github.com/nvim-neo-tree/neo-tree.nvim" },
+	-- { src = "https://github.com/MunifTanjim/nui.nvim" }, -- dependent for neo-tree
 
 	-- cph from bcyz
-	{ src = "https://github.com/beicanzhuzhu/cph.nvim" },
+	-- { src = "https://github.com/beicanzhuzhu/cph.nvim" },
 
 	-- dap and dap-ui
-	{ src = "https://codeberg.org/mfussenegger/nvim-dap.git" },
-	{ src = "https://github.com/nvim-neotest/nvim-nio" }, -- dependent for nvim-dap-ui
-	{ src = "https://github.com/rcarriga/nvim-dap-ui" },
-	{ src = "https://github.com/thehamsta/nvim-dap-virtual-text" },
+	-- { src = "https://codeberg.org/mfussenegger/nvim-dap.git" },
+	-- { src = "https://github.com/nvim-neotest/nvim-nio" }, -- dependent for nvim-dap-ui
+	-- { src = "https://github.com/rcarriga/nvim-dap-ui" },
+	-- { src = "https://github.com/thehamsta/nvim-dap-virtual-text" },
 })
 
 -- 获得自动构建器
@@ -112,24 +112,90 @@ require("plugins.blink-indent")
 require("plugins.nvim-notify")
 require("plugins.flash")
 -- require("plugins.mini-files")
-require("plugins.multicursor-nvim")
+-- require("plugins.multicursor-nvim") -- lazy loaded
 -- require("plugins.mini-indentscope")
-require("plugins.overseer")
+-- require("plugins.overseer") -- lazy loaded
 
--- 使用lazy加载器
+---------------------------------------- lazy load plugins ----------------------------------------
+
 local lazy = require("utlis.lazy")
 
--- 在使用命令的时候懒加载插件
+---------------------------------------- multicursor ----------------------------------------
 
-lazy.map("<leader>t", "toggleterm", "plugins.toggleterm", { noremap = true, silent = true, desc = "ToggleTerm float" })
+local function load_multicursor()
+	vim.pack.add({ { src = "https://github.com/jake-stewart/multicursor.nvim" } })
+	require("plugins.multicursor-nvim")
+end
 
-lazy.map("<leader>e", "neo-tree", "plugins.neo-tree", { silent = true, desc = " Neotree toggle" })
+lazy.keymap_stub({ "n", "x" }, "<S-c>", load_multicursor, { desc = "Multicursor: add cursor down" })
+lazy.keymap_stub({ "n", "x" }, "<leader><S-c>", load_multicursor, { desc = "Multicursor: skip cursor down" })
+lazy.keymap_stub({ "n", "x" }, "<leader>m", load_multicursor, { desc = "Multicursor: clear cursors" })
 
-lazy.map("<leader>x", "cph", "plugins.cph", { silent = true, desc = " CPH toggle" })
+---------------------------------------- toggleterm ----------------------------------------
 
-lazy.map("<F5>", "dap", "plugins.dap", { desc = "DAP Continue" })
-lazy.map("<leader>dn", "dap", "plugins.dap", { desc = "DAP Step Over" })
-lazy.map("<leader>di", "dap", "plugins.dap", { desc = "DAP Step Into" })
-lazy.map("<leader>do", "dap", "plugins.dap", { desc = "DAP Step Out" })
-lazy.map("<Leader>b", "dap", "plugins.dap", { desc = "DAP Toggle Breakpoint" })
-lazy.map("<Leader>dq", "dap", "plugins.dap", { desc = "DAP Quit" })
+local function load_toggleterm()
+	vim.pack.add({ { src = "https://github.com/akinsho/toggleterm.nvim" } })
+	require("plugins.toggleterm")
+end
+
+lazy.keymap_stub("n", "<leader>t", load_toggleterm, { noremap = true, silent = true, desc = "ToggleTerm float" })
+lazy.command_stub("ToggleTerm", load_toggleterm)
+
+---------------------------------------- neo-tree ----------------------------------------
+
+local function load_neotree()
+	vim.pack.add({
+		{ src = "https://github.com/nvim-neo-tree/neo-tree.nvim" },
+		{ src = "https://github.com/MunifTanjim/nui.nvim" },
+	})
+	require("plugins.neo-tree")
+end
+
+lazy.keymap_stub("n", "<leader>e", load_neotree, { silent = true, desc = " Neotree toggle" })
+lazy.command_stub("Neotree", load_neotree)
+
+---------------------------------------- cph ----------------------------------------
+
+local function load_cph()
+	vim.pack.add({ { src = "https://github.com/beicanzhuzhu/cph.nvim" } })
+	require("plugins.cph")
+end
+
+lazy.keymap_stub("n", "<leader>x", load_cph, { silent = true, desc = " CPH toggle" })
+lazy.command_stub("ToggleCPH", load_cph)
+
+---------------------------------------- overseer ----------------------------------------
+
+local function load_overseer()
+	vim.pack.add({ { src = "https://github.com/stevearc/overseer.nvim" } })
+	require("plugins.overseer")
+end
+
+lazy.keymap_stub("n", "<leader>oo", load_overseer, { desc = "Overseer: toggle task list" })
+lazy.keymap_stub("n", "<leader>ot", load_overseer, { desc = "Overseer: run task" })
+lazy.keymap_stub("n", "<leader>os", load_overseer, { desc = "Overseer: shell task" })
+lazy.keymap_stub("n", "<leader>oa", load_overseer, { desc = "Overseer: task action" })
+
+lazy.command_stub("OverseerToggle", load_overseer)
+lazy.command_stub("OverseerRun", load_overseer)
+lazy.command_stub("OverseerShell", load_overseer)
+lazy.command_stub("OverseerTaskAction", load_overseer)
+
+---------------------------------------- dap ----------------------------------------
+
+local function load_dap()
+	vim.pack.add({
+		{ src = "https://codeberg.org/mfussenegger/nvim-dap.git" },
+		{ src = "https://github.com/nvim-neotest/nvim-nio" },
+		{ src = "https://github.com/rcarriga/nvim-dap-ui" },
+		{ src = "https://github.com/thehamsta/nvim-dap-virtual-text" },
+	})
+	require("plugins.dap")
+end
+
+lazy.keymap_stub("n", "<F5>", load_dap, { desc = "DAP Continue" })
+lazy.keymap_stub("n", "<leader>dn", load_dap, { desc = "DAP Step Over" })
+lazy.keymap_stub("n", "<leader>di", load_dap, { desc = "DAP Step Into" })
+lazy.keymap_stub("n", "<leader>do", load_dap, { desc = "DAP Step Out" })
+lazy.keymap_stub("n", "<Leader>b", load_dap, { desc = "DAP Toggle Breakpoint" })
+lazy.keymap_stub("n", "<Leader>dq", load_dap, { desc = "DAP Quit" })

@@ -1,56 +1,68 @@
 ---@class UtilsLazy
 local M = {}
 
----@type table<string, boolean>
-local loaded = {}
-local map = vim.keymap.set
+local keymap = vim.keymap
+local api = vim.api
+local cmd = vim.cmd
 
----懒加载一个 Lua 模块，并缓存成功加载的状态。
----后续再次使用同一个 `name` 时不会重复加载，而是直接返回 `true`。
----@param name string 用于缓存和错误提示的标识名。
----@param module string 传给 `require` 的模块名。
----@return boolean ok 是否成功加载模块。
-function M.require(name, module)
-	if loaded[name] then
-		return true
-	end
+local DEBUG = false
 
-	local ok, err = pcall(require, module)
-	if not ok then
-		vim.notify(("Failed to load %s: %s"):format(name, err), vim.log.levels.ERROR)
-		return false
-	else
-		-- vim.notify(("Succeeded to load %s !"):format(name), vim.log.levels.INFO)
-	end
-
-	loaded[name] = true
-	return true
-end
-
----在懒加载完成后，重新触发原始按键序列。
----@param lhs string 映射左侧按键，例如 `<leader>x`。
+--- 重放按键序列（处理 <leader> 等特殊键）
+---@param lhs string
 local function replay(lhs)
-	local keys = vim.api.nvim_replace_termcodes(lhs, true, false, true)
-	vim.api.nvim_feedkeys(keys, "m", false)
+	local keys = api.nvim_replace_termcodes(lhs, true, false, true)
+	api.nvim_feedkeys(keys, "m", false)
 end
 
----创建一个普通模式下的懒加载按键映射。
----第一次触发时先加载 `module`，然后重放原始按键，
----这样插件自己定义的真实映射就可以继续接管后续行为。
----@param lhs string 要映射的普通模式按键。
----@param name string 用于缓存懒加载状态的标识名。
----@param module string 第一次使用时需要 `require` 的模块名。
----@param opts? vim.keymap.set.Opts 传递给 `vim.keymap.set` 的可选参数。
-function M.map(lhs, name, module, opts)
-	map("n", lhs, function()
-		if not M.require(name, module) then
-			return
+--- 创建懒加载按键映射桩。
+--- 首次触发时：删除桩 → 执行回调 → 重放按键。
+---@param mode string|string[]
+---@param lhs string
+---@param callback function
+---@param opts? vim.keymap.set.Opts
+function M.keymap_stub(mode, lhs, callback, opts)
+	keymap.set(mode, lhs, function()
+		keymap.del(mode, lhs)
+		if DEBUG then
+			vim.notify(("[lazy] keymap_stub triggered: %s"):format(lhs), vim.log.levels.INFO)
 		end
-
-		vim.schedule(function()
-			replay(lhs)
-		end)
+		callback()
+		replay(lhs)
 	end, opts)
+end
+
+--- 创建懒加载命令桩。
+--- 首次触发时：删除桩 → 执行回调 → 重放命令（保留参数）。
+---@param name string
+---@param callback function
+function M.command_stub(name, callback)
+	api.nvim_create_user_command(name, function(info)
+		api.nvim_del_user_command(name)
+		if DEBUG then
+			vim.notify(("[lazy] command_stub triggered: %s %s"):format(name, info.args), vim.log.levels.INFO)
+		end
+		callback()
+		if info.args ~= "" then
+			cmd(name .. " " .. info.args)
+		else
+			cmd(name)
+		end
+	end, { nargs = "*" })
+end
+
+--- 创建懒加载 require 桩。
+--- 当模块被 require 时，清除桩并执行回调返回真正的模块。
+---@param mod string
+---@param callback function
+function M.require_stub(mod, callback)
+	package.preload[mod] = function()
+		package.loaded[mod] = nil
+		package.preload[mod] = nil
+		if DEBUG then
+			vim.notify(("[lazy] require_stub triggered: %s"):format(mod), vim.log.levels.INFO)
+		end
+		return callback()
+	end
 end
 
 return M
