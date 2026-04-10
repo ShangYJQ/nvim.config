@@ -54,9 +54,22 @@ map("n", "<A-j>", ":move .+1<CR>==", { noremap = true, silent = true })
 map("n", "<A-Up>", ":move .-2<CR>==", { noremap = true, silent = true })
 map("n", "<A-Down>", ":move .+1<CR>==", { noremap = true, silent = true })
 
+-- visual mode 移动选中块
+map("v", "<A-k>", ":move '<-2<CR>gv=gv", { noremap = true, silent = true })
+map("v", "<A-j>", ":move '>+1<CR>gv=gv", { noremap = true, silent = true })
+
+map("v", "<A-Up>", ":move '<-2<CR>gv=gv", { noremap = true, silent = true })
+map("v", "<A-Down>", ":move '>+1<CR>gv=gv", { noremap = true, silent = true })
+
 -- change x to helix mode
-map("n", "x", "V", { noremap = true, silent = true })
-map("v", "x", "<Esc>", { noremap = true, silent = true })
+map("n", "x", function()
+	local count = vim.v.count1
+	vim.cmd("normal! V")
+	if count > 1 then
+		vim.cmd("normal! " .. (count - 1) .. "j")
+	end
+end, { noremap = true, silent = true, desc = "Helix-style line select" })
+map("v", "x", "<Esc>", { noremap = true, silent = true, desc = "Helix-style x to esc v mode" })
 
 -- Half-page scrolling for Shift/Page keys
 map("n", "<S-Up>", "<C-u>", { desc = "Half page up" })
