@@ -40,6 +40,7 @@ ts.install({
 	"zsh",
 	"zig",
 	"yaml",
+	"haskell",
 })
 
 -- 自动启用ts高亮
