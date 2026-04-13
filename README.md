@@ -121,6 +121,15 @@ bun i -g prettier
 sudo pacman -S libxml2
 ```
 
+#### haskell
+
+```bash
+# 使用 ghcup 安装 haskell 工具链
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+# 安装 formatter
+brew install ormolu
+```
+
 #### Vue
 
 ```bash

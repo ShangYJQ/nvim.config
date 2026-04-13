@@ -43,6 +43,7 @@ require("conform").setup({
 		xml = { "xmllint" },
 		html = { "prettier" },
 		css = { "prettier" },
+		haskell = { "ormolu" },
 		-- for pgsql
 		-- sql = { "pg_format" },
 	},

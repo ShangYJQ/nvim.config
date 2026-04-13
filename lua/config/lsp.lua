@@ -16,6 +16,7 @@ local lsp_servers = {
 	-- "sqls",
 	"fish_lsp",
 	"asm_lsp",
+	"hls",
 }
 
 -- you need have vue-language-server exe in your PATH !
