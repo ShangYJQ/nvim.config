@@ -1,5 +1,4 @@
 local dap = require("dap")
-local dapui = require("dapui")
 
 dap.adapters.lldb = {
 	type = "executable",
@@ -16,7 +15,16 @@ dap.configurations.cpp = {
 		program = function()
 			local cwd = vim.fn.getcwd()
 			local filename = vim.fn.expand("%:t:r")
-			return vim.fn.input("Path to executable: ", cwd .. "/.output/" .. filename, "file")
+			-- return vim.fn.input("Path to executable: ", cwd .. "/.output/" .. filename, "file")
+			local path = cwd .. "/.output/" .. filename
+			local file = io.open(path, "r")
+			if file then
+				file:close()
+				return path
+			else
+				vim.notify("请先编译 : " .. path, vim.log.levels.ERROR)
+				return nil
+			end
 		end,
 		cwd = "${workspaceFolder}",
 		stopOnEntry = false,
@@ -33,50 +41,61 @@ dap.configurations.cpp = {
 		--
 		-- But you should be aware of the implications:
 		-- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
-		-- runInTerminal = false,
+		runInTerminal = true,
 	},
 }
 
+vim.fn.sign_define("DapBreakpoint", {
+	text = "󰧞",
+	texthl = "DiagnosticSignError",
+})
+
+vim.fn.sign_define("DapBreakpointCondition", {
+	text = "",
+	texthl = "DiagnosticSignWarn",
+})
+
+vim.fn.sign_define("DapLogPoint", {
+	text = "󰋼",
+	texthl = "DiagnosticSignInfo",
+})
+
+vim.fn.sign_define("DapStopped", {
+	text = "󰁕",
+	texthl = "DiagnosticSignHint",
+	linehl = "Visual",
+})
+
 -- also for c
 dap.configurations.c = dap.configurations.cpp
-
--- for dap ui to auto open
-dap.listeners.before.attach.dapui_config = function()
-	dapui.open()
-end
-dap.listeners.before.launch.dapui_config = function()
-	dapui.open()
-end
-dap.listeners.before.event_terminated.dapui_config = function()
-	dapui.close()
-end
-dap.listeners.before.event_exited.dapui_config = function()
-	dapui.close()
-end
 
 -- keymaps
 local map = vim.keymap.set
 
 map("n", "<F5>", function()
 	dap.continue()
-end)
+end, { silent = true, desc = "DAP Continue" })
 
 map("n", "<leader>dn", function()
 	dap.step_over()
-end, { desc = "DAP Step Over" })
+end, { silent = true, desc = "DAP Step Over" })
 
 map("n", "<leader>di", function()
 	dap.step_into()
-end, { desc = "DAP Step Into" })
+end, { silent = true, desc = "DAP Step Into" })
 
 map("n", "<leader>do", function()
 	dap.step_out()
-end, { desc = "DAP Step Out" })
+end, { silent = true, desc = "DAP Step Out" })
 
 map("n", "<Leader>b", function()
 	dap.toggle_breakpoint()
-end)
+end, { silent = true, desc = "DAP Add Breakpoint" })
 
 map("n", "<Leader>dq", function()
 	dap.terminate()
-end, { desc = "DAP Quit" })
+end, { silent = true, desc = "DAP Quit" })
+
+map("n", "<Leader>dv", function()
+	require("dap-view").toggle()
+end, { silent = true, desc = "DAP View toggle" })

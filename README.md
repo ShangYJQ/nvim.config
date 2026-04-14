@@ -292,6 +292,8 @@ sudo pacman -S pgformatter
 ├── after
 │   └── lsp
 │       └── lua_ls.lua
+├── ftplugin
+│   └── haskell.lua
 ├── init.lua
 ├── lua
 │   ├── config
@@ -308,6 +310,7 @@ sudo pacman -S pgformatter
 │   │           ├── c_quick_run.lua
 │   │           ├── cpp_quick_run.lua
 │   │           ├── debug_quick_build.lua
+│   │           ├── hs_quick_run.lua
 │   │           └── py_quick_run.lua
 │   ├── plugins
 │   │   ├── blink-cmp.lua
@@ -316,8 +319,7 @@ sudo pacman -S pgformatter
 │   │   ├── conform.lua
 │   │   ├── cph.lua
 │   │   ├── dap
-│   │   │   ├── dap-ui.lua
-│   │   │   ├── dap-virtual-text.lua
+│   │   │   ├── dap-view.lua
 │   │   │   ├── dap.lua
 │   │   │   └── init.lua
 │   │   ├── flash.lua
@@ -336,10 +338,10 @@ sudo pacman -S pgformatter
 │   │   ├── oil.lua
 │   │   ├── overseer.lua
 │   │   ├── render-markdown.lua
+│   │   ├── sloat.lua
 │   │   ├── telescope.lua
 │   │   ├── themes.lua
 │   │   ├── tiny-inline-diagnostics.lua
-│   │   ├── sloat.lua
 │   │   ├── todo-comments.lua
 │   │   └── toggleterm.lua
 │   └── utlis

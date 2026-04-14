@@ -76,12 +76,6 @@ vim.pack.add({
 
 	-- cph from bcyz
 	-- { src = "https://github.com/beicanzhuzhu/cph.nvim" },
-
-	-- dap and dap-ui
-	-- { src = "https://codeberg.org/mfussenegger/nvim-dap.git" },
-	-- { src = "https://github.com/nvim-neotest/nvim-nio" }, -- dependent for nvim-dap-ui
-	-- { src = "https://github.com/rcarriga/nvim-dap-ui" },
-	-- { src = "https://github.com/thehamsta/nvim-dap-virtual-text" },
 })
 
 -- 获得自动构建器
@@ -197,10 +191,8 @@ lazy.command_stub("OverseerTaskAction", load_overseer)
 
 local function load_dap()
 	vim.pack.add({
-		{ src = "https://codeberg.org/mfussenegger/nvim-dap.git" },
-		{ src = "https://github.com/nvim-neotest/nvim-nio" },
-		{ src = "https://github.com/rcarriga/nvim-dap-ui" },
-		{ src = "https://github.com/thehamsta/nvim-dap-virtual-text" },
+		{ src = "https://codeberg.org/mfussenegger/nvim-dap" },
+		{ src = "https://github.com/igorlfs/nvim-dap-view" },
 	})
 	require("plugins.dap")
 end
@@ -211,3 +203,4 @@ lazy.keymap_stub("n", "<leader>di", load_dap, { desc = "DAP Step Into" })
 lazy.keymap_stub("n", "<leader>do", load_dap, { desc = "DAP Step Out" })
 lazy.keymap_stub("n", "<Leader>b", load_dap, { desc = "DAP Toggle Breakpoint" })
 lazy.keymap_stub("n", "<Leader>dq", load_dap, { desc = "DAP Quit" })
+lazy.keymap_stub("n", "<Leader>dv", load_dap, { desc = "DAP View Toggle" })

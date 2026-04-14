@@ -137,9 +137,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		-- Diagnostics
 		-- map("n", "<leader>e", vim.diagnostic.open_float, { buffer = buf, desc = "LSP: Show diagnostics" })
-		map("n", "<leader>D", function()
-			vim.diagnostic.open_float({ source = true })
-		end, { buffer = buf, desc = "LSP: Show diagnostics with source" })
+		-- map("n", "<leader>D", function()
+		-- 	vim.diagnostic.open_float({ source = true })
+		-- end, { buffer = buf, desc = "LSP: Show diagnostics with source" })
 
 		-- 快速复制lsp信息
 
