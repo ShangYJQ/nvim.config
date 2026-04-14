@@ -5,7 +5,7 @@ require("blink.cmp").setup({
 		local bt = vim.bo.buftype
 
 		-- disable for dapui
-		if ft:match("^dap%-") or ft:match("^dapui_") then
+		if ft:match("^dap%-") then
 			return false
 		end
 
