@@ -2,25 +2,24 @@ require("dap-view").setup({
 	winbar = {
 		show = true,
 		-- You can add a "console" section to merge the terminal with the other views
-		sections = { "scopes", "watches", "exceptions", "breakpoints", "threads", "repl" },
+		sections = { "scopes", "watches", "console", "exceptions", "breakpoints", "threads", "repl" },
 		-- Must be one of the sections declared above
 		default_section = "scopes",
 		-- Append hints with keymaps within the labels
-		show_keymap_hints = true,
+		show_keymap_hints = false,
 		-- List of up to 2 strings, defining left and right separators
 		separators = nil,
 		-- Configure each section individually
 		base_sections = {
 			-- Labels can be set dynamically with functions
 			-- Each function receives the window's width and the current section as arguments
-			breakpoints = { label = "Breakpoints", keymap = "B" },
-			scopes = { label = "Scopes", keymap = "S" },
-			exceptions = { label = "Exceptions", keymap = "E" },
-			watches = { label = "Watches", keymap = "W" },
-			threads = { label = "Threads", keymap = "T" },
-			repl = { label = "REPL", keymap = "R" },
-			sessions = { label = "Sessions", keymap = "K" },
-			console = { label = "Console", keymap = "C" },
+			scopes = { label = "Scopes 1", keymap = "!" },
+			watches = { label = "Watches 2", keymap = "@" },
+			console = { label = "Console 3", keymap = "#" },
+			exceptions = { label = "Exceptions 4", keymap = "$" },
+			breakpoints = { label = "Breakpoints 5", keymap = "%" },
+			threads = { label = "Threads 6", keymap = "^" },
+			repl = { label = "REPL 7", keymap = "&" },
 		},
 		-- Add your own sections
 		custom_sections = {},
