@@ -83,13 +83,13 @@ map("n", "<leader>u", function()
 end, { desc = "Yank whole file without moving cursor" })
 
 -- Toggle cmdheight
-map("n", "<leader>z", function()
-	if vim.o.cmdheight == 0 then
-		vim.o.cmdheight = 1
-	else
-		vim.o.cmdheight = 0
-	end
-end, { silent = true, desc = "Toggle cmdheight" })
+-- map("n", "<leader>z", function()
+-- 	if vim.o.cmdheight == 0 then
+-- 		vim.o.cmdheight = 1
+-- 	else
+-- 		vim.o.cmdheight = 0
+-- 	end
+-- end, { silent = true, desc = "Toggle cmdheight" })
 
 -- auto close pairs
 -- map("i", "'", "''<left>")

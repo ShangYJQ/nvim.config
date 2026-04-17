@@ -301,6 +301,7 @@ sudo pacman -S pgformatter
 │   │   ├── globals.lua
 │   │   ├── init.lua
 │   │   ├── keymap.lua
+│   │   ├── ui2.lua
 │   │   ├── lsp.lua
 │   │   ├── neovide.lua
 │   │   └── options.lua
@@ -331,7 +332,6 @@ sudo pacman -S pgformatter
 │   │   ├── mini-surround.lua
 │   │   ├── multicursor-nvim.lua
 │   │   ├── neo-tree.lua
-│   │   ├── nvim-notify.lua
 │   │   ├── nvim-treesitter.lua
 │   │   ├── nvim-ts-autotag.lua
 │   │   ├── nvim-ufo.lua

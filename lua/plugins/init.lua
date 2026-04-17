@@ -18,7 +18,7 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
 	-- { src = "https://github.com/nvim-mini/mini.indentscope" },
 	{ src = "https://github.com/saghen/blink.indent" },
-	{ src = "https://github.com/rcarriga/nvim-notify" },
+	{ src = "https://github.com/rachartier/tiny-cmdline.nvim" },
 
 	-- LSP and diagnostics
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
@@ -105,7 +105,7 @@ require("plugins.nvim-ts-autotag")
 require("plugins.nvim-ufo")
 require("plugins.todo-comments")
 require("plugins.blink-indent")
-require("plugins.nvim-notify")
+require("plugins.tiny-cmdline")
 require("plugins.flash")
 -- require("plugins.mini-files")
 -- require("plugins.multicursor-nvim") -- lazy loaded

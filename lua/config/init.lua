@@ -3,6 +3,7 @@ require("config.globals")
 require("config.lsp")
 require("config.options")
 require("config.keymap")
+require("config.ui2")
 
 -- neovide config
 if vim.g.neovide then
