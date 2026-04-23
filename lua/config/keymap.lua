@@ -82,6 +82,9 @@ map("n", "<leader>u", function()
 	vim.fn.winrestview(view)
 end, { desc = "Yank whole file without moving cursor" })
 
+-- W 也可以保存
+vim.api.nvim_create_user_command("W", "w", {})
+
 -- Toggle cmdheight
 -- map("n", "<leader>z", function()
 -- 	if vim.o.cmdheight == 0 then

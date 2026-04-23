@@ -146,13 +146,15 @@ bun i -g vscode-langservers-extracted
 bun i -g dockerfile-language-server-nodejs
 ```
 
-#### sqls
+#### matlab
 
 ```bash
-# lsp
-go install github.com/sqls-server/sqls@latest
-# formatter
-sudo pacman -S pgformatter
+git clone https://github.com/mathworks/MATLAB-language-server.git
+cd MATLAB-language-server
+npm install
+npm run package
+
+# NOTE: 之后去 after/lsp/matlab_ls.lua 修改 lsp 配置
 ```
 
 ## 快捷键
@@ -291,7 +293,8 @@ sudo pacman -S pgformatter
 ```text
 ├── after
 │   └── lsp
-│       └── lua_ls.lua
+│       ├── lua_ls.lua
+│       └── matlab_ls.lua
 ├── ftplugin
 │   └── haskell.lua
 ├── init.lua
@@ -301,10 +304,10 @@ sudo pacman -S pgformatter
 │   │   ├── globals.lua
 │   │   ├── init.lua
 │   │   ├── keymap.lua
-│   │   ├── ui2.lua
 │   │   ├── lsp.lua
 │   │   ├── neovide.lua
-│   │   └── options.lua
+│   │   ├── options.lua
+│   │   └── ui2.lua
 │   ├── overseer
 │   │   └── template
 │   │       └── user
@@ -341,6 +344,7 @@ sudo pacman -S pgformatter
 │   │   ├── sloat.lua
 │   │   ├── telescope.lua
 │   │   ├── themes.lua
+│   │   ├── tiny-cmdline.lua
 │   │   ├── tiny-inline-diagnostics.lua
 │   │   ├── todo-comments.lua
 │   │   └── toggleterm.lua
