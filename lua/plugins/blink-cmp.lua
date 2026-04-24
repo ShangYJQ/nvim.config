@@ -1,5 +1,7 @@
 -- Blink.cmp(autocompletion)
-require("blink.cmp").setup({
+local cmp = require("blink.cmp")
+
+cmp.setup({
 	enabled = function()
 		local ft = vim.bo.filetype
 		local bt = vim.bo.buftype
@@ -30,7 +32,11 @@ require("blink.cmp").setup({
 		["<C-p>"] = { "select_prev", "fallback" },
 		["<C-e>"] = { "hide", "fallback" },
 	},
-	fuzzy = { implementation = "prefer_rust_with_warning" },
+
+	fuzzy = { implementation = "lua" },
+
+	snippets = { preset = "default" },
+
 	completion = {
 		documentation = {
 			auto_show = false,

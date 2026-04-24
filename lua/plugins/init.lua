@@ -1,5 +1,8 @@
 --  plugins list
 --  在大多数情况下会自动编译 编译失败请手动编译
+
+require("utlis.builder")
+
 vim.pack.add({
 
 	---------------------------------------- core plugins ----------------------------------------
@@ -28,6 +31,7 @@ vim.pack.add({
 	-- rustup override set nightly
 	-- cargo build --release
 
+	{ src = "https://github.com/saghen/blink.lib" }, -- require for new version of blink-cmp
 	{ src = "https://github.com/saghen/blink.cmp" },
 
 	-- Formatting
@@ -54,14 +58,22 @@ vim.pack.add({
 	-- cd ~/.local/share/nvim/site/pack/core/opt/blink.pairs
 	-- rustup override set nightly
 	-- cargo build --release
-	{ src = "https://github.com/saghen/blink.pairs" },
+	{ src = "https://github.com/saghen/blink.pairs", data = {
+		build = "cargo build --release",
+	} },
 
 	-- { src = "https://github.com/jake-stewart/multicursor.nvim" },
 
 	-- cd .local/share/nvim/site/pack/core/opt/telescope-fzf-native.nvim
 	-- make
-	{ src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim" },
-	{ src = "https://github.com/nvim-telescope/telescope-project.nvim" },
+	{
+		src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
+		data = {
+			build = "make",
+		},
+	},
+
+	-- { src = "https://github.com/nvim-telescope/telescope-project.nvim" },
 
 	---------------------------------------- lazy load plugins ----------------------------------------
 
@@ -77,14 +89,6 @@ vim.pack.add({
 	-- cph from bcyz
 	-- { src = "https://github.com/beicanzhuzhu/cph.nvim" },
 })
-
--- 获得自动构建器
-local status, builder = pcall(require, "utlis.builder")
-if status then
-	builder.setup_autobuild()
-else
-	vim.notify("[error] can not find builder")
-end
 
 require("plugins.themes")
 require("plugins.nvim-treesitter")

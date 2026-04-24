@@ -220,7 +220,6 @@ npm run package
 | n    | `<leader>S`  | 工作区符号               |
 | n    | `<leader>gh` | Git status               |
 | n    | `<leader>w`  | 查找 TODO                |
-| n    | `<leader>p`  | 项目列表                 |
 | n    | `<leader>T`  | 主题切换                 |
 | n    | `<leader>n`  | 通知记录                 |
 
