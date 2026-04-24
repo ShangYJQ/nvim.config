@@ -27,12 +27,18 @@ vim.pack.add({
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
 	{ src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
 
-	-- cd ~/.local/share/nvim/site/pack/core/opt/blink.cmp
-	-- rustup override set nightly
-	-- cargo build --release
-
 	{ src = "https://github.com/saghen/blink.lib" }, -- require for new version of blink-cmp
-	{ src = "https://github.com/saghen/blink.cmp" },
+	{
+		src = "https://github.com/saghen/blink.cmp",
+		data = {
+			-- cd ~/.local/share/nvim/site/pack/core/opt/blink.cmp
+			-- rustup override set nightly
+			-- cargo build --release
+			build = function()
+				require("blink.cmp").build():wait(60000)
+			end,
+		},
+	},
 
 	-- Formatting
 	{ src = "https://github.com/stevearc/conform.nvim" },
@@ -55,12 +61,15 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-mini/mini.surround" },
 	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
 
-	-- cd ~/.local/share/nvim/site/pack/core/opt/blink.pairs
-	-- rustup override set nightly
-	-- cargo build --release
-	{ src = "https://github.com/saghen/blink.pairs", data = {
-		build = "cargo build --release",
-	} },
+	{
+		src = "https://github.com/saghen/blink.pairs",
+		data = {
+			-- cd ~/.local/share/nvim/site/pack/core/opt/blink.pairs
+			-- rustup override set nightly
+			-- cargo build --release
+			build = "cargo build --release",
+		},
+	},
 
 	-- { src = "https://github.com/jake-stewart/multicursor.nvim" },
 

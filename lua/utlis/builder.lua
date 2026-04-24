@@ -1,7 +1,7 @@
----Run the build command defined in a plugin spec.
+---Run the build action defined in a plugin spec.
 ---
----If the plugin spec contains `data.build`, this function executes it in the
----given plugin directory using the system shell.
+---If the plugin spec contains `data.build`, this function executes shell
+---commands in the plugin directory, or calls Lua build functions with context.
 ---
 ---@param spec table Plugin spec table from the PackChanged event.
 ---@param path string Plugin installation/update directory.
@@ -12,10 +12,30 @@ local function run_build(spec, path)
 		return
 	end
 
-	vim.system({ "sh", "-c", build }, {
-		cwd = path,
-		text = true,
-	})
+	if type(build) == "string" then
+		vim.system({ "sh", "-c", build }, {
+			cwd = path,
+			text = true,
+		})
+		return
+	end
+
+	if type(build) == "function" then
+		local ok, err = pcall(build, {
+			spec = spec,
+			path = path,
+			cwd = path,
+		})
+		if not ok then
+			vim.notify(("Build failed for %s: %s"):format(spec.name or spec.src or path, err), vim.log.levels.ERROR)
+		end
+		return
+	end
+
+	vim.notify(
+		("Unsupported build type for %s: %s"):format(spec.name or spec.src or path, type(build)),
+		vim.log.levels.WARN
+	)
 end
 
 ---Create an autocmd that runs a plugin build command after install or update.

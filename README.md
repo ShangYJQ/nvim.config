@@ -349,13 +349,13 @@ npm run package
 │   │   └── toggleterm.lua
 │   └── utlis
 │       ├── builder.lua
-│       ├── init.lua
 │       └── lazy.lua
 ├── nvim-pack-lock.json
 ├── README.md
 ├── screenshots
 │   └── 01.png
 └── snippets
+    ├── cmake.json
     ├── cpp.json
     ├── json.json
     ├── lua.json
