@@ -29,15 +29,10 @@ vim.pack.add({
 
 	{ src = "https://github.com/saghen/blink.lib" }, -- require for new version of blink-cmp
 	{
+		-- cd ~/.local/share/nvim/site/pack/core/opt/blink.cmp
+		-- rustup override set nightly
+		-- cargo build --release
 		src = "https://github.com/saghen/blink.cmp",
-		data = {
-			-- cd ~/.local/share/nvim/site/pack/core/opt/blink.cmp
-			-- rustup override set nightly
-			-- cargo build --release
-			build = function()
-				require("blink.cmp").build():wait(60000)
-			end,
-		},
 	},
 
 	-- Formatting
