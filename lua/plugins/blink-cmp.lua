@@ -44,4 +44,8 @@ cmp.setup({
 		},
 		ghost_text = { enabled = true },
 	},
+
+	cmdline = {
+		completion = { menu = { auto_show = true } },
+	},
 })
