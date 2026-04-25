@@ -11,6 +11,7 @@ local lsp_servers = {
 	"tailwindcss",
 	"dockerls",
 	"eslint",
+	"vue_ls",
 	"vtsls",
 	"neocmake",
 	-- "sqls",
@@ -120,14 +121,6 @@ vim.lsp.config("tailwindcss", {
 -- vim.lsp.config("sqls", {
 -- 	cmd = { "sqls", "-config", "config.yml" },
 -- })
-
--- 按需加载Vue语言服务器配置
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "vue",
-	callback = function()
-		vim.lsp.enable("vue_ls")
-	end,
-})
 
 -- Emmet 服务器
 -- vim.api.nvim_create_autocmd("FileType", {
