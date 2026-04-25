@@ -51,6 +51,66 @@ vim.lsp.config("vtsls", {
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 })
 
+vim.lsp.config("tailwindcss", {
+	-- filetypes copied and adjusted from tailwindcss-intellisense
+	filetypes = {
+		-- html
+		"aspnetcorerazor",
+		"astro",
+		"astro-markdown",
+		"blade",
+		"clojure",
+		"django-html",
+		"htmldjango",
+		"edge",
+		"eelixir", -- vim ft
+		"elixir",
+		"ejs",
+		"erb",
+		"eruby", -- vim ft
+		"gohtml",
+		"gohtmltmpl",
+		"haml",
+		"handlebars",
+		"hbs",
+		"html",
+		"htmlangular",
+		"html-eex",
+		"heex",
+		"jade",
+		"leaf",
+		"liquid",
+		-- "markdown",
+		"mdx",
+		"mustache",
+		"njk",
+		"nunjucks",
+		"php",
+		"razor",
+		"slim",
+		"twig",
+		-- css
+		"css",
+		"less",
+		"postcss",
+		"sass",
+		"scss",
+		"stylus",
+		"sugarss",
+		-- js
+		"javascript",
+		"javascriptreact",
+		"reason",
+		"rescript",
+		"typescript",
+		"typescriptreact",
+		-- mixed
+		"vue",
+		"svelte",
+		"templ",
+	},
+})
+
 -- sqls 的配置
 -- 在打开目录下创建 config.yml
 -- connections:
