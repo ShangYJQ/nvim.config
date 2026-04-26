@@ -62,6 +62,7 @@ vim.pack.add({
 	{
 		src = "https://github.com/saghen/blink.pairs",
 		data = {
+			-- NOTE: need rust nightly for build
 			-- cd ~/.local/share/nvim/site/pack/core/opt/blink.pairs
 			-- rustup override set nightly
 			-- cargo build --release
@@ -76,7 +77,8 @@ vim.pack.add({
 	{
 		src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
 		data = {
-			build = "make",
+			-- NOTE: need cmake for build
+			build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install",
 		},
 	},
 
