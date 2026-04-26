@@ -53,5 +53,15 @@ cmp.setup({
 
 	cmdline = {
 		completion = { menu = { auto_show = true } },
+		keymap = {
+			["<Tab>"] = {},
+			["<S-Tab>"] = {},
+
+			["<C-l>"] = { "accept", "fallback" },
+			["<CR>"] = { "accept_and_enter", "fallback" },
+
+			["<C-k>"] = { "select_prev", "fallback" },
+			["<C-j>"] = { "select_next", "fallback" },
+		},
 	},
 })
