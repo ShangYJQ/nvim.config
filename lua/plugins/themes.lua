@@ -101,6 +101,11 @@ require("kanagawa").setup({
 })
 
 require("tokyonight").setup({
+	--- You can override specific color groups to use other groups or a hex color
+	--- function will be called with a ColorScheme table
+	---@param colors ColorScheme
+	on_colors = function(colors) end,
+
 	terminal_colors = true,
 	on_highlights = function(hl, c)
 		local prompt = "#2d3149"
@@ -151,11 +156,11 @@ require("material").setup({
 		"blink",
 		-- "coc",
 		-- "colorful-winsep",
-		-- "dap",
+		"dap",
 		-- "dashboard",
 		-- "eyeliner",
 		-- "fidget",
-		-- "flash",
+		"flash",
 		"gitsigns",
 		-- "harpoon",
 		-- "hop",
