@@ -72,8 +72,8 @@ end, { noremap = true, silent = true, desc = "Helix-style line select" })
 map("v", "x", "<Esc>", { noremap = true, silent = true, desc = "Helix-style x to esc v mode" })
 
 -- Half-page scrolling for Shift/Page keys
-map("n", "<S-Up>", "<C-u>", { desc = "Half page up" })
-map("n", "<S-Down>", "<C-d>", { desc = "Half page down" })
+-- map("n", "<S-Up>", "<C-u>", { desc = "Half page up" })
+-- map("n", "<S-Down>", "<C-d>", { desc = "Half page down" })
 
 -- Yank whole file without moving cursor
 map("n", "<leader>u", function()
