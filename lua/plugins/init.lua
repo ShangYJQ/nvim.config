@@ -29,9 +29,12 @@ vim.pack.add({
 
 	{ src = "https://github.com/saghen/blink.lib" }, -- require for new version of blink-cmp
 	{
+		-- NOTE:
 		-- cd ~/.local/share/nvim/site/pack/core/opt/blink.cmp
 		-- rustup override set nightly
 		-- cargo build --release
+		-- or build in nvim with
+		-- :BlinkCmp build
 		src = "https://github.com/saghen/blink.cmp",
 	},
 
@@ -84,7 +87,6 @@ vim.pack.add({
 	-- overseer
 	-- { src = "https://github.com/stevearc/overseer.nvim" },
 
-	-- { src = "https://github.com/akinsho/toggleterm.nvim" },
 	-- { src = "https://github.com/ShangYJQ/sloat.git" },
 
 	-- { src = "https://github.com/nvim-neo-tree/neo-tree.nvim" },
@@ -107,7 +109,6 @@ require("plugins.render-markdown")
 require("plugins.tiny-inline-diagnostics")
 require("plugins.nvim-ts-autotag")
 -- require("plugins.sloat") -- lazy loaded
--- require("plugins.toggleterm") -- lazy loaded
 -- require("plugins.oil")
 -- require("plugins.neo-tree") -- lazy loaded
 require("plugins.nvim-ufo")
@@ -134,16 +135,6 @@ end
 lazy.keymap_stub({ "n", "x" }, "<S-c>", load_multicursor, { desc = "Multicursor: add cursor down" })
 lazy.keymap_stub({ "n", "x" }, "<leader><S-c>", load_multicursor, { desc = "Multicursor: skip cursor down" })
 lazy.keymap_stub({ "n", "x" }, "<leader>m", load_multicursor, { desc = "Multicursor: clear cursors" })
-
----------------------------------------- toggleterm ----------------------------------------
-
--- local function load_toggleterm()
--- 	vim.pack.add({ { src = "https://github.com/akinsho/toggleterm.nvim" } })
--- 	require("plugins.toggleterm")
--- end
---
--- lazy.keymap_stub("n", "<leader>t", load_toggleterm, { noremap = true, silent = true, desc = "ToggleTerm float" })
--- lazy.command_stub("ToggleTerm", load_toggleterm)
 
 ---------------------------------------- sloat ----------------------------------------
 

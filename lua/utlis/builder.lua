@@ -1,7 +1,7 @@
 ---Run the build action defined in a plugin spec.
 ---
 ---If the plugin spec contains `data.build`, this function executes shell
----commands in the plugin directory, or calls Lua build functions with context.
+---commands in the plugin directory.
 ---
 ---@param spec table Plugin spec table from the PackChanged event.
 ---@param path string Plugin installation/update directory.
@@ -12,30 +12,28 @@ local function run_build(spec, path)
 		return
 	end
 
-	if type(build) == "string" then
-		vim.system({ "sh", "-c", build }, {
-			cwd = path,
-			text = true,
-		})
+	local plugin_name = spec.name or spec.src or path
+
+	if type(build) ~= "string" then
+		vim.notify(("Unsupported build type for %s: %s"):format(plugin_name, type(build)), vim.log.levels.WARN)
 		return
 	end
 
-	if type(build) == "function" then
-		local ok, err = pcall(build, {
-			spec = spec,
-			path = path,
-			cwd = path,
-		})
-		if not ok then
-			vim.notify(("Build failed for %s: %s"):format(spec.name or spec.src or path, err), vim.log.levels.ERROR)
-		end
+	vim.notify(("[Building] %s..."):format(plugin_name), vim.log.levels.INFO)
+	local result = vim.system({ "sh", "-c", build }, {
+		cwd = path,
+		text = true,
+	}):wait()
+
+	if result.code ~= 0 then
+		local stderr = result.stderr or ""
+		local stdout = result.stdout or ""
+		local output = stderr ~= "" and stderr or stdout
+		vim.notify(("Build failed for %s:\n%s"):format(plugin_name, output), vim.log.levels.ERROR)
 		return
 	end
 
-	vim.notify(
-		("Unsupported build type for %s: %s"):format(spec.name or spec.src or path, type(build)),
-		vim.log.levels.WARN
-	)
+	vim.notify(("[Built] %s"):format(plugin_name), vim.log.levels.INFO)
 end
 
 ---Create an autocmd that runs a plugin build command after install or update.
