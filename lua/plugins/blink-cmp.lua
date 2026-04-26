@@ -52,7 +52,7 @@ cmp.setup({
 	},
 
 	cmdline = {
-		completion = { menu = { auto_show = true } },
+		completion = { menu = { auto_show = false } },
 		keymap = {
 			-- ["<Tab>"] = {},
 			-- ["<S-Tab>"] = {},
