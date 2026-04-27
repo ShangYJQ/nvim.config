@@ -6,6 +6,8 @@ cmp.build():wait(60000)
 
 cmp.setup({
 	enabled = function()
+		-- :set buftype?
+		-- :set filetype?
 		local ft = vim.bo.filetype
 		local bt = vim.bo.buftype
 
