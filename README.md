@@ -148,13 +148,21 @@ bun i -g dockerfile-language-server-nodejs
 
 #### matlab
 
+> [!NOTE]
+> 后续请到 `after/lsp/matlab_ls.lua` 修改 LSP 配置。
+
 ```bash
 git clone https://github.com/mathworks/MATLAB-language-server.git
 cd MATLAB-language-server
 npm install
 npm run package
 
-# NOTE: 之后去 after/lsp/matlab_ls.lua 修改 lsp 配置
+```
+
+#### gh_action_ls
+
+```bash
+bun i -g gh-actions-language-server
 ```
 
 ## 快捷键
