@@ -1,31 +1,31 @@
 {
-	"name": "snippets",
-	"contributes": {
-		"snippets": [
-			{
-				"language": "lua",
-				"path": "./lua.json"
-			},
-			{
-				"language": "json",
-				"path": "./json.json"
-			},
-			{
-				"language": "cpp",
-				"path": "./cpp.json"
-			},
-			{
-				"language": "vue",
-				"path": "./vue.json"
-			},
-			{
-				"language": "markdown",
-				"path": "./markdown.json"
-			},
-			{
-				"language": "cmake",
-				"path": "./cmake.json"
-			}
-		]
-	}
+  "name": "snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "lua",
+        "path": "./lua.json"
+      },
+      {
+        "language": "json",
+        "path": "./json.json"
+      },
+      {
+        "language": "cpp",
+        "path": "./cpp.json"
+      },
+      {
+        "language": "vue",
+        "path": "./vue.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./markdown.json"
+      },
+      {
+        "language": "cmake",
+        "path": "./cmake.json"
+      }
+    ]
+  }
 }

@@ -1,25 +1,22 @@
 {
-	"project()": {
-		"prefix": "prj",
-		"body": ["project(${1:myProject})$2"],
-		"description": "Add the snippet for project()"
-	},
-	"cmake_minimum_required()": {
-		"prefix": "cmr",
-		"body": ["cmake_minimum_required(VERSION ${1:3.16})$2"],
-		"description": "Add the snippet for cmake_minimum_required()"
-	},
-	"export compile commands": {
-		"prefix": "ecc",
-		"body": ["set(CMAKE_EXPORT_COMPILE_COMMANDS ON)"],
-		"description": "Add the snippet to generate 'compile_commands.json'"
-	},
-	"Set c++ standard": {
-		"prefix": "cxx",
-		"body": [
-			"set(CMAKE_CXX_STANDARD ${1:14})",
-			"set(CMAKE_CXX_STANDARD_REQUIRED ON)"
-		],
-		"description": "Add the snippet to set c++ standard"
-	}
+  "project()": {
+    "prefix": "prj",
+    "body": ["project(${1:myProject})$2"],
+    "description": "Add the snippet for project()"
+  },
+  "cmake_minimum_required()": {
+    "prefix": "cmr",
+    "body": ["cmake_minimum_required(VERSION ${1:3.16})$2"],
+    "description": "Add the snippet for cmake_minimum_required()"
+  },
+  "export compile commands": {
+    "prefix": "ecc",
+    "body": ["set(CMAKE_EXPORT_COMPILE_COMMANDS ON)"],
+    "description": "Add the snippet to generate 'compile_commands.json'"
+  },
+  "Set c++ standard": {
+    "prefix": "cxx",
+    "body": ["set(CMAKE_CXX_STANDARD ${1:14})", "set(CMAKE_CXX_STANDARD_REQUIRED ON)"],
+    "description": "Add the snippet to set c++ standard"
+  }
 }

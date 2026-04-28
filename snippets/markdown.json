@@ -1,136 +1,136 @@
 {
-	"head": {
-		"prefix": "head",
-		"body": [
-			"# ${1:Title}",
-			"",
-			"> Date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
-			"> Author: ShangYJQ",
-			"> GitHub: https://github.com/ShangYJQ",
-			"",
-			"---",
-			""
-		],
-		"description": "Markdown document header"
-	},
-	"h1": {
-		"prefix": "h1",
-		"body": ["# ${1:Heading 1}"],
-		"description": "Heading 1"
-	},
-	"h2": {
-		"prefix": "h2",
-		"body": ["## ${1:Heading 2}"],
-		"description": "Heading 2"
-	},
-	"h3": {
-		"prefix": "h3",
-		"body": ["### ${1:Heading 3}"],
-		"description": "Heading 3"
-	},
-	"h4": {
-		"prefix": "h4",
-		"body": ["#### ${1:Heading 4}"],
-		"description": "Heading 4"
-	},
-	"h5": {
-		"prefix": "h5",
-		"body": ["##### ${1:Heading 5}"],
-		"description": "Heading 5"
-	},
-	"h6": {
-		"prefix": "h6",
-		"body": ["###### ${1:Heading 6}"],
-		"description": "Heading 6"
-	},
-	"bold": {
-		"prefix": "bold",
-		"body": ["**${1:text}**"],
-		"description": "Bold text"
-	},
-	"italic": {
-		"prefix": "italic",
-		"body": ["*${1:text}*"],
-		"description": "Italic text"
-	},
-	"strike": {
-		"prefix": "strike",
-		"body": ["~~${1:text}~~"],
-		"description": "Strikethrough text"
-	},
-	"code": {
-		"prefix": "code",
-		"body": ["`${1:code}`"],
-		"description": "Inline code"
-	},
-	"codeblock": {
-		"prefix": "codeblock",
-		"body": ["```$1", "$2", "```"],
-		"description": "Fenced code block"
-	},
-	"quote": {
-		"prefix": "quote",
-		"body": ["> ${1:Quote}"],
-		"description": "Blockquote"
-	},
-	"link": {
-		"prefix": "link",
-		"body": ["[${1:text}](${2:url})"],
-		"description": "Markdown link"
-	},
-	"image": {
-		"prefix": "image",
-		"body": ["![${1:alt text}](${2:image-url})"],
-		"description": "Markdown image"
-	},
-	"ul": {
-		"prefix": "ul",
-		"body": ["- ${1:item 1}", "- ${2:item 2}", "- ${3:item 3}"],
-		"description": "Unordered list"
-	},
-	"ol": {
-		"prefix": "ol",
-		"body": ["1. ${1:item 1}", "2. ${2:item 2}", "3. ${3:item 3}"],
-		"description": "Ordered list"
-	},
-	"task": {
-		"prefix": "task",
-		"body": ["- [ ] ${1:Task}"],
-		"description": "Task list item"
-	},
-	"tasks": {
-		"prefix": "tasks",
-		"body": ["- [ ] ${1:Task 1}", "- [ ] ${2:Task 2}", "- [ ] ${3:Task 3}"],
-		"description": "Task list"
-	},
-	"hr": {
-		"prefix": "hr",
-		"body": ["---"],
-		"description": "Horizontal rule"
-	},
-	"table": {
-		"prefix": "table",
-		"body": [
-			"| ${1:Column 1} | ${2:Column 2} | ${3:Column 3} |",
-			"| --- | --- | --- |",
-			"| ${4:Value 1} | ${5:Value 2} | ${6:Value 3} |",
-			"| ${7:Value 4} | ${8:Value 5} | ${9:Value 6} |"
-		],
-		"description": "Markdown table"
-	},
-	"note": {
-		"prefix": "note",
-		"body": ["> [!NOTE]", "> ${1:Note content}"],
-		"description": "Note callout"
-	},
-	"tip": {
-		"prefix": "tip",
-		"body": ["> [!TIP]", "> ${1:Tip content}"],
-		"description": "Tip callout"
-	},
-	"warn": {
-		"prefix": "warn",
-		"body": ["> [!WARNING]", "> ${1:Warning content}"],
-		"description": "Warning callout"
-	}
+  "head": {
+    "prefix": "head",
+    "body": [
+      "# ${1:Title}",
+      "",
+      "> Date: ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}",
+      "> Author: ShangYJQ",
+      "> GitHub: https://github.com/ShangYJQ",
+      "",
+      "---",
+      ""
+    ],
+    "description": "Markdown document header"
+  },
+  "h1": {
+    "prefix": "h1",
+    "body": ["# ${1:Heading 1}"],
+    "description": "Heading 1"
+  },
+  "h2": {
+    "prefix": "h2",
+    "body": ["## ${1:Heading 2}"],
+    "description": "Heading 2"
+  },
+  "h3": {
+    "prefix": "h3",
+    "body": ["### ${1:Heading 3}"],
+    "description": "Heading 3"
+  },
+  "h4": {
+    "prefix": "h4",
+    "body": ["#### ${1:Heading 4}"],
+    "description": "Heading 4"
+  },
+  "h5": {
+    "prefix": "h5",
+    "body": ["##### ${1:Heading 5}"],
+    "description": "Heading 5"
+  },
+  "h6": {
+    "prefix": "h6",
+    "body": ["###### ${1:Heading 6}"],
+    "description": "Heading 6"
+  },
+  "bold": {
+    "prefix": "bold",
+    "body": ["**${1:text}**"],
+    "description": "Bold text"
+  },
+  "italic": {
+    "prefix": "italic",
+    "body": ["*${1:text}*"],
+    "description": "Italic text"
+  },
+  "strike": {
+    "prefix": "strike",
+    "body": ["~~${1:text}~~"],
+    "description": "Strikethrough text"
+  },
+  "code": {
+    "prefix": "code",
+    "body": ["`${1:code}`"],
+    "description": "Inline code"
+  },
+  "codeblock": {
+    "prefix": "codeblock",
+    "body": ["```$1", "$2", "```"],
+    "description": "Fenced code block"
+  },
+  "quote": {
+    "prefix": "quote",
+    "body": ["> ${1:Quote}"],
+    "description": "Blockquote"
+  },
+  "link": {
+    "prefix": "link",
+    "body": ["[${1:text}](${2:url})"],
+    "description": "Markdown link"
+  },
+  "image": {
+    "prefix": "image",
+    "body": ["![${1:alt text}](${2:image-url})"],
+    "description": "Markdown image"
+  },
+  "ul": {
+    "prefix": "ul",
+    "body": ["- ${1:item 1}", "- ${2:item 2}", "- ${3:item 3}"],
+    "description": "Unordered list"
+  },
+  "ol": {
+    "prefix": "ol",
+    "body": ["1. ${1:item 1}", "2. ${2:item 2}", "3. ${3:item 3}"],
+    "description": "Ordered list"
+  },
+  "task": {
+    "prefix": "task",
+    "body": ["- [ ] ${1:Task}"],
+    "description": "Task list item"
+  },
+  "tasks": {
+    "prefix": "tasks",
+    "body": ["- [ ] ${1:Task 1}", "- [ ] ${2:Task 2}", "- [ ] ${3:Task 3}"],
+    "description": "Task list"
+  },
+  "hr": {
+    "prefix": "hr",
+    "body": ["---"],
+    "description": "Horizontal rule"
+  },
+  "table": {
+    "prefix": "table",
+    "body": [
+      "| ${1:Column 1} | ${2:Column 2} | ${3:Column 3} |",
+      "| --- | --- | --- |",
+      "| ${4:Value 1} | ${5:Value 2} | ${6:Value 3} |",
+      "| ${7:Value 4} | ${8:Value 5} | ${9:Value 6} |"
+    ],
+    "description": "Markdown table"
+  },
+  "note": {
+    "prefix": "note",
+    "body": ["> [!NOTE]", "> ${1:Note content}"],
+    "description": "Note callout"
+  },
+  "tip": {
+    "prefix": "tip",
+    "body": ["> [!TIP]", "> ${1:Tip content}"],
+    "description": "Tip callout"
+  },
+  "warn": {
+    "prefix": "warn",
+    "body": ["> [!WARNING]", "> ${1:Warning content}"],
+    "description": "Warning callout"
+  }
 }
