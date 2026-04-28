@@ -42,6 +42,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = {
 		"help",
+		"gitsigns-blame",
 	},
 	callback = function(event)
 		vim.bo[event.buf].buflisted = false

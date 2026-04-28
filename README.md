@@ -233,12 +233,13 @@ bun i -g gh-actions-language-server
 
 ### Git (gitsigns)
 
-| 模式 | 按键         | 功能               |
-| ---- | ------------ | ------------------ |
-| n    | `]c` / `[c`  | 下/上一个 git hunk |
-| n    | `<leader>gb` | 切换 git blame     |
-| n    | `<leader>gd` | 行内 diff 预览     |
-| n    | `<leader>gr` | 重置 hunk          |
+| 模式 | 按键         | 功能                  |
+| ---- | ------------ | --------------------- |
+| n    | `]c` / `[c`  | 下/上一个 git hunk    |
+| n    | `<leader>ib` | 切换 git blame inline |
+| n    | `<leader>gb` | 切换 git blame        |
+| n    | `<leader>gd` | 行内 diff 预览        |
+| n    | `<leader>gr` | 重置 hunk             |
 
 ### 文件树 (Neo-tree)
 
