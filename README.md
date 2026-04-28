@@ -109,6 +109,12 @@ sudo pacman -S cmake-format
 paru -S neocmakelsp-bin
 ```
 
+#### make
+
+```bash
+go install github.com/owenrumney/make-ls/cmd/make-ls@latest
+```
+
 #### Markdown/YAML/HTML/CSS
 
 ```bash
@@ -301,6 +307,7 @@ bun i -g gh-actions-language-server
 ├── after
 │   └── lsp
 │       ├── lua_ls.lua
+│       ├── make_ls.lua
 │       └── matlab_ls.lua
 ├── ftplugin
 │   └── haskell.lua
