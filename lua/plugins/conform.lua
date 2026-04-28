@@ -1,6 +1,6 @@
 -- Conform
 require("conform").setup({
-	format_on_save = { timeout_ms = 1000, lsp_format = "fallback" },
+	format_on_save = { timeout_ms = 2000, lsp_format = "fallback" },
 
 	formatters = {
 		clang_format = {
@@ -21,30 +21,51 @@ require("conform").setup({
 		},
 	},
 
+	---@type table<string, conform.FiletypeFormatter>
 	formatters_by_ft = {
+
+		-- oxfmt
+		json = { "oxfmt" },
+		jsonc = { "oxfmt" },
+		json5 = { "oxfmt" },
+		toml = { "oxfmt" },
+		vue = { "oxfmt" },
+		markdown = { "oxfmt" },
+		yaml = { "oxfmt" },
+		yml = { "oxfmt" },
+		html = { "oxfmt" },
+		css = { "oxfmt" },
+
+		-- clang_format
 		c = { "clang_format" },
 		cpp = { "clang_format" },
-		json = { "prettier" },
-		jsonc = { "prettier" },
+		cmake = { "cmake_format" },
+
+		-- xmllint
+		xml = { "xmllint" },
+		svg = { "xmllint" },
+
+		-- stylua
 		lua = { "stylua" },
+
+		-- rustfmt
 		rust = { "rustfmt", lsp_format = "fallback" },
+
+		-- ruff_format
 		python = { "ruff_format" },
+
+		-- go
 		go = { "goimports", "gofmt" },
+
+		-- zigfmt
 		zig = { "zigfmt" },
+
+		-- shfmt
 		zsh = { "shfmt" },
 		sh = { "shfmt" },
 		bash = { "shfmt" },
-		toml = { "taplo" },
-		cmake = { "cmake_format" },
-		vue = { "prettier" },
-		markdown = { "prettier" },
-		yaml = { "prettier" },
-		yml = { "prettier" },
-		xml = { "xmllint" },
-		html = { "prettier" },
-		css = { "prettier" },
+
+		-- ormolu
 		haskell = { "ormolu" },
-		-- for pgsql
-		-- sql = { "pg_format" },
 	},
 })

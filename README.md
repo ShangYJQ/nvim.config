@@ -70,12 +70,6 @@ sudo pacman -S fish-lsp
 sudo pacman -S shfmt
 ```
 
-#### JSON
-
-```bash
-bun i -g vscode-langservers-extracted
-```
-
 #### Go
 
 ```bash
@@ -99,7 +93,7 @@ sudo pacman -S asm-lsp
 #### TOML
 
 ```bash
-sudo pacman -S taplo-cli
+sudo pacman -S oxfmt
 ```
 
 #### CMake
@@ -115,10 +109,10 @@ paru -S neocmakelsp-bin
 go install github.com/owenrumney/make-ls/cmd/make-ls@latest
 ```
 
-#### Markdown/YAML/HTML/CSS
+#### Markdown/YAML/HTML/CSS/JSON
 
 ```bash
-bun i -g prettier
+bun i -g oxfmt
 ```
 
 #### XML

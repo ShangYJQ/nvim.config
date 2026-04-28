@@ -10,7 +10,7 @@ require("blink.pairs").setup({
 
 	mappings = {
 		enabled = true,
-		cmdline = false,
+		cmdline = true,
 	},
 
 	highlights = {
