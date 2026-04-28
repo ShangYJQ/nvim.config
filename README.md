@@ -1,5 +1,8 @@
 ## 由 `Neovim` v0.12 & `vim.pack` 驱动. 为速度和美观而生.
 
+<a href="https://dotfyle.com/ShangYJQ/nvimconfig"><img src="https://dotfyle.com/ShangYJQ/nvimconfig/badges/plugins?style=flat" /></a>
+<a href="https://dotfyle.com/ShangYJQ/nvimconfig"><img src="https://dotfyle.com/ShangYJQ/nvimconfig/badges/leaderkey?style=flat" /></a>
+
 ![界面预览](./screenshots/01.png)
 
 ## 环境依赖
