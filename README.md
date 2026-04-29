@@ -327,7 +327,8 @@ bun i -g gh-actions-language-server
 │   │           ├── cpp_quick_run.lua
 │   │           ├── debug_quick_build.lua
 │   │           ├── hs_quick_run.lua
-│   │           └── py_quick_run.lua
+│   │           ├── py_quick_run.lua
+│   │           └── rust_quick_run.lua
 │   ├── plugins
 │   │   ├── blink-cmp.lua
 │   │   ├── blink-indent.lua

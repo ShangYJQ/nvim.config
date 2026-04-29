@@ -48,6 +48,40 @@ dap.configurations.cpp = {
 -- also for c
 dap.configurations.c = dap.configurations.cpp
 
+-- conf for rust
+dap.configurations.rust = {
+	{
+		name = "Debug",
+		type = "lldb",
+		request = "launch",
+		program = function()
+			-- 直接获得编译的 debug 文件
+			local cwd = vim.fn.getcwd()
+			local cargo_toml = cwd .. "/Cargo.toml"
+
+			for line in io.lines(cargo_toml) do
+				local name = line:match('^name%s*=%s*"(.*)"')
+				if name then
+					return cwd .. "/target/debug/" .. name
+				end
+			end
+
+			return cwd .. "/target/debug/"
+		end,
+		cwd = "${workspaceFolder}",
+		stopOnEntry = false,
+		args = {},
+
+		initCommands = function()
+			local rustc_sysroot = vim.fn.trim(vim.fn.system("rustc --print sysroot"))
+			return {
+				([[command script import '%s/lib/rustlib/etc/lldb_lookup.py']]):format(rustc_sysroot),
+				([[command source '%s/lib/rustlib/etc/lldb_commands']]):format(rustc_sysroot),
+			}
+		end,
+	},
+}
+
 -- Install hdb
 -- cabal install haskell-debugger \
 --     --allow-newer=base,time,containers,ghc,ghc-bignum,template-haskell \
