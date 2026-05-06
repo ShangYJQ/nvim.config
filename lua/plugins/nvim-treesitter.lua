@@ -21,6 +21,7 @@ ts.install({
 	"c",
 	"bash",
 	"make",
+	"latex",
 	"markdown",
 	"markdown_inline",
 	"matlab",
