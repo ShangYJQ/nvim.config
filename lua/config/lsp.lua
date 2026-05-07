@@ -16,6 +16,7 @@ local lsp_servers = {
 	"neocmake",
 	-- "sqls",
 	"fish_lsp",
+	"nixd",
 	"asm_lsp",
 	"hls",
 	"matlab_ls",

@@ -67,5 +67,8 @@ require("conform").setup({
 
 		-- ormolu
 		haskell = { "ormolu" },
+
+		-- nix
+		nix = { "nixfmt" },
 	},
 })
