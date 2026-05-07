@@ -80,14 +80,14 @@ cmp.setup({
 			path = { score_offset = 30 },
 
 			buffer = {
-				score_offset = 10,
+				score_offset = 20,
 				min_keyword_length = 2,
 				max_items = 4,
 			},
 
 			dictionary = {
 
-				score_offset = 20,
+				score_offset = 10,
 
 				module = "blink-cmp-dictionary",
 				name = "Dict",
