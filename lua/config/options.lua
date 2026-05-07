@@ -64,7 +64,12 @@ if vim.env.TERMUX_VERSION then
 end
 
 -- Clipboard
-opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
+-- opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
+if vim.env.SSH_TTY then
+	vim.g.clipboard = "osc52"
+end
+
+vim.opt.clipboard = "unnamedplus"
 
 -- Window splits
 opt.splitright = true
