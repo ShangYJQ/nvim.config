@@ -69,7 +69,7 @@ cmp.setup({
 
 	sources = {
 
-		default = { "dictionary", "lsp", "snippets", "path", "buffer" },
+		default = { "lsp", "snippets", "path", "dictionary", "buffer" },
 
 		providers = {
 			dictionary = {
