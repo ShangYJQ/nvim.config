@@ -79,7 +79,8 @@ vim.pack.add({
 		src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
 		data = {
 			-- NOTE: need cmake for build
-			build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install",
+			-- build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install",
+			build = "make",
 		},
 	},
 
