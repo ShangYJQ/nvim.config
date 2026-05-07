@@ -37,6 +37,7 @@ vim.pack.add({
 		-- :BlinkCmp build
 		src = "https://github.com/saghen/blink.cmp",
 	},
+	{ src = "https://github.com/Kaiser-Yang/blink-cmp-dictionary" },
 
 	-- Formatting
 	{ src = "https://github.com/stevearc/conform.nvim" },

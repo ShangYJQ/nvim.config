@@ -25,7 +25,7 @@ cmp.setup({
 	end,
 	keymap = {
 		preset = "enter",
-		["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+		["<C-h>"] = { "show", "show_documentation", "hide_documentation" },
 		["<CR>"] = { "accept", "fallback" },
 		["<C-l>"] = { "accept", "fallback" },
 		["<C-Down>"] = { "scroll_documentation_down", "fallback" },
@@ -48,7 +48,7 @@ cmp.setup({
 	completion = {
 		documentation = {
 			auto_show = false,
-			auto_show_delay_ms = 500,
+			auto_show_delay_ms = 800,
 		},
 		ghost_text = { enabled = true },
 	},
@@ -64,6 +64,31 @@ cmp.setup({
 
 			["<C-k>"] = { "select_prev", "fallback" },
 			["<C-j>"] = { "select_next", "fallback" },
+		},
+	},
+
+	sources = {
+
+		default = { "dictionary", "lsp", "snippets", "path", "buffer" },
+
+		providers = {
+			dictionary = {
+				module = "blink-cmp-dictionary",
+				name = "Dict",
+				-- 💡 Performance impact of min_keyword_length:
+				-- - In fallback mode: No impact on performance regardless of value
+				-- - With fzf: Higher values may improve performance
+				-- - With other commands (rg/grep): Higher values significantly improve performance
+				min_keyword_length = 2,
+				max_items = 6,
+				-- options for blink-cmp-dictionary
+				opts = {
+					-- put your dictionary files here
+					dictionary_directories = {
+						vim.fn.stdpath("config") .. "/dictionary",
+					},
+				},
+			},
 		},
 	},
 })
