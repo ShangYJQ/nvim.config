@@ -72,7 +72,23 @@ cmp.setup({
 		default = { "lsp", "snippets", "path", "dictionary", "buffer" },
 
 		providers = {
+
+			lsp = { score_offset = 100 },
+
+			snippets = { score_offset = 90 },
+
+			path = { score_offset = 30 },
+
+			buffer = {
+				score_offset = 10,
+				min_keyword_length = 2,
+				max_items = 4,
+			},
+
 			dictionary = {
+
+				score_offset = 20,
+
 				module = "blink-cmp-dictionary",
 				name = "Dict",
 				-- 💡 Performance impact of min_keyword_length:
