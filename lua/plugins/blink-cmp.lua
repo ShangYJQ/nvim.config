@@ -51,6 +51,10 @@ cmp.setup({
 			auto_show_delay_ms = 800,
 		},
 		ghost_text = { enabled = true },
+		menu = {
+			border = nil,
+			auto_show = true,
+		},
 	},
 
 	cmdline = {
@@ -115,4 +119,7 @@ cmp.setup({
 			},
 		},
 	},
+
+	-- Experimental signature help support
+	signature = { enabled = true },
 })
