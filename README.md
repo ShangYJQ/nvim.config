@@ -58,6 +58,7 @@ sudo pacman -S clang
 
 ```bash
 sudo pacman -S python-ruff
+brew install basedpyright
 ```
 
 #### Bash
