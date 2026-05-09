@@ -43,9 +43,8 @@ map("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Increase width" }
 -- end, { desc = "Open terminal" })
 map("t", "<C-q>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 
--- helix move
-map("n", "gs", "0", { desc = "Move to left" })
-map("n", "gl", "$", { desc = "Move to right" })
+map("n", "<Tab>", "<cmd>bnext<CR>", { desc = "bn" })
+map("n", "<S-Tab>", "<cmd>bprevious<CR>", { desc = "bp" })
 
 -- move code
 map("n", "<A-k>", ":move .-2<CR>==", { noremap = true, silent = true })

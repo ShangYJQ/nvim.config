@@ -54,7 +54,11 @@ cmp.setup({
 	},
 
 	cmdline = {
+		enabled = true,
 		completion = { menu = { auto_show = false } },
+		sources = {
+			default = { "cmdline" },
+		},
 		keymap = {
 			-- ["<Tab>"] = {},
 			-- ["<S-Tab>"] = {},
@@ -65,6 +69,10 @@ cmp.setup({
 			["<C-k>"] = { "select_prev", "fallback" },
 			["<C-j>"] = { "select_next", "fallback" },
 		},
+	},
+
+	term = {
+		enabled = false,
 	},
 
 	sources = {
