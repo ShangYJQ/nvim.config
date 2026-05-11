@@ -19,6 +19,7 @@ local lsp_servers = {
 	"nixd",
 	"asm_lsp",
 	"hls",
+	"elixirls",
 	"matlab_ls",
 	"gh_actions_ls",
 	"make_ls",

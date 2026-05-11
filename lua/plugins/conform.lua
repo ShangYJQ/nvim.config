@@ -68,6 +68,11 @@ require("conform").setup({
 		-- ormolu
 		haskell = { "ormolu" },
 
+		-- mix
+		elixir = { "mix" },
+		eelixir = { "mix" },
+		heex = { "mix" },
+
 		-- nix
 		nix = { "nixfmt" },
 	},
