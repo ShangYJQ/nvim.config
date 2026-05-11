@@ -20,6 +20,7 @@ local lsp_servers = {
 	"asm_lsp",
 	"hls",
 	"elixirls",
+	"taplo",
 	"matlab_ls",
 	"gh_actions_ls",
 	"make_ls",
