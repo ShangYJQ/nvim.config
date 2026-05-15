@@ -85,9 +85,9 @@ cmp.setup({
 
 		providers = {
 
-			lsp = { score_offset = 100 },
+			snippets = { score_offset = 100 },
 
-			snippets = { score_offset = 90 },
+			lsp = { score_offset = 90 },
 
 			path = { score_offset = 30 },
 
