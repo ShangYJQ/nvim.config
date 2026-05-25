@@ -253,9 +253,9 @@ bun i -g gh-actions-language-server
 
 ### 终端 (NvChad Term)
 
-| 模式 | 按键        | 功能              |
-| ---- | ----------- | ----------------- |
-| n,t  | `<leader>t` | 切换浮动终端      |
+| 模式 | 按键        | 功能         |
+| ---- | ----------- | ------------ |
+| n,t  | `<leader>t` | 切换浮动终端 |
 
 ### Overseer (任务运行)
 
@@ -306,12 +306,12 @@ bun i -g gh-actions-language-server
 ├── after
 │   └── lsp
 │       ├── lua_ls.lua
-│       ├── make_ls.lua
-│       ├── matlab_ls.lua
-│       └── nixd.lua
+│       └── matlab_ls.lua
 ├── ftplugin
 │   └── haskell.lua
 ├── init.lua
+├── lsp
+│   └── make_ls.lua
 ├── lua
 │   ├── chadrc.lua
 │   ├── config
@@ -327,6 +327,7 @@ bun i -g gh-actions-language-server
 │   │   └── template
 │   │       └── user
 │   │           ├── c_quick_run.lua
+│   │           ├── cmake.lua
 │   │           ├── cpp_quick_run.lua
 │   │           ├── debug_quick_build.lua
 │   │           ├── hs_quick_run.lua
@@ -338,6 +339,7 @@ bun i -g gh-actions-language-server
 │   │   ├── blink-pairs.lua
 │   │   ├── conform.lua
 │   │   ├── cph.lua
+│   │   ├── dadbod-grip.lua
 │   │   ├── dap
 │   │   │   ├── dap-view.lua
 │   │   │   ├── dap.lua
