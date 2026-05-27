@@ -19,7 +19,7 @@ require("neo-tree").setup({
 		truncation_character = "…", -- character to use when truncating the tab label
 	},
 	enable_diagnostics = true,
-	open_files_do_not_replace_types = { "terminal", "Trouble", "qf", "edgy", "nofile" }, -- when opening files, do not use windows containing these filetypes or buftypes
+	open_files_do_not_replace_types = { "terminal", "Trouble", "qf", "edgy" }, -- when opening files, do not use windows containing these filetypes or buftypes
 	open_files_using_relative_paths = false,
 	default_component_configs = {
 		container = {
