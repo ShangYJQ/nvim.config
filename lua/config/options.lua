@@ -27,6 +27,8 @@ opt.winborder = "rounded"
 opt.whichwrap = "<,>,[,],h,l"
 opt.wrap = false
 
+opt.updatetime = 250
+
 -- listchars
 opt.list = true
 opt.listchars = {
