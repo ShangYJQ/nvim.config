@@ -60,16 +60,7 @@ vim.pack.add({
 
 	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
 
-	{
-		src = "https://github.com/saghen/blink.pairs",
-		data = {
-			-- NOTE: need rust nightly for build
-			-- cd ~/.local/share/nvim/site/pack/core/opt/blink.pairs
-			-- rustup override set nightly
-			-- cargo build --release
-			build = "cargo build --release",
-		},
-	},
+	{ src = "https://github.com/saghen/blink.pairs" },
 
 	-- { src = "https://github.com/jake-stewart/multicursor.nvim" },
 
