@@ -21,6 +21,7 @@ M.base46 = {
 	integrations = {
 		"blink",
 		"blink-pair",
+		"dap",
 		"render-markdown",
 		"flash",
 		"telescope",
