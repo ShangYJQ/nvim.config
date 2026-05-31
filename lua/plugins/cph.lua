@@ -1,7 +1,7 @@
 require("cph").setup({
 	window = {
-		dir = "floating",
-		width = 90,
+		dir = "right",
+		width = 34,
 		height = 28,
 	},
 	compile = {
@@ -15,8 +15,8 @@ require("cph").setup({
 		},
 	},
 	run = {
-		time_limit = 2000,
-		memory_limit = 2048,
+		time_limit = 4000,
+		memory_limit = 8000,
 	},
 })
 
