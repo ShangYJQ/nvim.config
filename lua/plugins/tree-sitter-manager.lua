@@ -16,7 +16,6 @@ require("tree-sitter-manager").setup({
 		"c",
 		"bash",
 		"make",
-		"latex",
 		"markdown",
 		"markdown_inline",
 		"matlab",
