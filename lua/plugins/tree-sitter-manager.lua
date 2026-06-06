@@ -1,4 +1,7 @@
 require("tree-sitter-manager").setup({
+
+	nerdfont = true,
+
 	-- Default Options
 	ensure_installed = {
 		"html",

@@ -2,6 +2,24 @@
 -- vim.api.nvim_set_hl(0, "TinyCmdlineBorder", { link = "FloatBorder" })
 
 require("tiny-cmdline").setup({
+
+	title = {
+		enabled = false,
+		pos = "center",
+		-- evaluated in order; first match wins. Last entry is the fallback.
+		formats = {
+			{ type = ":", pattern = { "^%s*lua%s+", "^%s*lua%s*=", "^%s*=" }, title = " Lua " },
+			{ type = ":", pattern = "^%s*!", title = " Shell " },
+			{ type = ":", pattern = "^%s*he?l?p?%s+", title = " Help " },
+			{ type = "/", title = " Search " },
+			{ type = "?", title = " Search " },
+			{ type = "=", title = " Expression " },
+			{ type = "@", title = " Input " },
+			{ type = ">", title = " Debug " },
+			{ title = " CmdLine " },
+		},
+	},
+
 	-- Cmdline window width
 	width = {
 		value = "60%", -- "N%" = fraction of editor columns, integer = absolute columns
