@@ -18,13 +18,20 @@
 ```bash
 # 导入配置
 git clone https://github.com/ShangYJQ/nvim.config.git ~/.config/nvim
-git clone git@github.com:ShangYJQ/nvim.config.git # If use ssh
 
-# 编译安装最新 neovim (NVIM v0.12.1 已经发布 直接包管理安装即可)
-git clone --depth 1 https://github.com/neovim/neovim
-make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/share/neovim" CMAKE_BUILD_TYPE=Release
+git clone git@github.com:ShangYJQ/nvim.config.git ~/.config/nvim
+
+# 编译安装最新 neovim
+make CMAKE_BUILD_TYPE=Release CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/.local/opt/neovim"
 make install
-export PATH="$HOME/.local/share/neovim/bin:$PATH"
+
+mkdir -p ~/.local/bin
+ln -sf ~/.local/opt/neovim/bin/nvim ~/.local/bin/nvim
+
+# bash
+export PATH="$HOME/.local/bin:$PATH"
+# fish
+fish_add_path -m ~/.local/bin
 
 # 安装必须依赖
 bun i -g tree-sitter-cli
