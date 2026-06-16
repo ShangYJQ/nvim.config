@@ -4,6 +4,37 @@ local cmp = require("blink.cmp")
 
 cmp.build():pwait(60000)
 
+---@param ctx blink.cmp.Context
+---@param items blink.cmp.CompletionItem[]
+---@return blink.cmp.CompletionItem[]
+local function prefix_only_items(ctx, items)
+	local keyword = ctx:get_keyword():lower()
+
+	if keyword == "" then
+		return {}
+	end
+
+	return vim.tbl_filter(function(item)
+		local text = (item.filterText or item.label or ""):lower()
+		return vim.startswith(text, keyword)
+	end, items)
+end
+
+---@param source blink.cmp.Source
+---@param ctx blink.cmp.Context
+---@param callback fun(response?: blink.cmp.CompletionResponse)
+local function get_prefix_only_completions(source, ctx, callback)
+	return source:get_completions(ctx, function(response)
+		response = response or { items = {} }
+		response.items = prefix_only_items(ctx, response.items or {})
+
+		response.is_incomplete_forward = true
+		response.is_incomplete_backward = true
+
+		callback(response)
+	end)
+end
+
 cmp.setup({
 	enabled = function()
 		-- :set buftype?
@@ -85,7 +116,12 @@ cmp.setup({
 
 		providers = {
 
-			snippets = { score_offset = 100 },
+			snippets = {
+				score_offset = 100,
+				override = {
+					get_completions = get_prefix_only_completions,
+				},
+			},
 
 			lsp = { score_offset = 90 },
 
