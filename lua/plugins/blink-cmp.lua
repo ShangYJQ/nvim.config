@@ -35,6 +35,21 @@ local function get_prefix_only_completions(source, ctx, callback)
 	end)
 end
 
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "c", "cpp", "objc", "objcpp", "cuda" },
+	callback = function()
+		-- clangd returns an empty complete result when "<" triggers completion in templates.
+		-- Block that trigger so typing the template argument asks clangd again.
+		vim.b.blink_cmp = vim.tbl_deep_extend("force", vim.b.blink_cmp or {}, {
+			completion = {
+				trigger = {
+					show_on_blocked_trigger_characters = { " ", "\n", "\t", "<" },
+				},
+			},
+		})
+	end,
+})
+
 cmp.setup({
 	enabled = function()
 		-- :set buftype?

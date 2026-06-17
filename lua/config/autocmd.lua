@@ -15,7 +15,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight when yanking (copying) text",
 	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
 	callback = function()
-		vim.hl.hl_op({
+		-- 在 nvim 0.12 中使用 on_yank 但是在 nvim 0.13 中请使用 hl_op
+		vim.hl.on_yank({
 			higroup = "IncSearch",
 			timeout = 150,
 		})
