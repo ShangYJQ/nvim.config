@@ -4,51 +4,51 @@ local cmp = require("blink.cmp")
 
 cmp.build():pwait(60000)
 
----@param ctx blink.cmp.Context
----@param items blink.cmp.CompletionItem[]
----@return blink.cmp.CompletionItem[]
-local function prefix_only_items(ctx, items)
-	local keyword = ctx:get_keyword():lower()
+-- ---@param ctx blink.cmp.Context
+-- ---@param items blink.cmp.CompletionItem[]
+-- ---@return blink.cmp.CompletionItem[]
+-- local function prefix_only_items(ctx, items)
+-- 	local keyword = ctx:get_keyword():lower()
+--
+-- 	if keyword == "" then
+-- 		return {}
+-- 	end
+--
+-- 	return vim.tbl_filter(function(item)
+-- 		local text = (item.filterText or item.label or ""):lower()
+-- 		return vim.startswith(text, keyword)
+-- 	end, items)
+-- end
+--
+-- ---@param source blink.cmp.Source
+-- ---@param ctx blink.cmp.Context
+-- ---@param callback fun(response?: blink.cmp.CompletionResponse)
+-- local function get_prefix_only_completions(source, ctx, callback)
+-- 	return source:get_completions(ctx, function(response)
+-- 		response = response or { items = {} }
+-- 		response.items = prefix_only_items(ctx, response.items or {})
+--
+-- 		response.is_incomplete_forward = true
+-- 		response.is_incomplete_backward = true
+--
+-- 		callback(response)
+-- 	end)
+-- end
 
-	if keyword == "" then
-		return {}
-	end
-
-	return vim.tbl_filter(function(item)
-		local text = (item.filterText or item.label or ""):lower()
-		return vim.startswith(text, keyword)
-	end, items)
-end
-
----@param source blink.cmp.Source
----@param ctx blink.cmp.Context
----@param callback fun(response?: blink.cmp.CompletionResponse)
-local function get_prefix_only_completions(source, ctx, callback)
-	return source:get_completions(ctx, function(response)
-		response = response or { items = {} }
-		response.items = prefix_only_items(ctx, response.items or {})
-
-		response.is_incomplete_forward = true
-		response.is_incomplete_backward = true
-
-		callback(response)
-	end)
-end
-
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "c", "cpp", "objc", "objcpp", "cuda" },
-	callback = function()
-		-- clangd returns an empty complete result when "<" triggers completion in templates.
-		-- Block that trigger so typing the template argument asks clangd again.
-		vim.b.blink_cmp = vim.tbl_deep_extend("force", vim.b.blink_cmp or {}, {
-			completion = {
-				trigger = {
-					show_on_blocked_trigger_characters = { " ", "\n", "\t", "<" },
-				},
-			},
-		})
-	end,
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	pattern = { "c", "cpp", "objc", "objcpp", "cuda" },
+-- 	callback = function()
+-- 		-- clangd returns an empty complete result when "<" triggers completion in templates.
+-- 		-- Block that trigger so typing the template argument asks clangd again.
+-- 		vim.b.blink_cmp = vim.tbl_deep_extend("force", vim.b.blink_cmp or {}, {
+-- 			completion = {
+-- 				trigger = {
+-- 					show_on_blocked_trigger_characters = { " ", "\n", "\t", "<" },
+-- 				},
+-- 			},
+-- 		})
+-- 	end,
+-- })
 
 cmp.setup({
 	enabled = function()
@@ -133,9 +133,9 @@ cmp.setup({
 
 			snippets = {
 				score_offset = 100,
-				override = {
-					get_completions = get_prefix_only_completions,
-				},
+				-- override = {
+				-- 	get_completions = get_prefix_only_completions,
+				-- },
 			},
 
 			lsp = { score_offset = 90 },
