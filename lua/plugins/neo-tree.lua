@@ -227,5 +227,5 @@ require("neo-tree").setup({
 local map = vim.keymap.set
 
 map("n", "<leader>e", function()
-	require("neo-tree.command").execute({ toggle = true })
+	require("neo-tree.command").execute({ toggle = true, source = "last" })
 end, { silent = true, desc = "Neotree toggle" })
