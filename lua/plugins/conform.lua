@@ -13,9 +13,15 @@ require("conform").setup({
 
 	formatters = {
 		clang_format = {
-			prepend_args = {
-				"--style={BasedOnStyle: LLVM, IndentWidth: 4, UseTab: Always, TabWidth: 4, AllowShortFunctionsOnASingleLine: None}",
-			},
+			prepend_args = function(_, ctx)
+				if vim.fn.findfile(".clang-format", vim.fn.fnamemodify(ctx.filename, ":h") .. ";") ~= "" then
+					return { "--style=file" }
+				end
+
+				return {
+					"--style={BasedOnStyle: LLVM, IndentWidth: 4, UseTab: Always, TabWidth: 4, AllowShortFunctionsOnASingleLine: None}",
+				}
+			end,
 		},
 		rustfmt = {
 			args = { "--edition", "2021", "--config", "hard_tabs=true,tab_spaces=4", "--emit", "stdout" },
