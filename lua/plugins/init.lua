@@ -14,7 +14,7 @@ vim.pack.add({
 
 	{ src = "https://github.com/nvchad/base46" },
 	{ src = "https://github.com/nvzone/volt" },
-	{ src = "https://github.com/nvchad/ui" },
+	{ src = "https://github.com/nvchad/ui", name = "nvchad-ui" },
 
 	-- { src = "https://github.com/nvim-mini/mini.indentscope" },
 	{ src = "https://github.com/saghen/blink.indent" },
