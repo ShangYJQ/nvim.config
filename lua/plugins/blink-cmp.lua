@@ -131,14 +131,14 @@ cmp.setup({
 
 		providers = {
 
+			lsp = { score_offset = 100 },
+
 			snippets = {
-				score_offset = 100,
+				score_offset = 80,
 				-- override = {
 				-- 	get_completions = get_prefix_only_completions,
 				-- },
 			},
-
-			lsp = { score_offset = 90 },
 
 			path = { score_offset = 30 },
 
