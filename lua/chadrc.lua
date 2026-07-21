@@ -28,6 +28,7 @@ M.base46 = {
 		"tiny-inline-diagnostic",
 		"todo",
 		"lsp",
+		"gitsigns",
 	},
 
 	hl_add = {

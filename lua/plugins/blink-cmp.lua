@@ -4,37 +4,6 @@ local cmp = require("blink.cmp")
 
 cmp.build():pwait(60000)
 
--- ---@param ctx blink.cmp.Context
--- ---@param items blink.cmp.CompletionItem[]
--- ---@return blink.cmp.CompletionItem[]
--- local function prefix_only_items(ctx, items)
--- 	local keyword = ctx:get_keyword():lower()
---
--- 	if keyword == "" then
--- 		return {}
--- 	end
---
--- 	return vim.tbl_filter(function(item)
--- 		local text = (item.filterText or item.label or ""):lower()
--- 		return vim.startswith(text, keyword)
--- 	end, items)
--- end
---
--- ---@param source blink.cmp.Source
--- ---@param ctx blink.cmp.Context
--- ---@param callback fun(response?: blink.cmp.CompletionResponse)
--- local function get_prefix_only_completions(source, ctx, callback)
--- 	return source:get_completions(ctx, function(response)
--- 		response = response or { items = {} }
--- 		response.items = prefix_only_items(ctx, response.items or {})
---
--- 		response.is_incomplete_forward = true
--- 		response.is_incomplete_backward = true
---
--- 		callback(response)
--- 	end)
--- end
-
 -- vim.api.nvim_create_autocmd("FileType", {
 -- 	pattern = { "c", "cpp", "objc", "objcpp", "cuda" },
 -- 	callback = function()
@@ -50,11 +19,29 @@ cmp.build():pwait(60000)
 -- 	end,
 -- })
 
+---@class ProviderCycleItem
+---@field name string
+---@field providers string[]
+
+---@type ProviderCycleItem[]
+local provider_cycle = {
+	{ name = "snippets", providers = { "snippets" } },
+	{
+		name = "defalut",
+		providers = {
+			"lsp",
+			"dadbod_grip",
+			"path",
+			"buffer",
+		},
+	},
+}
+
 cmp.setup({
 	enabled = function()
-		-- :set buftype?
 		-- :set filetype?
 		local ft = vim.bo.filetype
+		-- :set buftype?
 		local bt = vim.bo.buftype
 
 		-- disable for dapui
@@ -85,6 +72,27 @@ cmp.setup({
 		-- ["<C-n>"] = { "select_next", "fallback" },
 		-- ["<C-p>"] = { "select_prev", "fallback" },
 		["<C-e>"] = { "hide", "fallback" },
+
+		-- 切换补全源列表
+		["<C-a>"] = {
+			function(cmp_local)
+				local index = (vim.b.blink_provider_cycle_index or 0) + 1
+
+				if index > #provider_cycle then
+					index = 1
+				end
+
+				vim.b.blink_provider_cycle_index = index
+
+				local current = provider_cycle[index]
+
+				vim.notify("Completion source: " .. current.name, vim.log.levels.INFO, { title = "blink.cmp" })
+
+				return cmp_local.show({
+					providers = current.providers,
+				})
+			end,
+		},
 	},
 
 	fuzzy = { implementation = "prefer_rust_with_warning" },
@@ -92,6 +100,14 @@ cmp.setup({
 	snippets = { preset = "default" },
 
 	completion = {
+
+		list = {
+			selection = {
+				preselect = true,
+				auto_insert = false,
+			},
+		},
+
 		documentation = {
 			auto_show = false,
 			auto_show_delay_ms = 800,
@@ -127,18 +143,15 @@ cmp.setup({
 
 	sources = {
 
-		default = { "lsp", "dadbod_grip", "snippets", "path", "buffer" },
+		default = provider_cycle[2].providers,
 
 		providers = {
 
-			lsp = { score_offset = 100 },
-
 			snippets = {
-				score_offset = 80,
-				-- override = {
-				-- 	get_completions = get_prefix_only_completions,
-				-- },
+				score_offset = 100,
 			},
+
+			lsp = { score_offset = 100 },
 
 			path = { score_offset = 30 },
 
