@@ -46,6 +46,17 @@ vim.lsp.config("clangd", {
 	},
 })
 
+vim.lsp.config("dartls", {
+	---@type lspconfig.settings.dartls
+	settings = {
+		dart = {
+			autoImportCompletions = true,
+			completeFunctionCalls = false,
+			showTodos = true,
+		},
+	},
+})
+
 vim.lsp.config("vtsls", {
 	settings = {
 		vtsls = {
