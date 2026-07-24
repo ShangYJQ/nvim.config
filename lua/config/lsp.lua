@@ -8,6 +8,7 @@ local lsp_servers = {
 	"jsonls",
 	"gopls",
 	"zls",
+	"dartls",
 	"unocss",
 	"tailwindcss",
 	"dockerls",

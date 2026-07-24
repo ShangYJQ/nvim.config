@@ -14,6 +14,7 @@ require("tree-sitter-manager").setup({
 		"javascript",
 		"typescript",
 		"tsx",
+		"dart",
 		"python",
 		"cpp",
 		"c",
