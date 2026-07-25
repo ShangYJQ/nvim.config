@@ -51,6 +51,9 @@ require("conform").setup({
 		html = { "oxfmt" },
 		css = { "oxfmt" },
 
+		-- Astro 暂时只能用 Prettier
+		astro = { "prettier" },
+
 		-- clang_format
 		c = { "clang_format" },
 		cpp = { "clang_format" },

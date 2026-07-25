@@ -151,6 +151,13 @@ bun i -g @tailwindcss/language-server
 bun i -g vscode-langservers-extracted
 ```
 
+#### Astro
+
+```bash
+bun add -g @astrojs/language-server
+bun add -g typescript@6
+```
+
 #### DockerFile
 
 ```bash

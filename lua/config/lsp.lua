@@ -1,4 +1,5 @@
 local lsp_servers = {
+	"astro",
 	"lua_ls",
 	"rust_analyzer",
 	"clangd",
@@ -53,6 +54,16 @@ vim.lsp.config("dartls", {
 			autoImportCompletions = true,
 			completeFunctionCalls = false,
 			showTodos = true,
+		},
+	},
+})
+
+vim.lsp.config("astro", {
+	init_options = {
+		typescript = {
+			-- NOTE: 注意 目前只适配 ts6
+			-- bun add -g typescript@6
+			tsdk = vim.fn.expand("~/.bun/install/global/node_modules/typescript/lib"),
 		},
 	},
 })
