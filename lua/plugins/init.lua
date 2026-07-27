@@ -43,7 +43,10 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-lua/plenary.nvim" },
 	-- { src = "https://github.com/stevearc/oil.nvim" },
 
+	-- git tools
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
+	-- { src = "https://github.com/esmuellert/codediff.nvim" },
+
 	{ src = "https://github.com/folke/todo-comments.nvim" },
 	{ src = "https://github.com/windwp/nvim-ts-autotag" },
 	{ src = "https://github.com/folke/flash.nvim" },
@@ -98,6 +101,7 @@ require("plugins.conform")
 -- require("plugins.lualine")
 require("plugins.nvchad")
 require("plugins.gitsigns")
+-- require("plugins.codediff") -- lazy loaded
 require("plugins.mini-surround")
 require("plugins.dadbod-grip")
 require("plugins.telescope")
@@ -154,6 +158,17 @@ end
 
 lazy.keymap_stub("n", "<leader>e", load_neotree, { silent = true, desc = " Neotree toggle" })
 lazy.command_stub("Neotree", load_neotree)
+
+---------------------------------------- codediff ----------------------------------------
+
+local function load_codediff()
+	vim.pack.add({
+		{ src = "https://github.com/esmuellert/codediff.nvim" },
+	})
+	require("plugins.codediff")
+end
+
+lazy.command_stub("CodeDiff", load_codediff)
 
 ---------------------------------------- cph ----------------------------------------
 
