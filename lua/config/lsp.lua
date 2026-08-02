@@ -30,7 +30,7 @@ local lsp_servers = {
 }
 
 -- you need have vue-language-server exe in your PATH !
-local vue_language_server_path = vim.fn.exepath("vue-language-server")
+local vue_language_server_path = vim.fn.expand("~/.bun/install/global/node_modules/@vue/language-server")
 
 local vue_plugin = {
 	name = "@vue/typescript-plugin",
