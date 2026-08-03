@@ -57,7 +57,13 @@ require("conform").setup({
 		-- clang_format
 		c = { "clang_format" },
 		cpp = { "clang_format" },
+		objc = { "clang_format" },
+
 		cmake = { "cmake_format" },
+
+		-- swift
+
+		swift = { "swift" },
 
 		-- xmllint
 		xml = { "xmllint" },

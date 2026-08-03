@@ -3,6 +3,7 @@ local lsp_servers = {
 	"lua_ls",
 	"rust_analyzer",
 	"clangd",
+	"sourcekit",
 	"basedpyright",
 	"ruff",
 	"bashls",
