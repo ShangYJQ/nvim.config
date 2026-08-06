@@ -369,6 +369,7 @@ bun i -g gh-actions-language-server
 │   │   ├── multicursor-nvim.lua
 │   │   ├── neo-tree.lua
 │   │   ├── nvchad.lua
+│   │   ├── nvim-treesitter.lua
 │   │   ├── nvim-ts-autotag.lua
 │   │   ├── nvim-ufo.lua
 │   │   ├── oil.lua
@@ -378,8 +379,7 @@ bun i -g gh-actions-language-server
 │   │   ├── telescope.lua
 │   │   ├── tiny-cmdline.lua
 │   │   ├── tiny-inline-diagnostics.lua
-│   │   ├── todo-comments.lua
-│   │   └── tree-sitter-manager.lua
+│   │   └── todo-comments.lua
 │   └── utlis
 │       ├── builder.lua
 │       └── lazy.lua

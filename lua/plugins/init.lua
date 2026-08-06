@@ -7,7 +7,8 @@ vim.pack.add({
 
 	---------------------------------------- core plugins ----------------------------------------
 
-	{ src = "https://github.com/romus204/tree-sitter-manager.nvim" },
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+
 	-- UI
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
 	-- { src = "https://github.com/nvim-lualine/lualine.nvim" },
@@ -92,9 +93,11 @@ vim.pack.add({
 
 	-- cph from bcyz
 	-- { src = "https://github.com/beicanzhuzhu/cph.nvim" },
+}, {
+	load = true,
 })
 
-require("plugins.tree-sitter-manager")
+require("plugins.nvim-treesitter")
 require("plugins.blink-cmp")
 require("plugins.blink-pairs")
 require("plugins.conform")
