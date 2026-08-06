@@ -8,6 +8,7 @@ vim.pack.add({
 	---------------------------------------- core plugins ----------------------------------------
 
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+	{ src = "https://github.com/lewis6991/ts-install.nvim" },
 
 	-- UI
 	{ src = "https://github.com/nvim-tree/nvim-web-devicons" },
