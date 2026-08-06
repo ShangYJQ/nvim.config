@@ -50,13 +50,6 @@ map("n", "<leader>t", function()
 	})
 end, { desc = "NvChad floating terminal" })
 
-map("t", "<leader>t", function()
-	require("nvchad.term").toggle({
-		pos = "float",
-		id = "floatTerm",
-	})
-end, { desc = "Toggle NvChad floating terminal" })
-
 map("n", "<Tab>", "<cmd>bnext<CR>", { desc = "bn" })
 map("n", "<S-Tab>", "<cmd>bprevious<CR>", { desc = "bp" })
 
