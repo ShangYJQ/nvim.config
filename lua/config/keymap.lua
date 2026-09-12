@@ -13,6 +13,7 @@ map("n", "N", "Nzzzv", { desc = "Previous search result centered" })
 
 -- map("n", "<C-z>", "<cmd>undo<CR>", { desc = "Undo" })
 map({ "n", "v" }, "d", '"_d', { desc = "Delete to black hole register" })
+map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 map("n", "<leader>c", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 
 -- Window navigation (Ctrl + hjkl)
