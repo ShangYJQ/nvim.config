@@ -121,7 +121,15 @@ cmp.setup({
 
 	cmdline = {
 		enabled = true,
-		completion = { menu = { auto_show = false } },
+		completion = {
+			menu = { auto_show = false },
+			list = {
+				selection = {
+					preselect = false,
+					auto_insert = true,
+				},
+			},
+		},
 		sources = {
 			default = { "cmdline" },
 		},
