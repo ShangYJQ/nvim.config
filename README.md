@@ -1,4 +1,4 @@
-## 由 `Neovim` v0.12 & `vim.pack` 驱动. 为速度和美观而生.
+## 由 `Neovim` v0.13 & `vim.pack` 驱动. 为速度和美观而生.
 
 <a href="https://dotfyle.com/ShangYJQ/nvimconfig"><img src="https://dotfyle.com/ShangYJQ/nvimconfig/badges/plugins?style=flat" /></a>
 <a href="https://dotfyle.com/ShangYJQ/nvimconfig"><img src="https://dotfyle.com/ShangYJQ/nvimconfig/badges/leaderkey?style=flat" /></a>
@@ -7,7 +7,7 @@
 
 ## 环境依赖
 
-1. `Neovim` v0.12+
+1. `Neovim` v0.13+
 2. 编译器: `gcc`, `g++`
 3. Rust 工具链: `rustc`, `cargo`
 4. Node 环境: `bun` （推荐）

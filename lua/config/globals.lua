@@ -8,9 +8,10 @@ vim.g.autoformat_enabled = true
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- 禁用 netrw
+-- 禁用 netrw 和内置目录浏览器 dir
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_nvim_dir_plugin = 1
 
 vim.g.have_nerd_font = true
 
@@ -39,8 +40,7 @@ vim.g.omni_sql_no_default_maps = 1
 vim.g.loaded_gzip = 1
 vim.g.loaded_tar = 1
 vim.g.loaded_tarPlugin = 1
-vim.g.loaded_zip = 1
-vim.g.loaded_zipPlugin = 1
+vim.g.loaded_nvim_zip_plugin = 1
 
 -- Disable EditorConfig
 vim.g.editorconfig = false

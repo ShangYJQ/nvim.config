@@ -133,31 +133,31 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.bo[buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
 		-- Toggle inlay hints if supported
-		if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+		if client and client:supports_method("textDocument/inlayHint") then
 			map("n", "<leader>ih", function()
 				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = buf }))
-			end, { buffer = buf, desc = "LSP: Toggle inlay hints" })
+			end, { buf = buf, desc = "LSP: Toggle inlay hints" })
 		end
 
 		-- Navigation
-		map("n", "gD", vim.lsp.buf.declaration, { buffer = buf, desc = "LSP: Go to declaration" })
-		map("n", "gd", telescope_builtin.lsp_definitions, { buffer = buf, desc = "LSP: Go to definition" })
-		map("n", "gi", telescope_builtin.lsp_implementations, { buffer = buf, desc = "LSP: Go to implementation" })
-		map("n", "gr", telescope_builtin.lsp_references, { buffer = buf, desc = "LSP: Find references" })
-		map("n", "gy", telescope_builtin.lsp_type_definitions, { buffer = buf, desc = "LSP: Go to type definition" })
+		map("n", "gD", vim.lsp.buf.declaration, { buf = buf, desc = "LSP: Go to declaration" })
+		map("n", "gd", telescope_builtin.lsp_definitions, { buf = buf, desc = "LSP: Go to definition" })
+		map("n", "gi", telescope_builtin.lsp_implementations, { buf = buf, desc = "LSP: Go to implementation" })
+		map("n", "gr", telescope_builtin.lsp_references, { buf = buf, desc = "LSP: Find references" })
+		map("n", "gy", telescope_builtin.lsp_type_definitions, { buf = buf, desc = "LSP: Go to type definition" })
 
 		-- Code actions
-		map("n", "<leader>a", vim.lsp.buf.code_action, { buffer = buf, desc = "LSP: Code action" })
+		map("n", "<leader>a", vim.lsp.buf.code_action, { buf = buf, desc = "LSP: Code action" })
 		map("n", "<leader>r", require("nvchad.lsp.renamer"), {
-			buffer = buf,
+			buf = buf,
 			desc = "LSP: Rename symbol",
 		})
 
 		-- Diagnostics
-		-- map("n", "<leader>e", vim.diagnostic.open_float, { buffer = buf, desc = "LSP: Show diagnostics" })
+		-- map("n", "<leader>e", vim.diagnostic.open_float, { buf = buf, desc = "LSP: Show diagnostics" })
 		-- map("n", "<leader>D", function()
 		-- 	vim.diagnostic.open_float({ source = true })
-		-- end, { buffer = buf, desc = "LSP: Show diagnostics with source" })
+		-- end, { buf = buf, desc = "LSP: Show diagnostics with source" })
 
 		-- 快速复制lsp信息
 
@@ -170,7 +170,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			else
 				vim.notify("No diagnostic at cursor")
 			end
-		end, { buffer = buf, desc = "LSP: Copy current diagnostic" })
+		end, { buf = buf, desc = "LSP: Copy current diagnostic" })
 
 		-- <leader>Y: 复制当前文件所有的报错信息
 		map("n", "<leader>Y", function()
@@ -185,7 +185,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			else
 				vim.notify("No diagnostics in current buffer")
 			end
-		end, { buffer = buf, desc = "LSP: Copy all diagnostics" })
+		end, { buf = buf, desc = "LSP: Copy all diagnostics" })
 
 		-- Override diagnostic float with tiny-inline-diagnostic
 		vim.diagnostic.open_float = require("tiny-inline-diagnostic.override").open_float
