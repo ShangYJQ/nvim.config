@@ -131,14 +131,14 @@ local lazy = require("utlis.lazy")
 
 ---------------------------------------- multicursor ----------------------------------------
 
-local function load_multicursor()
-	vim.pack.add({ { src = "https://github.com/jake-stewart/multicursor.nvim" } })
-	require("plugins.multicursor-nvim")
-end
-
-lazy.keymap_stub({ "n", "x" }, "<S-c>", load_multicursor, { desc = "Multicursor: add cursor down" })
-lazy.keymap_stub({ "n", "x" }, "<leader><S-c>", load_multicursor, { desc = "Multicursor: skip cursor down" })
-lazy.keymap_stub({ "n", "x" }, "<leader>m", load_multicursor, { desc = "Multicursor: clear cursors" })
+-- local function load_multicursor()
+-- 	vim.pack.add({ { src = "https://github.com/jake-stewart/multicursor.nvim" } })
+-- 	require("plugins.multicursor-nvim")
+-- end
+--
+-- lazy.keymap_stub({ "n", "x" }, "<S-c>", load_multicursor, { desc = "Multicursor: add cursor down" })
+-- lazy.keymap_stub({ "n", "x" }, "<leader><S-c>", load_multicursor, { desc = "Multicursor: skip cursor down" })
+-- lazy.keymap_stub({ "n", "x" }, "<leader>m", load_multicursor, { desc = "Multicursor: clear cursors" })
 
 ---------------------------------------- sloat ----------------------------------------
 

@@ -21,6 +21,11 @@ map("n", "<C-j>", "<C-w>j", { desc = "Focus below window" })
 map("n", "<C-k>", "<C-w>k", { desc = "Focus above window" })
 map("n", "<C-l>", "<C-w>l", { desc = "Focus right window" })
 
+-- 清除多光标（默认 CTRL-L 的清除功能被上面的 <C-l> 覆盖了）
+map("n", "<C-;>", function()
+	vim.api.nvim_buf_clear_namespace(0, vim.api.nvim_create_namespace("nvim.multicursor"), 0, -1)
+end, { desc = "Clear multicursors" })
+
 -- Window splitting (leader + hjkl)
 -- map("n", "<leader>l", "<cmd>set splitright<CR><cmd>vsplit<CR>", { desc = "Split right" })
 -- map("n", "<leader>j", "<cmd>set splitbelow<CR><cmd>split<CR>", { desc = "Split below" })
