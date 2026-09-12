@@ -6,7 +6,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 			return
 		end
 		local file = vim.uv.fs_realpath(event.match) or event.match
-		vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
+		vim.fs.mkdir(vim.fs.dirname(file), { parents = true })
 	end,
 })
 

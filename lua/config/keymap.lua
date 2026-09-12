@@ -13,8 +13,7 @@ map("n", "N", "Nzzzv", { desc = "Previous search result centered" })
 
 -- map("n", "<C-z>", "<cmd>undo<CR>", { desc = "Undo" })
 map({ "n", "v" }, "d", '"_d', { desc = "Delete to black hole register" })
-map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
-map("n", "<leader>c", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
+map("n", { "<Esc>", "<leader>c" }, "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 
 -- Window navigation (Ctrl + hjkl)
 map("n", "<C-h>", "<C-w>h", { desc = "Focus left window" })
@@ -60,18 +59,12 @@ map("n", "<Tab>", "<cmd>bnext<CR>", { desc = "bn" })
 map("n", "<S-Tab>", "<cmd>bprevious<CR>", { desc = "bp" })
 
 -- move code
-map("n", "<A-k>", ":move .-2<CR>==", { noremap = true, silent = true })
-map("n", "<A-j>", ":move .+1<CR>==", { noremap = true, silent = true })
-
-map("n", "<A-Up>", ":move .-2<CR>==", { noremap = true, silent = true })
-map("n", "<A-Down>", ":move .+1<CR>==", { noremap = true, silent = true })
+map("n", { "<A-k>", "<A-Up>" }, ":move .-2<CR>==", { noremap = true, silent = true })
+map("n", { "<A-j>", "<A-Down>" }, ":move .+1<CR>==", { noremap = true, silent = true })
 
 -- visual mode 移动选中块
-map("v", "<A-k>", ":move '<-2<CR>gv=gv", { noremap = true, silent = true })
-map("v", "<A-j>", ":move '>+1<CR>gv=gv", { noremap = true, silent = true })
-
-map("v", "<A-Up>", ":move '<-2<CR>gv=gv", { noremap = true, silent = true })
-map("v", "<A-Down>", ":move '>+1<CR>gv=gv", { noremap = true, silent = true })
+map("v", { "<A-k>", "<A-Up>" }, ":move '<-2<CR>gv=gv", { noremap = true, silent = true })
+map("v", { "<A-j>", "<A-Down>" }, ":move '>+1<CR>gv=gv", { noremap = true, silent = true })
 
 -- change x to helix mode
 map("n", "x", function()
@@ -90,13 +83,6 @@ map("v", "x", "<Esc>", { noremap = true, silent = true, desc = "Helix-style x to
 -- map("n", "<leader>T", function()
 -- 	require("nvchad.themes").open()
 -- end, { desc = "Toggle themes" })
-
--- Yank whole file without moving cursor
-map("n", "<leader>u", function()
-	local view = vim.fn.winsaveview()
-	vim.cmd("silent keepjumps %y")
-	vim.fn.winrestview(view)
-end, { desc = "Yank whole file without moving cursor" })
 
 map("n", "<leader>F", function()
 	vim.g.autoformat_enabled = not vim.g.autoformat_enabled
@@ -136,7 +122,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		local telescope_builtin = require("telescope.builtin")
 
 		-- add omnifunc to cmp with lsp
-		vim.bo[buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+		vim.bo[buf].omnifunc = vim.lsp.omnifunc
 
 		-- Toggle inlay hints if supported
 		if client and client:supports_method("textDocument/inlayHint") then
