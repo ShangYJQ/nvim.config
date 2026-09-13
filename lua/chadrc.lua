@@ -102,6 +102,7 @@ M.nvdash = {
 		{ txt = "  Find File", keys = "ff", cmd = "Telescope find_files" },
 		{ txt = "󰈭  Find Word", keys = "fw", cmd = "Telescope live_grep" },
 		{ txt = "  Git Status", keys = "gh", cmd = "Telescope git_status" },
+		{ txt = "  Code Diff", keys = "cd", cmd = "CodeDiff" },
 		{ txt = "󱥚  Themes", keys = "th", cmd = ":lua require('nvchad.themes').open()" },
 		{ txt = "󰚰  Update", keys = "up", cmd = ":lua vim.pack.update()" },
 		{ txt = "  Mappings", keys = "ch", cmd = "NvCheatsheet" },
