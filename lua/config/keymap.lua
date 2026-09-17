@@ -121,9 +121,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		local client = vim.lsp.get_client_by_id(event.data.client_id)
 		local telescope_builtin = require("telescope.builtin")
 
-		-- add omnifunc to cmp with lsp
-		vim.bo[buf].omnifunc = vim.lsp.omnifunc
-
 		-- Toggle inlay hints if supported
 		if client and client:supports_method("textDocument/inlayHint") then
 			map("n", "<leader>ih", function()
@@ -131,25 +128,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			end, { buf = buf, desc = "LSP: Toggle inlay hints" })
 		end
 
-		-- Navigation
-		map("n", "gD", vim.lsp.buf.declaration, { buf = buf, desc = "LSP: Go to declaration" })
-		map("n", "gd", telescope_builtin.lsp_definitions, { buf = buf, desc = "LSP: Go to definition" })
-		map("n", "gi", telescope_builtin.lsp_implementations, { buf = buf, desc = "LSP: Go to implementation" })
-		map("n", "gr", telescope_builtin.lsp_references, { buf = buf, desc = "LSP: Find references" })
-		map("n", "gy", telescope_builtin.lsp_type_definitions, { buf = buf, desc = "LSP: Go to type definition" })
-
-		-- Code actions
-		map("n", "<leader>a", vim.lsp.buf.code_action, { buf = buf, desc = "LSP: Code action" })
-		map("n", "<leader>r", require("nvchad.lsp.renamer"), {
-			buf = buf,
-			desc = "LSP: Rename symbol",
-		})
-
-		-- Diagnostics
-		-- map("n", "<leader>e", vim.diagnostic.open_float, { buf = buf, desc = "LSP: Show diagnostics" })
-		-- map("n", "<leader>D", function()
-		-- 	vim.diagnostic.open_float({ source = true })
-		-- end, { buf = buf, desc = "LSP: Show diagnostics with source" })
+		-- lsp keymaps
+		map("n", "grd", vim.lsp.buf.declaration, { buf = buf, desc = "LSP: Go to declaration" })
+		map("n", "gri", telescope_builtin.lsp_implementations, { buf = buf, desc = "LSP: Go to implementation" })
+		map("n", "grt", telescope_builtin.lsp_type_definitions, { buf = buf, desc = "LSP: Go to type definition" })
 
 		-- 快速复制lsp信息
 
@@ -178,8 +160,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
 				vim.notify("No diagnostics in current buffer")
 			end
 		end, { buf = buf, desc = "LSP: Copy all diagnostics" })
-
-		-- Override diagnostic float with tiny-inline-diagnostic
-		vim.diagnostic.open_float = require("tiny-inline-diagnostic.override").open_float
 	end,
 })
