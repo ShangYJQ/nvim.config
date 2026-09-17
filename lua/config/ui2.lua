@@ -55,9 +55,6 @@ ui2.enable({
 			verbose = "pager",
 			wildlist = "cmd",
 			wmsg = "msg",
-
-			-- trigger
-			typed_cmd = "msg",
 		},
 		dialog = {
 			height = 0.5,
