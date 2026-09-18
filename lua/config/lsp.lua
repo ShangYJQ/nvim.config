@@ -11,6 +11,7 @@ local lsp_servers = {
 	"gopls",
 	"zls",
 	"dartls",
+	"docker_language_server",
 	"unocss",
 	"tailwindcss",
 	"dockerls",
