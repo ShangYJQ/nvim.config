@@ -51,7 +51,6 @@ vim.pack.add({
 
 	{ src = "https://github.com/folke/todo-comments.nvim" },
 	{ src = "https://github.com/windwp/nvim-ts-autotag" },
-	{ src = "https://github.com/folke/flash.nvim" },
 
 	-- nvim-ufo
 	{ src = "https://github.com/kevinhwang91/promise-async" }, -- ufo dependent
@@ -119,7 +118,6 @@ require("plugins.nvim-ufo")
 require("plugins.todo-comments")
 require("plugins.blink-indent")
 require("plugins.tiny-cmdline")
-require("plugins.flash")
 -- require("plugins.mini-files")
 -- require("plugins.multicursor-nvim") -- lazy loaded
 -- require("plugins.mini-indentscope")

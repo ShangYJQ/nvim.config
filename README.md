@@ -299,20 +299,18 @@ bun i -g gh-actions-language-server
 
 ### 编辑增强
 
-| 模式 | 按键            | 功能                  |
-| ---- | --------------- | --------------------- |
-| n,x  | `s`             | Flash 跳转            |
-| n    | `S`             | Flash Treesitter 选择 |
-| n,x  | `<S-c>`         | 添加多光标            |
-| n,x  | `<leader><S-c>` | 跳过光标              |
-| n,x  | `<leader>m`     | 清除多光标            |
-| n    | `ma`            | 添加 surround         |
-| n    | `md`            | 删除 surround         |
-| n    | `mr`            | 替换 surround         |
-| n    | `mf`            | 查找 surround         |
-| n    | `zx`            | 切换全部折叠          |
-| n    | `]t` / `[t`     | 下/上一个 TODO        |
-| n    | `[i` / `]i`     | 跳转缩进作用域 顶/底  |
+| 模式 | 按键            | 功能                 |
+| ---- | --------------- | -------------------- |
+| n,x  | `<S-c>`         | 添加多光标           |
+| n,x  | `<leader><S-c>` | 跳过光标             |
+| n,x  | `<leader>m`     | 清除多光标           |
+| n    | `ma`            | 添加 surround        |
+| n    | `md`            | 删除 surround        |
+| n    | `mr`            | 替换 surround        |
+| n    | `mf`            | 查找 surround        |
+| n    | `zx`            | 切换全部折叠         |
+| n    | `]t` / `[t`     | 下/上一个 TODO       |
+| n    | `[i` / `]i`     | 跳转缩进作用域 顶/底 |
 
 ## 结构
 
@@ -358,7 +356,6 @@ bun i -g gh-actions-language-server
 │   │   │   ├── dap-view.lua
 │   │   │   ├── dap.lua
 │   │   │   └── init.lua
-│   │   ├── flash.lua
 │   │   ├── gitsigns.lua
 │   │   ├── init.lua
 │   │   ├── lualine.lua

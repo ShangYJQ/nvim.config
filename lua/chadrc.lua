@@ -23,7 +23,6 @@ M.base46 = {
 		"blink-pair",
 		"dap",
 		"render-markdown",
-		"flash",
 		"telescope",
 		"tiny-inline-diagnostic",
 		"todo",
