@@ -53,6 +53,8 @@ sudo pacman -S lua-language-server stylua
 ```bash
 # sudo pacman -S rust-analyzer rust
 rustup component add rust-analyzer
+# for Cargo.toml cmp
+brew install tombi
 ```
 
 #### C/C++

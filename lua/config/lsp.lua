@@ -2,6 +2,7 @@ local lsp_servers = {
 	"astro",
 	"lua_ls",
 	"rust_analyzer",
+	"tombi",
 	"clangd",
 	"sourcekit",
 	"basedpyright",

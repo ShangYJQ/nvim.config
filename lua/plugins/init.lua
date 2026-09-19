@@ -86,8 +86,6 @@ vim.pack.add({
 	-- overseer
 	-- { src = "https://github.com/stevearc/overseer.nvim" },
 
-	-- { src = "https://github.com/ShangYJQ/sloat.git" },
-
 	-- { src = "https://github.com/nvim-neo-tree/neo-tree.nvim" },
 	-- { src = "https://github.com/MunifTanjim/nui.nvim" }, -- dependent for neo-tree
 
@@ -111,8 +109,6 @@ require("plugins.telescope")
 require("plugins.render-markdown")
 require("plugins.tiny-inline-diagnostics")
 require("plugins.nvim-ts-autotag")
--- require("plugins.sloat") -- lazy loaded
--- require("plugins.oil")
 -- require("plugins.neo-tree") -- lazy loaded
 require("plugins.nvim-ufo")
 require("plugins.todo-comments")
@@ -137,16 +133,6 @@ local lazy = require("utlis.lazy")
 -- lazy.keymap_stub({ "n", "x" }, "<S-c>", load_multicursor, { desc = "Multicursor: add cursor down" })
 -- lazy.keymap_stub({ "n", "x" }, "<leader><S-c>", load_multicursor, { desc = "Multicursor: skip cursor down" })
 -- lazy.keymap_stub({ "n", "x" }, "<leader>m", load_multicursor, { desc = "Multicursor: clear cursors" })
-
----------------------------------------- sloat ----------------------------------------
-
--- local function load_sloat()
--- 	vim.pack.add({ { src = "https://github.com/ShangYJQ/sloat.git" } })
--- 	require("plugins.sloat")
--- end
---
--- lazy.keymap_stub("n", "<leader>t", load_sloat, { noremap = true, silent = true, desc = "Toggle sloat term" })
--- lazy.command_stub("Sloat", load_sloat)
 
 ---------------------------------------- neo-tree ----------------------------------------
 
